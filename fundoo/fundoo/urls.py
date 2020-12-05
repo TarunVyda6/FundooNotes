@@ -21,7 +21,7 @@ from fundooapp import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = routers.DefaultRouter()
-router.register('register', views.UserDetailsCrud)
+router.register('users', views.UserDetailsCrud)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

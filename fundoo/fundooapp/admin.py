@@ -1,11 +1,23 @@
 from django.contrib import admin
-from .models import UserDetails
+from .models import NewUser
+from django.contrib.auth.admin import UserAdmin
 
 
 # Register your models here.
 
-class UserDetailsAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'user_name', 'email_id', 'password']
+class UserDetailsAdmin(UserAdmin):
+    model = NewUser
+    ordering = ('email', 'first_name', 'last_name', 'user_name')
+    list_display = ['first_name', 'last_name', 'user_name', 'email']
+    fieldsets = (
+        (None, {'fields': ('email', 'user_name', 'first_name', 'last_name', 'password')}),
+        ('Permissions', {'fields': ('is_staff', 'is_active')})
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'first_name', 'last_name', 'user_name', 'password', 'is_active', 'is_staff')}
+         ),
+    )
 
-
-admin.site.register(UserDetails, UserDetailsAdmin)
+admin.site.register(NewUser, UserDetailsAdmin)
