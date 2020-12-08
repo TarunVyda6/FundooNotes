@@ -8,7 +8,7 @@ from django.contrib.auth.admin import UserAdmin
 class UserDetailsAdmin(UserAdmin):
     model = NewUser
     ordering = ('email', 'first_name', 'last_name', 'user_name')
-    list_display = ['first_name', 'last_name', 'user_name', 'email']
+    list_display = ['user_name', 'email']
     fieldsets = (
         (None, {'fields': ('email', 'user_name', 'first_name', 'last_name', 'password')}),
         ('Permissions', {'fields': ('is_staff', 'is_active')})
@@ -19,5 +19,6 @@ class UserDetailsAdmin(UserAdmin):
             'fields': ('email', 'first_name', 'last_name', 'user_name', 'password', 'is_active', 'is_staff')}
          ),
     )
+
 
 admin.site.register(NewUser, UserDetailsAdmin)
