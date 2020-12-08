@@ -35,22 +35,22 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('reset_password/',
          auth_views.PasswordResetView.as_view(
-             template_name="C:/Users/Tarun vyda/PycharmProjects/FundooNotes/fundoo/fundooapp/templates/password_reset.html"),
+             template_name="fundooapp/password_reset.html"),
          name="reset_password"),
 
     path('reset_password_sent/',
          auth_views.PasswordResetDoneView.as_view(
-             template_name="C:/Users/Tarun vyda/PycharmProjects/FundooNotes/fundoo/fundooapp/templates/password_reset_sent.html"),
+             template_name="fundooapp/password_reset_sent.html"),
          name="password_reset_done"),
 
     path('reset/<uidb64>/<token>/',
          auth_views.PasswordResetConfirmView.as_view(
-             template_name="C:/Users/Tarun vyda/PycharmProjects/FundooNotes/fundoo/fundooapp/templates/password_reset_form.html"),
+             template_name="fundooapp/password_reset_form.html"),
          name="password_reset_confirm"),
 
     path('reset_password_complete/',
          auth_views.PasswordResetCompleteView.as_view(
-             template_name="C:/Users/Tarun vyda/PycharmProjects/FundooNotes/fundoo/fundooapp/templates/password_reset_done.html"),
+             template_name="fundooapp/password_reset_done.html"),
          name="password_reset_complete"),
 
 ]

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+<table>
+    <tr>
+        <td>username</td><td>:</td> <td>{{form.user_name}}</td>
+    </tr>
+     <tr>
+        <td>email</td><td>:</td> <td>{{form.email}}</td>
+    </tr>
+     <tr>
+        <td>password</td><td>:</td> <td>{{form.password1}}</td>
+    </tr>
+     <tr>
+        <td>confirm password</td><td>:</td> <td>{{form.password2}}</td>
+    </tr>
+    <tr>
+    <td><input type="submit"></td><td></td>
+    </tr>
+    <tr>
+        <td><h4><a href="{% url 'login' %}">Login</a></h4></td>
+        <td><h4><a href="{% url 'reset_password' %}">forgot password?</a></h4></td>
+    </tr>
+</table>
+
+{{form.errors}}
+</form>
+
+{% for message in messages %}
+<h1>{{message}}</h1>
+{% endfor %}
+
+</body>
+</html>

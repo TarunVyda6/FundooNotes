@@ -30,7 +30,7 @@ def register_page(request):
     context = {'form': form}
     print("failed")
 
-    return render(request, 'C:/Users/Tarun vyda/PycharmProjects/FundooNotes/fundoo/fundooapp/templates/Register.html',
+    return render(request, 'fundooapp/Register.html',
                   context)
 
 
@@ -51,7 +51,7 @@ def login_page(request):
             messages.info(request, 'Username or password is incorrect')
 
     context = {}
-    return render(request, 'C:/Users/Tarun vyda/PycharmProjects/FundooNotes/fundoo/fundooapp/templates/Login.html',
+    return render(request, 'fundooapp/Login.html',
                   context)
 
 
@@ -61,7 +61,7 @@ def home_page(request):
     :rtype: object
     """
     context = {}
-    return render(request, 'C:/Users/Tarun vyda/PycharmProjects/FundooNotes/fundoo/fundooapp/templates/Home.html',
+    return render(request, 'fundooapp/Home.html',
                   context)
 
 
