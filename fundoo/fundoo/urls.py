@@ -27,10 +27,9 @@ router.register('users', views.UserDetailsCrud)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('register/', views.register_page, name="register"),
-    path('login/', views.login_page, name="login"),
-    path('home/', views.home_page, name="home"),
-    path('logout/', views.logout_page, name="logout"),
+    path('login/', views.LoginAPIView.as_view()),
+    path('register/', views.RegisterView.as_view()),
+
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('reset_password/',

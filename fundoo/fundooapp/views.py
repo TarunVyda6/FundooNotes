@@ -1,12 +1,12 @@
 from __future__ import absolute_import
 
-from django.shortcuts import render, redirect
+from django.contrib.sites.shortcuts import get_current_site
 from rest_framework.viewsets import ModelViewSet
 from .models import NewUser
-from fundooapp.serializers import UserDetailsSerializer
-from .forms import CreateUserForm
-from django.contrib import messages
-from django.contrib.auth import login, authenticate, logout
+from fundooapp.serializers import UserDetailsSerializer, LoginSerializer, RegisterSerializer
+from rest_framework.response import Response
+from .serializers import LoginSerializer
+from rest_framework import generics, status
 
 
 class UserDetailsCrud(ModelViewSet):
@@ -14,60 +14,23 @@ class UserDetailsCrud(ModelViewSet):
     serializer_class = UserDetailsSerializer
 
 
-def register_page(request):
-    """
-    this function takes request as input and register the details, if all the details are valid then redirect to login page
-    """
-    form = CreateUserForm()
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('user_name')
-            messages.success(request, 'Account was created for ' + user)
-            return redirect('login')
+class LoginAPIView(generics.GenericAPIView):
+    serializer_class = LoginSerializer
 
-    context = {'form': form}
-    print("failed")
-
-    return render(request, 'fundooapp/Register.html',
-                  context)
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-def login_page(request):
-    """
-    takes request as input and if valid credentials are provided then it will redirect to home page
-    """
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
+class RegisterView(generics.GenericAPIView):
+    serializer_class = RegisterSerializer
 
-        user = authenticate(request, email=email, password=password)
+    def post(self, request):
+        user = request.data
+        serializer = self.serializer_class(data=user)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        user_data = serializer.data
 
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            messages.info(request, 'Username or password is incorrect')
-
-    context = {}
-    return render(request, 'fundooapp/Login.html',
-                  context)
-
-
-def home_page(request):
-    """
-    takes request as input parameter and displays home page
-    :rtype: object
-    """
-    context = {}
-    return render(request, 'fundooapp/Home.html',
-                  context)
-
-
-def logout_page(request):
-    """
-    takes request as input parameter and if the account is logged out then it will redirect to login page
-    """
-    logout(request)
-    return redirect('login')
+        return Response(user_data, status=status.HTTP_201_CREATED)
