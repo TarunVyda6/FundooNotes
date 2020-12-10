@@ -19,7 +19,6 @@ from django.urls import path, include
 from rest_framework import routers
 from fundooapp import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from django.contrib.auth import views as auth_views
 
 router = routers.DefaultRouter()
 router.register('users', views.UserDetailsCrud)
@@ -32,24 +31,11 @@ urlpatterns = [
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('reset_password/',
-         auth_views.PasswordResetView.as_view(
-             template_name="fundooapp/password_reset.html"),
-         name="reset_password"),
-
-    path('reset_password_sent/',
-         auth_views.PasswordResetDoneView.as_view(
-             template_name="fundooapp/password_reset_sent.html"),
-         name="password_reset_done"),
-
-    path('reset/<uidb64>/<token>/',
-         auth_views.PasswordResetConfirmView.as_view(
-             template_name="fundooapp/password_reset_form.html"),
-         name="password_reset_confirm"),
-
-    path('reset_password_complete/',
-         auth_views.PasswordResetCompleteView.as_view(
-             template_name="fundooapp/password_reset_done.html"),
-         name="password_reset_complete"),
+    path('request-reset-email/', views.RequestPasswordResetEmail.as_view(),
+         name="request-reset-email"),
+    path('password-reset/<uidb64>/<token>/',
+         views.PasswordTokenCheckAPI.as_view(), name='password-reset-confirm'),
+    path('password-reset-complete/', views.SetNewPasswordAPIView.as_view(),
+         name='password-reset-complete')
 
 ]
