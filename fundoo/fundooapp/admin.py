@@ -15,7 +15,8 @@ class UserDetailsAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'first_name', 'last_name', 'user_name', 'password', 'is_active', 'is_staff', 'is_verified')}
+            'fields': (
+            'email', 'first_name', 'last_name', 'user_name', 'password', 'is_active', 'is_staff', 'is_verified')}
          ),
     )
 
