@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'fundooapp',
     'drf_yasg',
+    'notes',
+    'colorfield',
 ]
 
 SWAGGER_SETTINGS = {
@@ -137,7 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-AUTH_USER_MODEL = 'fundooapp.NewUser'
+AUTH_USER_MODEL = 'fundooapp.Account'
 
 # SMTP Configuration
 
@@ -147,3 +149,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'kamaltarun.rao0@gmail.com'
 EMAIL_HOST_PASSWORD = ''
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

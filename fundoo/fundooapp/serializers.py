@@ -1,4 +1,4 @@
-from .models import NewUser
+from .models import Account
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 from django.contrib import auth
@@ -16,7 +16,7 @@ class RegisterSerializer(ModelSerializer):
         'username': 'The username should only contain alphanumeric characters'}
 
     class Meta:
-        model = NewUser
+        model = Account
         fields = ['first_name', 'last_name', 'email', 'user_name', 'password']
 
     def validate(self, attrs):
@@ -33,14 +33,14 @@ class RegisterSerializer(ModelSerializer):
         return attrs
 
     def create(self, validated_data):
-        return NewUser.objects.create_user(**validated_data)
+        return Account.objects.create_user(**validated_data)
 
 
 class EmailVerificationSerializer(serializers.ModelSerializer):
     token = serializers.CharField(max_length=555)
 
     class Meta:
-        model = NewUser
+        model = Account
         fields = ['token']
 
 
@@ -52,7 +52,7 @@ class LoginSerializer(ModelSerializer):
         max_length=255, min_length=3, read_only=True)
 
     class Meta:
-        model = NewUser
+        model = Account
         fields = ['email', 'password', 'user_name']
 
     def validate(self, attrs):
@@ -104,7 +104,7 @@ class SetNewPasswordSerializer(serializers.Serializer):
             uidb64 = attrs.get('uidb64')
 
             id = force_str(urlsafe_base64_decode(uidb64))
-            user = NewUser.objects.get(id=id)
+            user = Account.objects.get(id=id)
             if not PasswordResetTokenGenerator().check_token(user, token):
                 raise AuthenticationFailed('The reset link is invalid', 401)
 

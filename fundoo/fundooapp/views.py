@@ -1,24 +1,22 @@
 # Create your views here.
 
-from rest_framework import views
-from .models import NewUser
-from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, \
-    EmailVerificationSerializer, LoginSerializer
-from rest_framework.response import Response
-from rest_framework import generics, status
-from django.contrib.auth.tokens import PasswordResetTokenGenerator
-from django.utils.encoding import smart_str, smart_bytes, DjangoUnicodeDecodeError
-from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-from django.contrib.sites.shortcuts import get_current_site
-from django.urls import reverse
-from .utils import Util
-from django.http import HttpResponsePermanentRedirect
 import os
-from rest_framework_simplejwt.tokens import RefreshToken
-from drf_yasg.utils import swagger_auto_schema
-from drf_yasg import openapi
 import jwt
 from django.conf import settings
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from django.http import HttpResponsePermanentRedirect
+from django.urls import reverse
+from django.utils.encoding import smart_bytes
+from django.utils.http import urlsafe_base64_encode
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework import (generics, status, views)
+from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import RefreshToken
+from .models import Account
+from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, \
+    EmailVerificationSerializer, LoginSerializer
+from .utils import Util
 
 
 class CustomRedirect(HttpResponsePermanentRedirect):
@@ -46,21 +44,17 @@ class RegisterView(generics.GenericAPIView):
         it takes user details and it will create account for user
         :rtype: user data and its status if credentials are valid
         """
-        user = request.data
-        serializer = self.serializer_class(data=user)
+        serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         user_data = serializer.data
-        user = NewUser.objects.get(email=user_data['email'])
+        user = Account.objects.get(email=user_data['email'])
         token = RefreshToken.for_user(user).access_token
-        current_site = get_current_site(request).domain
-        relativeLink = reverse('email-verify')
-        absurl = 'http://' + current_site + relativeLink + "?token=" + str(token)
+        absolute_url = request.build_absolute_uri(reverse('email-verify')) + "?token=" + str(token)
         email_body = 'Hi ' + user.user_name + \
-                     ' Use the link below to verify your email \n' + absurl
+                     ', \n Use the link below to verify your email \n' + absolute_url
         data = {'email_body': email_body, 'to_email': user.email,
                 'email_subject': 'Verify your email'}
-
         Util.send_email(data)
         return Response(user_data, status=status.HTTP_201_CREATED)
 
@@ -79,18 +73,28 @@ class VerifyEmail(views.APIView):
         :rtype: user data and its status if credentials are valid
         """
         token = request.GET.get('token')
+        result = {'message': 'some other issue'}
         try:
             payload = jwt.decode(token, settings.SECRET_KEY)
-            user = NewUser.objects.get(id=payload['user_id'])
+            user = Account.objects.get(id=payload['user_id'])
             if not user.is_verified:
                 user.is_verified = True
                 user.is_active = True
                 user.save()
-            return Response({'email': 'Successfully activated'}, status=status.HTTP_200_OK)
-        except jwt.ExpiredSignatureError as identifier:
-            return Response({'error': 'Activation Expired'}, status=status.HTTP_400_BAD_REQUEST)
-        except jwt.exceptions.DecodeError as identifier:
-            return Response({'error': 'Invalid token'}, status=status.HTTP_400_BAD_REQUEST)
+                result['message'] = 'Successfully activated'
+                return Response(result, status=status.HTTP_200_OK)
+            else:
+                result['message'] = 'email is already verified'
+                return Response(result, status=status.HTTP_400_BAD_REQUEST)
+
+        except jwt.ExpiredSignatureError:
+            result['message'] = 'Activation Expired'
+            return Response(result, status=status.HTTP_400_BAD_REQUEST)
+        except jwt.exceptions.DecodeError:
+            result['message'] = 'Invalid Token'
+            return Response(result, status=status.HTTP_400_BAD_REQUEST)
+        except Exception:
+            return Response(result, status=status.HTTP_400_BAD_REQUEST)
 
 
 class RequestPasswordResetEmail(generics.GenericAPIView):
@@ -101,60 +105,43 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
         it takes email id as input and sends verification email link
         :rtype: it returns a response message saying verification link is sent to mail
         """
-        email = request.data.get('email', '')
+        result = {'message': 'some other issue'}
+        try:
+            email = request.data.get('email', '')
 
-        if NewUser.objects.filter(email=email).exists():
-            user = NewUser.objects.get(email=email)
-            uidb64 = urlsafe_base64_encode(smart_bytes(user.id))
-            token = PasswordResetTokenGenerator().make_token(user)
-            current_site = get_current_site(
-                request=request).domain
-            relativeLink = reverse(
-                'password-reset-confirm', kwargs={'uidb64': uidb64, 'token': token})
-
-            redirect_url = request.data.get('redirect_url', '')
-            absurl = 'http://' + current_site + relativeLink
-            email_body = 'Hello, \n Use link below to reset your password  \n' + \
-                         absurl + "?redirect_url=" + redirect_url
-            data = {'email_body': email_body, 'to_email': user.email,
-                    'email_subject': 'Reset your passsword'}
-            Util.send_email(data)
-        return Response({'success': 'We have sent you a link to reset your password'}, status=status.HTTP_200_OK)
+            if Account.objects.filter(email=email).exists():
+                user = Account.objects.get(email=email)
+                uidb64 = urlsafe_base64_encode(smart_bytes(user.id))
+                token = PasswordResetTokenGenerator().make_token(user)
+                redirect_url = reverse('password-reset-complete')
+                absolute_url = request.build_absolute_uri(reverse('password-reset-confirm'))
+                email_body = 'Hello, \n Your token number is : ' + token + ' \n your uidb64 code is ' + uidb64 + ' \n Use link below to reset your password  \n' + \
+                             absolute_url + "?redirect_url=" + redirect_url
+                data = {'email_body': email_body, 'to_email': user.email,
+                        'email_subject': 'Reset your passsword'}
+                Util.send_email(data)
+                result['message'] = 'We have sent you a link to reset your password'
+                return Response(result, status=status.HTTP_200_OK)
+            else:
+                result['message'] = "Email id you have entered doesn't exist"
+                return Response(result, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response(result, status.HTTP_400_BAD_REQUEST)
 
 
 class PasswordTokenCheckAPI(generics.GenericAPIView):
     serializer_class = SetNewPasswordSerializer
 
-    def get(self, request, uidb64, token):
+    def get(self, request):
         """
         it checks whether the token is valid for particular user or not
         """
         redirect_url = request.GET.get('redirect_url')
-
-        try:
-            id = smart_str(urlsafe_base64_decode(uidb64))
-            user = NewUser.objects.get(id=id)
-
-            if not PasswordResetTokenGenerator().check_token(user, token):
-                if len(redirect_url) > 3:
-                    return CustomRedirect(redirect_url + '?token_valid=False')
-                else:
-                    return CustomRedirect(os.environ.get('FRONTEND_URL', '') + '?token_valid=False')
-
-            if redirect_url and len(redirect_url) > 3:
-                return CustomRedirect(
-                    redirect_url + '?token_valid=True&message=Credentials Valid&uidb64=' + uidb64 + '&token=' + token)
-            else:
-                return CustomRedirect(os.environ.get('FRONTEND_URL', '') + '?token_valid=False')
-
-        except DjangoUnicodeDecodeError as identifier:
-            try:
-                if not PasswordResetTokenGenerator().check_token(user):
-                    return CustomRedirect(redirect_url + '?token_valid=False')
-
-            except UnboundLocalError as e:
-                return Response({'error': 'Token is not valid, please request a new one'},
-                                status=status.HTTP_400_BAD_REQUEST)
+        if redirect_url and len(redirect_url) > 3:
+            return CustomRedirect(
+                redirect_url + '?token_valid=True&message=Credentials Valid')
+        else:
+            return CustomRedirect(os.environ.get('FRONTEND_URL', '') + '?token_valid=False')
 
 
 class SetNewPasswordAPIView(generics.GenericAPIView):
@@ -167,4 +154,4 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
         """
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        return Response({'success': True, 'message': 'Password reset success'}, status=status.HTTP_200_OK)
+        return Response({'message': 'Password reset success'}, status=status.HTTP_200_OK)
