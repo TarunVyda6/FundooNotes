@@ -1,11 +1,11 @@
 # Register your models here.
 from django.contrib import admin
-from .models import NewUser
+from .models import Account
 from django.contrib.auth.admin import UserAdmin
 
 
 class UserDetailsAdmin(UserAdmin):
-    model = NewUser
+    model = Account
     ordering = ('email', 'first_name', 'last_name', 'user_name')
     list_display = ['user_name', 'email']
     fieldsets = (
@@ -21,4 +21,4 @@ class UserDetailsAdmin(UserAdmin):
     )
 
 
-admin.site.register(NewUser, UserDetailsAdmin)
+admin.site.register(Account, UserDetailsAdmin)

@@ -73,6 +73,7 @@ class VerifyEmail(views.APIView):
         :rtype: user data and its status if credentials are valid
         """
         token = request.GET.get('token')
+        result = {'message': 'some other issue'}
         try:
             payload = jwt.decode(token, settings.SECRET_KEY)
             user = Account.objects.get(id=payload['user_id'])
@@ -80,13 +81,20 @@ class VerifyEmail(views.APIView):
                 user.is_verified = True
                 user.is_active = True
                 user.save()
-            return Response({'email': 'Successfully activated'}, status=status.HTTP_200_OK)
+                result['message'] = 'Successfully activated'
+                return Response(result, status=status.HTTP_200_OK)
+            else:
+                result['message'] = 'email is already verified'
+                return Response(result, status=status.HTTP_400_BAD_REQUEST)
+
         except jwt.ExpiredSignatureError:
-            return Response({'error': 'Activation Expired'}, status=status.HTTP_400_BAD_REQUEST)
+            result['message'] = 'Activation Expired'
+            return Response(result, status=status.HTTP_400_BAD_REQUEST)
         except jwt.exceptions.DecodeError:
-            return Response({'error': 'Invalid token'}, status=status.HTTP_400_BAD_REQUEST)
+            result['message'] = 'Invalid Token'
+            return Response(result, status=status.HTTP_400_BAD_REQUEST)
         except Exception:
-            return Response({'error': 'some other issue'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(result, status=status.HTTP_400_BAD_REQUEST)
 
 
 class RequestPasswordResetEmail(generics.GenericAPIView):
@@ -97,22 +105,28 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
         it takes email id as input and sends verification email link
         :rtype: it returns a response message saying verification link is sent to mail
         """
-        email = request.data.get('email', '')
+        result = {'message': 'some other issue'}
+        try:
+            email = request.data.get('email', '')
 
-        if Account.objects.filter(email=email).exists():
-            user = Account.objects.get(email=email)
-            uidb64 = urlsafe_base64_encode(smart_bytes(user.id))
-            token = PasswordResetTokenGenerator().make_token(user)
-            redirect_url = reverse('password-reset-complete')
-            absolute_url = request.build_absolute_uri(reverse('password-reset-confirm'))
-            email_body = 'Hello, \n Your token number is : ' + token + ' \n your uidb64 code is ' + uidb64 + ' \n Use link below to reset your password  \n' + \
-                         absolute_url + "?redirect_url=" + redirect_url
-            data = {'email_body': email_body, 'to_email': user.email,
-                    'email_subject': 'Reset your passsword'}
-            Util.send_email(data)
-            return Response({'success': 'We have sent you a link to reset your password'}, status=status.HTTP_200_OK)
-        else:
-            return Response({'Failed': "Email id you have entered doesn't exist"}, status=status.HTTP_200_OK)
+            if Account.objects.filter(email=email).exists():
+                user = Account.objects.get(email=email)
+                uidb64 = urlsafe_base64_encode(smart_bytes(user.id))
+                token = PasswordResetTokenGenerator().make_token(user)
+                redirect_url = reverse('password-reset-complete')
+                absolute_url = request.build_absolute_uri(reverse('password-reset-confirm'))
+                email_body = 'Hello, \n Your token number is : ' + token + ' \n your uidb64 code is ' + uidb64 + ' \n Use link below to reset your password  \n' + \
+                             absolute_url + "?redirect_url=" + redirect_url
+                data = {'email_body': email_body, 'to_email': user.email,
+                        'email_subject': 'Reset your passsword'}
+                Util.send_email(data)
+                result['message'] = 'We have sent you a link to reset your password'
+                return Response(result, status=status.HTTP_200_OK)
+            else:
+                result['message'] = "Email id you have entered doesn't exist"
+                return Response(result, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response(result, status.HTTP_400_BAD_REQUEST)
 
 
 class PasswordTokenCheckAPI(generics.GenericAPIView):
@@ -140,4 +154,4 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
         """
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        return Response({'success': True, 'message': 'Password reset success'}, status=status.HTTP_200_OK)
+        return Response({'message': 'Password reset success'}, status=status.HTTP_200_OK)

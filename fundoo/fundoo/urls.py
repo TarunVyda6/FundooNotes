@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from fundooapp import views
+from notes import views as note_view
 from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
@@ -26,9 +27,12 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('request-reset-email/', views.RequestPasswordResetEmail.as_view(),
          name="request-reset-email"),
-    path('password-reset/<uidb64>/<token>/',
+    path('password-reset/',
          views.PasswordTokenCheckAPI.as_view(), name='password-reset-confirm'),
     path('password-reset-complete/', views.SetNewPasswordAPIView.as_view(),
-         name='password-reset-complete')
+         name='password-reset-complete'),
+    path('create-note/', note_view.AddNote.as_view(), name="AddNote"),
+    path('update-note/<int:pk>', note_view.UpdateNote.as_view(), name='UpdateNote'),
+
 
 ]
