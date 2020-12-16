@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework_simplejwt.views import TokenRefreshView
 from fundooapp import views
 from notes import views as note_view
-from rest_framework_simplejwt.views import TokenRefreshView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', views.LoginAPIView.as_view()),
+    path('login/', views.LoginAPIView.as_view(), name="login"),
     path('register/', views.RegisterView.as_view()),
     path('email-verify/', views.VerifyEmail.as_view(), name="email-verify"),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
@@ -31,8 +32,7 @@ urlpatterns = [
          views.PasswordTokenCheckAPI.as_view(), name='password-reset-confirm'),
     path('password-reset-complete/', views.SetNewPasswordAPIView.as_view(),
          name='password-reset-complete'),
-    path('create-note/', note_view.AddNote.as_view(), name="AddNote"),
-    path('update-note/<int:pk>', note_view.UpdateNote.as_view(), name='UpdateNote'),
-
+    path('note/', note_view.Notes.as_view()),
+    path('note/<int:pk>', note_view.Notes.as_view()),
 
 ]
