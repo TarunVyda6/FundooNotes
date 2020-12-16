@@ -44,19 +44,22 @@ class RegisterView(generics.GenericAPIView):
         it takes user details and it will create account for user
         :rtype: user data and its status if credentials are valid
         """
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        user_data = serializer.data
-        user = Account.objects.get(email=user_data['email'])
-        token = RefreshToken.for_user(user).access_token
-        absolute_url = request.build_absolute_uri(reverse('email-verify')) + "?token=" + str(token)
-        email_body = 'Hi ' + user.user_name + \
-                     ', \n Use the link below to verify your email \n' + absolute_url
-        data = {'email_body': email_body, 'to_email': user.email,
-                'email_subject': 'Verify your email'}
-        Util.send_email(data)
-        return Response(user_data, status=status.HTTP_201_CREATED)
+        try:
+            serializer = self.serializer_class(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            user_data = serializer.data
+            user = Account.objects.get(email=user_data['email'])
+            token = RefreshToken.for_user(user).access_token
+            absolute_url = request.build_absolute_uri(reverse('email-verify')) + "?token=" + str(token)
+            email_body = 'Hi ' + user.user_name + \
+                         ', \n Use the link below to verify your email \n' + absolute_url
+            data = {'email_body': email_body, 'to_email': user.email,
+                    'email_subject': 'Verify your email'}
+            Util.send_email(data)
+            return Response(user_data, status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({'message': str(e), 'status': False}, status.HTTP_400_BAD_REQUEST)
 
 
 class VerifyEmail(views.APIView):
@@ -73,7 +76,8 @@ class VerifyEmail(views.APIView):
         :rtype: user data and its status if credentials are valid
         """
         token = request.GET.get('token')
-        result = {'message': 'some other issue'}
+        result = {'message': 'some other issue',
+                  'status': False}
         try:
             payload = jwt.decode(token, settings.SECRET_KEY)
             user = Account.objects.get(id=payload['user_id'])
@@ -82,19 +86,20 @@ class VerifyEmail(views.APIView):
                 user.is_active = True
                 user.save()
                 result['message'] = 'Successfully activated'
-                return Response(result, status=status.HTTP_200_OK)
+                result['status'] = True
+                return Response(result, status.HTTP_200_OK)
             else:
                 result['message'] = 'email is already verified'
-                return Response(result, status=status.HTTP_400_BAD_REQUEST)
+                return Response(result, status.HTTP_400_BAD_REQUEST)
 
         except jwt.ExpiredSignatureError:
             result['message'] = 'Activation Expired'
-            return Response(result, status=status.HTTP_400_BAD_REQUEST)
+            return Response(result, status.HTTP_400_BAD_REQUEST)
         except jwt.exceptions.DecodeError:
             result['message'] = 'Invalid Token'
-            return Response(result, status=status.HTTP_400_BAD_REQUEST)
+            return Response(result, status.HTTP_400_BAD_REQUEST)
         except Exception:
-            return Response(result, status=status.HTTP_400_BAD_REQUEST)
+            return Response(result, status.HTTP_400_BAD_REQUEST)
 
 
 class RequestPasswordResetEmail(generics.GenericAPIView):
@@ -105,7 +110,8 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
         it takes email id as input and sends verification email link
         :rtype: it returns a response message saying verification link is sent to mail
         """
-        result = {'message': 'some other issue'}
+        result = {'message': 'some other issue',
+                  'status': False}
         try:
             email = request.data.get('email', '')
 
@@ -121,10 +127,11 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
                         'email_subject': 'Reset your passsword'}
                 Util.send_email(data)
                 result['message'] = 'We have sent you a link to reset your password'
-                return Response(result, status=status.HTTP_200_OK)
+                result['status'] = True
+                return Response(result, status.HTTP_200_OK)
             else:
                 result['message'] = "Email id you have entered doesn't exist"
-                return Response(result, status=status.HTTP_400_BAD_REQUEST)
+                return Response(result, status.HTTP_400_BAD_REQUEST)
         except:
             return Response(result, status.HTTP_400_BAD_REQUEST)
 
@@ -154,4 +161,4 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
         """
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        return Response({'message': 'Password reset success'}, status=status.HTTP_200_OK)
+        return Response({'message': 'Password reset success', 'status': True}, status.HTTP_200_OK)
