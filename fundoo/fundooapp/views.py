@@ -17,6 +17,7 @@ from .models import Account
 from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, \
     EmailVerificationSerializer, LoginSerializer
 from .utils import Util
+from rest_framework.exceptions import AuthenticationFailed
 
 
 class CustomRedirect(HttpResponsePermanentRedirect):
@@ -31,9 +32,15 @@ class LoginAPIView(generics.GenericAPIView):
         it verifies the credentials, if credentials were matched then returns data in json format, else throws exception
         :return: return json data if credentials are matched
         """
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        try:
+            serializer = self.serializer_class(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            return Response(serializer.data, status.HTTP_200_OK)
+        except AuthenticationFailed as e:
+            return Response(str(e), status.HTTP_401_UNAUTHORIZED)
+        except Exception as e:
+            return Response(str(e), status.HTTP_400_BAD_REQUEST)
+
 
 
 class RegisterView(generics.GenericAPIView):

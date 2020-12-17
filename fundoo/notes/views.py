@@ -17,7 +17,6 @@ class Notes(APIView):
             'status': False
         }
         try:
-
             serializer = NoteSerializer(data=request.data)
             if request.data['title'] is None or request.data['description'] is None:
                 res['message'] = "title and description required"
@@ -27,7 +26,7 @@ class Notes(APIView):
                 serializer.save()
                 res['message'] = "Note Added Successfully"
                 res['status'] = True
-                return Response(res)
+                return Response(res, status.HTTP_201_CREATED)
             res['message'] = "please enter valid data"
             return Response(res, status.HTTP_400_BAD_REQUEST)
         except Exception as e:
