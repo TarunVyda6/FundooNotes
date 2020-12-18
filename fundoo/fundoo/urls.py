@@ -18,6 +18,7 @@ from django.urls import path
 from rest_framework_simplejwt.views import TokenRefreshView
 from fundooapp import views
 from notes import views as note_view
+from labels import views as label_view
 
 
 urlpatterns = [
@@ -34,5 +35,7 @@ urlpatterns = [
          name='password-reset-complete'),
     path('note/', note_view.Notes.as_view()),
     path('note/<int:pk>', note_view.Notes.as_view()),
+     path('label/', label_view.Labels.as_view()),
+    path('label/<int:pk>', label_view.Labels.as_view()),
 
 ]

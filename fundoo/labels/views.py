@@ -9,6 +9,10 @@ class Labels(APIView):
     serializer_class = LabelSerializer
 
     def post(self, request):
+        """
+        takes label data as input and if the data is valid then it stores the data in database
+        :rtype:Response returns success or failure message along with status
+        """
         res = {
             'message': 'Something bad happened',
             'status': False
@@ -29,6 +33,10 @@ class Labels(APIView):
             return Response(res, status.HTTP_400_BAD_REQUEST)
 
     def get(self, *args, **kwargs):
+        """
+        takes key as input and if data exists for that key then it returns the data from database
+        :rtype:Response returns data along if it is success else returns failure message along with status
+        """
         res = {
             'message': 'Something other issue',
             'status': False
@@ -44,6 +52,10 @@ class Labels(APIView):
             return Response(res, status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, *args, **kwargs):
+        """
+        takes label data as input and if the data is valid then it replaces the data in database
+        :rtype:Response returns success or failure message along with status
+        """
         res = {
             'message': 'Something other issue',
             'status': False
@@ -51,8 +63,7 @@ class Labels(APIView):
         try:
 
             item = Label.objects.get(pk=kwargs.get('pk'))
-            data = request.data
-            serializer = LabelSerializer(item, data=data, partial=True)
+            serializer = LabelSerializer(item, data=request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
                 res['message'] = "Label Update Successfully"
@@ -66,6 +77,10 @@ class Labels(APIView):
             return Response(res, status.HTTP_400_BAD_REQUEST)
 
     def delete(self, *args, **kwargs):
+        """
+        takes key as input and if data exists for that key then it returns the delete that data from database
+        :rtype:Response returns success or failure message along with status
+        """
         res = {
             'message': 'Some other issue',
             'status': False

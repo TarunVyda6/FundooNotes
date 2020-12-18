@@ -12,14 +12,18 @@ class Notes(APIView):
     serializer_class = NoteSerializer
 
     def post(self, request):
+        """
+        takes notes data as input and if the data is valid then it stores the data in database
+        :rtype:Response returns success or failure message along with statuscode
+        """
         res = {
             'message': 'Something bad happened',
             'status': False
         }
         try:
-
-            serializer = NoteSerializer(data=request.data)
-            if request.data['title'] is None or request.data['description'] is None:
+            data = request.data
+            serializer = NoteSerializer(data=data)
+            if data['title'] is None or data['description'] is None:
                 res['message'] = "title and description required"
                 return Response(res, status.HTTP_400_BAD_REQUEST)
 
@@ -27,7 +31,8 @@ class Notes(APIView):
                 serializer.save()
                 res['message'] = "Note Added Successfully"
                 res['status'] = True
-                return Response(res)
+                return Response(res, status.HTTP_201_CREATED)
+            print("didnt enter serializer")
             res['message'] = "please enter valid data"
             return Response(res, status.HTTP_400_BAD_REQUEST)
         except Exception as e:
@@ -35,6 +40,10 @@ class Notes(APIView):
             return Response(res, status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, *args, **kwargs):
+        """
+        takes key as input and if the data is exists in database then the data is returned
+        :rtype:Response returns data if success else returns failure message along with statuscode
+        """
         res = {
             'message': 'Something other issue',
             'status': False
@@ -50,6 +59,10 @@ class Notes(APIView):
             return Response(res, status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, *args, **kwargs):
+        """
+        takes key as input and if the data is valid then it replaces data in database
+        :rtype:Response returns data if success else returns failure message along with statuscode
+        """
         res = {
             'message': 'Something other issue',
             'status': False
@@ -72,6 +85,10 @@ class Notes(APIView):
             return Response(res, status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, *args, **kwargs):
+        """
+        takes key as input and if the data is exists in database then the it deletes the data from database
+        :rtype:Response returns success else or failure message along with statuscode
+        """
         res = {
             'message': 'Some other issue',
             'status': False
