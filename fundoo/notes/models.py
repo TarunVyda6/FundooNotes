@@ -22,9 +22,6 @@ class Note(models.Model):
     collaborate = models.ManyToManyField(Account, blank=True, related_name='collaborated_user')  # for
     user = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='owner', null=True, blank=True)  # for
 
-
-    # storing user details
-
     def __str__(self):
         return self.title + " " + self.description
 

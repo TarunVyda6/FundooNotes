@@ -131,6 +131,7 @@ class Notes(APIView):
             return Response(res, status.HTTP_202_ACCEPTED)
         except Note.DoesNotExist:
             res['message'] = "The requested note doesn't exist"
+            return Response(res, status.HTTP_404_NOT_FOUND)
         except Exception as e:
             res['message'] = str(e)
             logging.debug('{}'.format(res))

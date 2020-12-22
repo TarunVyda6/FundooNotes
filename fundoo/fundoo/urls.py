@@ -20,11 +20,10 @@ from fundooapp import views
 from notes import views as note_view
 from labels import views as label_view
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', views.LoginAPIView.as_view(), name="login"),
-    path('register/', views.RegisterView.as_view()),
+    path('register/', views.RegisterView.as_view(), name="register"),
     path('email-verify/', views.VerifyEmail.as_view(), name="email-verify"),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('request-reset-email/', views.RequestPasswordResetEmail.as_view(),
@@ -33,9 +32,9 @@ urlpatterns = [
          views.PasswordTokenCheckAPI.as_view(), name='password-reset-confirm'),
     path('password-reset-complete/', views.SetNewPasswordAPIView.as_view(),
          name='password-reset-complete'),
-    path('note/', note_view.Notes.as_view()),
+    path('note/', note_view.Notes.as_view(), name="note"),
     path('note/<int:pk>', note_view.Notes.as_view()),
-     path('label/', label_view.Labels.as_view()),
-    path('label/<int:pk>', label_view.Labels.as_view()),
+    path('label/', label_view.Labels.as_view(), name="label-post"),
+    path('label/<int:pk>', label_view.Labels.as_view(), name="label"),
 
 ]
