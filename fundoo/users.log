@@ -1,0 +1,156 @@
+2020-12-21 19:55:04,273:DEBUG:{'message': 'Note Added Successfully', 'status': True}
+2020-12-21 19:55:55,410:DEBUG:{'message': 'Note Deleted Successfully', 'status': True}
+2020-12-21 20:13:11,437:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2020-12-21 20:13:11,437:DEBUG:Using selector: SelectSelector
+2020-12-21 20:15:43,358:DEBUG:{'message': 'Note Deleted Successfully', 'status': True}
+2020-12-21 20:15:59,656:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:15:59,657:WARNING:Bad Request: /note/3
+2020-12-21 20:16:08,028:DEBUG:{'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}, 'status': True}
+2020-12-21 20:16:14,415:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:16:14,416:WARNING:Bad Request: /note/3
+2020-12-21 20:18:30,601:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2020-12-21 20:18:30,602:DEBUG:Using selector: SelectSelector
+2020-12-21 20:18:40,731:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:18:40,734:WARNING:Not Found: /note/3
+2020-12-21 20:21:43,641:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:21:43,642:DEBUG:Using selector: SelectSelector
+2020-12-21 20:21:54,758:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:21:54,758:DEBUG:Using selector: SelectSelector
+2020-12-21 20:21:59,881:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:21:59,881:DEBUG:Using selector: SelectSelector
+2020-12-21 20:23:00,677:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:23:00,677:DEBUG:Using selector: SelectSelector
+2020-12-21 20:23:08,479:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:23:08,481:WARNING:Not Found: /note/3
+2020-12-21 20:23:11,057:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:23:11,058:WARNING:Not Found: /note/3
+2020-12-21 20:29:14,208:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:29:14,208:WARNING:Not Found: /note/5
+2020-12-21 20:29:16,153:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:29:16,154:WARNING:Not Found: /note/5
+2020-12-21 20:29:20,203:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:29:20,204:WARNING:Not Found: /note/3
+2020-12-21 20:38:40,832:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:38:40,834:DEBUG:Using selector: SelectSelector
+2020-12-21 20:38:46,788:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:38:46,789:WARNING:Not Found: /note/3
+2020-12-21 20:38:58,888:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:38:58,889:WARNING:Not Found: /note/3
+2020-12-21 20:39:03,387:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:39:03,388:WARNING:Not Found: /note/3
+2020-12-21 20:41:47,065:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:41:47,065:DEBUG:Using selector: SelectSelector
+2020-12-21 20:41:59,821:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:41:59,823:WARNING:Bad Request: /note/8
+2020-12-21 20:42:29,843:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:42:29,843:DEBUG:Using selector: SelectSelector
+2020-12-21 20:42:34,024:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
+2020-12-21 20:42:34,026:WARNING:Bad Request: /note/8
+2020-12-21 20:42:56,681:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:42:56,681:DEBUG:Using selector: SelectSelector
+2020-12-21 20:43:26,613:WARNING:Not Found: /label/15
+2020-12-21 20:47:44,027:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:47:44,027:DEBUG:Using selector: SelectSelector
+2020-12-21 20:48:48,498:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:48:48,502:DEBUG:Using selector: SelectSelector
+2020-12-21 20:51:18,803:DEBUG:{'message': 'please enter valid data', 'status': False}
+2020-12-21 20:51:18,805:WARNING:Bad Request: /label/
+2020-12-21 20:54:03,572:WARNING:Not Found: /label/
+2020-12-21 20:54:04,169:WARNING:Not Found: /favicon.ico
+2020-12-21 20:54:11,245:DEBUG:{'message': 'please enter valid data', 'status': False}
+2020-12-21 20:54:11,299:WARNING:Bad Request: /label/
+2020-12-21 20:55:08,401:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:55:08,401:DEBUG:Using selector: SelectSelector
+2020-12-21 20:56:11,898:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:56:11,898:DEBUG:Using selector: SelectSelector
+2020-12-21 20:56:20,955:DEBUG:{'message': 'please enter valid data', 'status': False}
+2020-12-21 20:56:21,041:WARNING:Bad Request: /label/
+2020-12-21 20:57:38,842:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:57:38,842:DEBUG:Using selector: SelectSelector
+2020-12-21 20:57:45,501:DEBUG:{'message': 'please enter valid data', 'status': False}
+2020-12-21 20:57:45,586:WARNING:Bad Request: /label/
+2020-12-21 20:57:49,788:DEBUG:{'message': 'please enter valid data', 'status': False}
+2020-12-21 20:57:49,915:WARNING:Bad Request: /label/
+2020-12-21 20:58:46,070:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:58:46,070:DEBUG:Using selector: SelectSelector
+2020-12-21 20:58:52,808:DEBUG:{'message': 'You cannot call `.save()` on a serializer with invalid data.', 'status': False}
+2020-12-21 20:58:52,890:WARNING:Bad Request: /label/
+2020-12-21 20:59:22,230:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:59:22,245:DEBUG:Using selector: SelectSelector
+2020-12-21 20:59:29,090:DEBUG:{'message': 'Label Added Successfully', 'status': True}
+2020-12-21 20:59:51,564:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 20:59:51,566:DEBUG:Using selector: SelectSelector
+2020-12-21 21:03:38,051:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 21:03:38,053:DEBUG:Using selector: SelectSelector
+2020-12-21 21:03:56,793:DEBUG:{'message': 'maximum length of label name should be 50 characters', 'status': False}
+2020-12-21 21:03:56,881:WARNING:Bad Request: /label/
+2020-12-21 21:04:21,792:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 21:04:21,792:DEBUG:Using selector: SelectSelector
+2020-12-21 21:04:28,765:DEBUG:{'message': 'maximum length of label name should be 50 characters', 'status': False}
+2020-12-21 21:04:28,850:WARNING:Bad Request: /label/
+2020-12-21 21:05:12,461:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 21:05:12,462:DEBUG:Using selector: SelectSelector
+2020-12-21 21:08:05,206:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 21:08:05,209:DEBUG:Using selector: SelectSelector
+2020-12-21 21:13:36,790:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 21:13:36,792:DEBUG:Using selector: SelectSelector
+2020-12-21 21:16:51,871:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 21:16:51,873:DEBUG:Using selector: SelectSelector
+2020-12-21 21:21:18,431:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2020-12-21 21:21:18,432:DEBUG:Using selector: SelectSelector
+2020-12-21 21:32:31,999:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2020-12-21 21:32:32,001:DEBUG:Using selector: SelectSelector
+2020-12-21 21:33:04,838:ERROR:Internal Server Error: /note/3
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 426, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2020-12-21 21:33:58,435:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2020-12-21 21:33:58,437:DEBUG:Using selector: SelectSelector
+2020-12-21 21:34:04,138:WARNING:Bad Request: /note/3
+2020-12-21 21:34:30,590:DEBUG:{'message': {'id': 1, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-21T07:12:08.603603Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}, 'status': True}
+2020-12-21 21:35:19,506:DEBUG:{'message': 'Note Update Successfully', 'status': True}
+2020-12-21 21:35:27,117:DEBUG:{'message': 'Note Update Successfully', 'status': True}
+2020-12-21 21:36:18,336:DEBUG:{'message': 'Note Update Successfully', 'status': True}
+2020-12-21 21:37:16,900:DEBUG:{'message': 'Note Update Successfully', 'status': True}
+2020-12-21 21:38:08,096:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2020-12-21 21:38:08,098:DEBUG:Using selector: SelectSelector
+2020-12-21 21:38:37,610:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2020-12-21 21:38:37,612:DEBUG:Using selector: SelectSelector
+2020-12-21 21:41:54,701:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-21 21:41:54,704:DEBUG:Using selector: SelectSelector
+2020-12-21 21:42:01,568:DEBUG:Using selector: SelectSelector
+2020-12-21 22:09:29,176:DEBUG:{'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-21T16:07:16.895819Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}, 'status': True}
+2020-12-21 22:11:07,885:DEBUG:{'message': 'please enter valid data', 'status': False}
+2020-12-21 22:11:07,886:WARNING:Bad Request: /note/
+2020-12-21 22:13:21,190:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2020-12-21 22:13:21,192:DEBUG:Using selector: SelectSelector
+2020-12-21 22:13:27,448:DEBUG:{'message': 'title should be less than 150 characters', 'status': False}
+2020-12-21 22:13:27,450:WARNING:Bad Request: /note/
+2020-12-21 22:15:38,828:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-21 22:15:38,829:DEBUG:Using selector: SelectSelector
+2020-12-21 22:15:42,372:DEBUG:{'message': "'Account' object has no attribute 'exists'", 'status': False}
+2020-12-21 22:15:42,374:WARNING:Bad Request: /note/
+2020-12-21 22:16:35,172:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-21 22:16:35,174:DEBUG:Using selector: SelectSelector
+2020-12-21 22:16:40,083:DEBUG:{'message': 'Note Added Successfully', 'status': True}
+2020-12-21 22:17:02,237:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-21 22:17:02,238:DEBUG:Using selector: SelectSelector
+2020-12-21 22:17:08,325:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-21 22:17:08,326:DEBUG:Using selector: SelectSelector
+2020-12-21 22:17:14,941:DEBUG:{'message': 'Note Added Successfully', 'status': True}
+2020-12-21 22:18:39,930:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-21 22:18:39,931:DEBUG:Using selector: SelectSelector
+2020-12-21 22:20:56,048:DEBUG:{'message': 'Note Added Successfully', 'status': True}
+2020-12-21 22:22:30,043:DEBUG:{'message': {'user': 1, 'label_name': 'adsf'}, 'status': True}
+2020-12-21 22:23:02,997:DEBUG:Using selector: SelectSelector
