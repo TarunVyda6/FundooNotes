@@ -62,3 +62,13 @@ def get_label_list(request):
             label_list.append(label_obj.id)  # append object id of the obtained object to list
     request.data["label"] = label_list
     request.POST._mutable = False
+
+
+def manage_response(**kwargs):
+    result = {}
+    result['status'] = kwargs['status']
+    result['message'] = kwargs['message']
+    result['status'] = kwargs['status']
+    result['message'] = kwargs['message']
+
+    return result
