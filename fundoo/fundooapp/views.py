@@ -35,8 +35,11 @@ class LoginAPIView(generics.GenericAPIView):
         """
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        logging.debug('{}'.format(serializer.data))
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        user = Account.objects.get(email=serializer.data['email'])
+        token = jwt.encode({"id": user.id}, "secret", algorithm="HS256").decode()
+        result = {'token': token}
+        logging.debug('{}'.format(result, token))
+        return Response(result, status=status.HTTP_200_OK)
 
 
 class RegisterView(generics.GenericAPIView):
