@@ -40,7 +40,7 @@ class Labels(APIView):
             logging.debug('{}'.format(result))
             return Response(result, status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            logging.debug('{}'.format(result))
+            logging.exception('{}'.format(result))
             return Response(res, status.HTTP_400_BAD_REQUEST)
 
     def get(self, *args, **kwargs):
@@ -60,10 +60,11 @@ class Labels(APIView):
             return Response(result, status.HTTP_200_OK)
         except Label.DoesNotExist:
             result = utils.manage_response(status=False, message="Please enter valid label id")
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_404_NOT_FOUND)
         except Exception as e:
             result = utils.manage_response(status=False, message='some other issue please try after some time')
-            logging.debug('{}'.format(result))
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, *args, **kwargs):
@@ -89,10 +90,11 @@ class Labels(APIView):
             return Response(result, status.HTTP_400_BAD_REQUEST)
         except Label.DoesNotExist:
             result = utils.manage_response(status=False, message="Please enter valid label id")
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_404_NOT_FOUND)
         except Exception as e:
             result = utils.manage_response(status=False, message="Some other issue. Please try after some time")
-            logging.debug('{}'.format(result))
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_400_BAD_REQUEST)
 
     def delete(self, *args, **kwargs):
@@ -112,8 +114,9 @@ class Labels(APIView):
             return Response(result, status.HTTP_202_ACCEPTED)
         except Label.DoesNotExist:
             result = utils.manage_response(status=False, message="Please enter valid label id")
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_404_NOT_FOUND)
         except Exception as e:
             result = utils.manage_response(status=False, message="Some other issue. Please try after some time")
-            logging.debug('{}'.format(result))
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_404_NOT_FOUND)

@@ -57,7 +57,7 @@ class Notes(APIView):
             return Response(result, status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             result = utils.manage_response(status=False, message='some other issue occured please try after some time')
-            logging.debug('{}'.format(result))
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, *args, **kwargs):
@@ -77,10 +77,11 @@ class Notes(APIView):
             return Response(result, status.HTTP_200_OK)
         except Note.DoesNotExist:
             result = utils.manage_response(status=False, message="Please enter valid note id")
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             result = utils.manage_response(status=False, message='some other issue please try after some time')
-            logging.debug('{}'.format(result))
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, *args, **kwargs):
@@ -107,10 +108,11 @@ class Notes(APIView):
             return Response(result, status.HTTP_400_BAD_REQUEST)
         except Note.DoesNotExist:
             result = utils.manage_response(status=False, message="Please enter valid note id")
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_404_NOT_FOUND)
         except Exception as e:
             result = utils.manage_response(status=False, message="Some other issue. Please try after some time")
-            logging.debug('{}'.format(result))
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, *args, **kwargs):
@@ -130,8 +132,9 @@ class Notes(APIView):
             return Response(res, status.HTTP_202_ACCEPTED)
         except Note.DoesNotExist:
             result = utils.manage_response(status=False, message="Please enter valid note id")
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_404_NOT_FOUND)
         except Exception as e:
             result = utils.manage_response(status=False, message="Some other issue. Please try after some time")
-            logging.debug('{}'.format(result))
+            logging.exception('{}'.format(result))
             return Response(result, status.HTTP_404_NOT_FOUND)
