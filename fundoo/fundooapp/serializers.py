@@ -74,6 +74,7 @@ class LoginSerializer(ModelSerializer):
         }
 
 
+
 class ResetPasswordEmailRequestSerializer(serializers.Serializer):
     email = serializers.EmailField(min_length=2)
 

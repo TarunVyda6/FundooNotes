@@ -1,10 +1,7 @@
-"""
-Overview: contains logic for converting emails or label names to ids in request.data
-Author: Anam Fazal
-Created on: Dec 18, 2020
-"""
-from labels.models import Label
-from fundooapp.models import Account
+from rest_framework.response import Response
+import logging
+from labels.models import *
+from fundooapp.models import *
 
 
 def get_user(request):
@@ -17,7 +14,6 @@ def get_user(request):
     request.POST._mutable = True
     user_email = request.data.get('user')
     user_qs = Account.objects.get(email=user_email)
-    print(type(user_qs))
     if not user_qs:
         raise Account.DoesNotExist('No such account exists')
     if user_qs:
@@ -65,10 +61,9 @@ def get_label_list(request):
 
 
 def manage_response(**kwargs):
-    result = {}
-    result['status'] = kwargs['status']
-    result['message'] = kwargs['message']
-    result['status'] = kwargs['status']
-    result['message'] = kwargs['message']
-
-    return result
+    result = {'status': kwargs['status'], 'message': kwargs['message']}
+    if 'exception' in kwargs:
+        logging.debug('{}, exception = {}, status_code = {}'.format(result, kwargs['exception'], kwargs['status_code']))
+    else:
+        logging.debug('{}, status_code = {}'.format(result, kwargs['status_code']))
+    return Response(result, kwargs['status_code'])

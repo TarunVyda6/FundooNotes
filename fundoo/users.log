@@ -1,187 +1,58 @@
-2020-12-21 19:55:04,273:DEBUG:{'message': 'Note Added Successfully', 'status': True}
-2020-12-21 19:55:55,410:DEBUG:{'message': 'Note Deleted Successfully', 'status': True}
-2020-12-21 20:13:11,437:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
-2020-12-21 20:13:11,437:DEBUG:Using selector: SelectSelector
-2020-12-21 20:15:43,358:DEBUG:{'message': 'Note Deleted Successfully', 'status': True}
-2020-12-21 20:15:59,656:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:15:59,657:WARNING:Bad Request: /note/3
-2020-12-21 20:16:08,028:DEBUG:{'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}, 'status': True}
-2020-12-21 20:16:14,415:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:16:14,416:WARNING:Bad Request: /note/3
-2020-12-21 20:18:30,601:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
-2020-12-21 20:18:30,602:DEBUG:Using selector: SelectSelector
-2020-12-21 20:18:40,731:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:18:40,734:WARNING:Not Found: /note/3
-2020-12-21 20:21:43,641:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:21:43,642:DEBUG:Using selector: SelectSelector
-2020-12-21 20:21:54,758:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:21:54,758:DEBUG:Using selector: SelectSelector
-2020-12-21 20:21:59,881:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:21:59,881:DEBUG:Using selector: SelectSelector
-2020-12-21 20:23:00,677:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:23:00,677:DEBUG:Using selector: SelectSelector
-2020-12-21 20:23:08,479:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:23:08,481:WARNING:Not Found: /note/3
-2020-12-21 20:23:11,057:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:23:11,058:WARNING:Not Found: /note/3
-2020-12-21 20:29:14,208:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:29:14,208:WARNING:Not Found: /note/5
-2020-12-21 20:29:16,153:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:29:16,154:WARNING:Not Found: /note/5
-2020-12-21 20:29:20,203:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:29:20,204:WARNING:Not Found: /note/3
-2020-12-21 20:38:40,832:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:38:40,834:DEBUG:Using selector: SelectSelector
-2020-12-21 20:38:46,788:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:38:46,789:WARNING:Not Found: /note/3
-2020-12-21 20:38:58,888:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:38:58,889:WARNING:Not Found: /note/3
-2020-12-21 20:39:03,387:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:39:03,388:WARNING:Not Found: /note/3
-2020-12-21 20:41:47,065:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:41:47,065:DEBUG:Using selector: SelectSelector
-2020-12-21 20:41:59,821:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:41:59,823:WARNING:Bad Request: /note/8
-2020-12-21 20:42:29,843:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:42:29,843:DEBUG:Using selector: SelectSelector
-2020-12-21 20:42:34,024:DEBUG:{'message': 'Note matching query does not exist.', 'status': False}
-2020-12-21 20:42:34,026:WARNING:Bad Request: /note/8
-2020-12-21 20:42:56,681:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:42:56,681:DEBUG:Using selector: SelectSelector
-2020-12-21 20:43:26,613:WARNING:Not Found: /label/15
-2020-12-21 20:47:44,027:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:47:44,027:DEBUG:Using selector: SelectSelector
-2020-12-21 20:48:48,498:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:48:48,502:DEBUG:Using selector: SelectSelector
-2020-12-21 20:51:18,803:DEBUG:{'message': 'please enter valid data', 'status': False}
-2020-12-21 20:51:18,805:WARNING:Bad Request: /label/
-2020-12-21 20:54:03,572:WARNING:Not Found: /label/
-2020-12-21 20:54:04,169:WARNING:Not Found: /favicon.ico
-2020-12-21 20:54:11,245:DEBUG:{'message': 'please enter valid data', 'status': False}
-2020-12-21 20:54:11,299:WARNING:Bad Request: /label/
-2020-12-21 20:55:08,401:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:55:08,401:DEBUG:Using selector: SelectSelector
-2020-12-21 20:56:11,898:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:56:11,898:DEBUG:Using selector: SelectSelector
-2020-12-21 20:56:20,955:DEBUG:{'message': 'please enter valid data', 'status': False}
-2020-12-21 20:56:21,041:WARNING:Bad Request: /label/
-2020-12-21 20:57:38,842:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:57:38,842:DEBUG:Using selector: SelectSelector
-2020-12-21 20:57:45,501:DEBUG:{'message': 'please enter valid data', 'status': False}
-2020-12-21 20:57:45,586:WARNING:Bad Request: /label/
-2020-12-21 20:57:49,788:DEBUG:{'message': 'please enter valid data', 'status': False}
-2020-12-21 20:57:49,915:WARNING:Bad Request: /label/
-2020-12-21 20:58:46,070:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:58:46,070:DEBUG:Using selector: SelectSelector
-2020-12-21 20:58:52,808:DEBUG:{'message': 'You cannot call `.save()` on a serializer with invalid data.', 'status': False}
-2020-12-21 20:58:52,890:WARNING:Bad Request: /label/
-2020-12-21 20:59:22,230:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:59:22,245:DEBUG:Using selector: SelectSelector
-2020-12-21 20:59:29,090:DEBUG:{'message': 'Label Added Successfully', 'status': True}
-2020-12-21 20:59:51,564:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 20:59:51,566:DEBUG:Using selector: SelectSelector
-2020-12-21 21:03:38,051:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 21:03:38,053:DEBUG:Using selector: SelectSelector
-2020-12-21 21:03:56,793:DEBUG:{'message': 'maximum length of label name should be 50 characters', 'status': False}
-2020-12-21 21:03:56,881:WARNING:Bad Request: /label/
-2020-12-21 21:04:21,792:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 21:04:21,792:DEBUG:Using selector: SelectSelector
-2020-12-21 21:04:28,765:DEBUG:{'message': 'maximum length of label name should be 50 characters', 'status': False}
-2020-12-21 21:04:28,850:WARNING:Bad Request: /label/
-2020-12-21 21:05:12,461:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 21:05:12,462:DEBUG:Using selector: SelectSelector
-2020-12-21 21:08:05,206:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 21:08:05,209:DEBUG:Using selector: SelectSelector
-2020-12-21 21:13:36,790:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 21:13:36,792:DEBUG:Using selector: SelectSelector
-2020-12-21 21:16:51,871:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 21:16:51,873:DEBUG:Using selector: SelectSelector
-2020-12-21 21:21:18,431:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
-2020-12-21 21:21:18,432:DEBUG:Using selector: SelectSelector
-2020-12-21 21:32:31,999:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
-2020-12-21 21:32:32,001:DEBUG:Using selector: SelectSelector
-2020-12-21 21:33:04,838:ERROR:Internal Server Error: /note/3
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 511, in dispatch
-    self.response = self.finalize_response(request, response, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 426, in finalize_response
-    % type(response)
-AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
-2020-12-21 21:33:58,435:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
-2020-12-21 21:33:58,437:DEBUG:Using selector: SelectSelector
-2020-12-21 21:34:04,138:WARNING:Bad Request: /note/3
-2020-12-21 21:34:30,590:DEBUG:{'message': {'id': 1, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-21T07:12:08.603603Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}, 'status': True}
-2020-12-21 21:35:19,506:DEBUG:{'message': 'Note Update Successfully', 'status': True}
-2020-12-21 21:35:27,117:DEBUG:{'message': 'Note Update Successfully', 'status': True}
-2020-12-21 21:36:18,336:DEBUG:{'message': 'Note Update Successfully', 'status': True}
-2020-12-21 21:37:16,900:DEBUG:{'message': 'Note Update Successfully', 'status': True}
-2020-12-21 21:38:08,096:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
-2020-12-21 21:38:08,098:DEBUG:Using selector: SelectSelector
-2020-12-21 21:38:37,610:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
-2020-12-21 21:38:37,612:DEBUG:Using selector: SelectSelector
-2020-12-21 21:41:54,701:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
-2020-12-21 21:41:54,704:DEBUG:Using selector: SelectSelector
-2020-12-21 21:42:01,568:DEBUG:Using selector: SelectSelector
-2020-12-21 22:09:29,176:DEBUG:{'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-21T16:07:16.895819Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}, 'status': True}
-2020-12-21 22:11:07,885:DEBUG:{'message': 'please enter valid data', 'status': False}
-2020-12-21 22:11:07,886:WARNING:Bad Request: /note/
-2020-12-21 22:13:21,190:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
-2020-12-21 22:13:21,192:DEBUG:Using selector: SelectSelector
-2020-12-21 22:13:27,448:DEBUG:{'message': 'title should be less than 150 characters', 'status': False}
-2020-12-21 22:13:27,450:WARNING:Bad Request: /note/
-2020-12-21 22:15:38,828:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
-2020-12-21 22:15:38,829:DEBUG:Using selector: SelectSelector
-2020-12-21 22:15:42,372:DEBUG:{'message': "'Account' object has no attribute 'exists'", 'status': False}
-2020-12-21 22:15:42,374:WARNING:Bad Request: /note/
-2020-12-21 22:16:35,172:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
-2020-12-21 22:16:35,174:DEBUG:Using selector: SelectSelector
-2020-12-21 22:16:40,083:DEBUG:{'message': 'Note Added Successfully', 'status': True}
-2020-12-21 22:17:02,237:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
-2020-12-21 22:17:02,238:DEBUG:Using selector: SelectSelector
-2020-12-21 22:17:08,325:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
-2020-12-21 22:17:08,326:DEBUG:Using selector: SelectSelector
-2020-12-21 22:17:14,941:DEBUG:{'message': 'Note Added Successfully', 'status': True}
-2020-12-21 22:18:39,930:INFO:C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
-2020-12-21 22:18:39,931:DEBUG:Using selector: SelectSelector
-2020-12-21 22:20:56,048:DEBUG:{'message': 'Note Added Successfully', 'status': True}
-2020-12-21 22:22:30,043:DEBUG:{'message': {'user': 1, 'label_name': 'adsf'}, 'status': True}
-2020-12-21 22:23:02,997:DEBUG:Using selector: SelectSelector
-2020-12-24 11:47:18,942:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
-2020-12-24 11:47:18,962:DEBUG:Using selector: SelectSelector
-2020-12-24 11:47:25,440:WARNING:Unauthorized: /note/2
-2020-12-24 11:47:38,414:DEBUG:Using selector: SelectSelector
-2020-12-24 12:40:10,152:DEBUG:Using selector: SelectSelector
-2020-12-24 13:39:23,003:DEBUG:{'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}, 'status': True}
-2020-12-24 13:43:47,088:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 13:43:47,089:DEBUG:Using selector: SelectSelector
-2020-12-24 13:47:40,370:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 13:47:40,370:DEBUG:Using selector: SelectSelector
-2020-12-24 13:47:45,144:DEBUG:{'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}, 'status': True}
-2020-12-24 13:47:49,703:DEBUG:Using selector: SelectSelector
-2020-12-24 15:10:49,412:DEBUG:Using selector: SelectSelector
-2020-12-24 15:11:43,165:DEBUG:{'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}, 'status': True}
-2020-12-24 15:11:53,114:WARNING:Bad Request: /note/
-2020-12-24 15:12:04,931:DEBUG:{'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}, 'status': True}
-2020-12-24 15:12:15,642:DEBUG:{'message': {'user': 1, 'label_name': 'mmm'}, 'status': True}
-2020-12-24 15:12:28,086:DEBUG:{'message': {'user': 1, 'label_name': 'mmm'}, 'status': True}
-2020-12-24 15:13:01,586:DEBUG:Using selector: SelectSelector
-2020-12-24 15:13:22,809:DEBUG:{'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}, 'status': True}
-2020-12-24 15:13:27,810:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
-    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
-ValueError: not enough values to unpack (expected 2, got 1)
-
-During handling of the above exception, another exception occurred:
-
+2020-12-25 16:15:26,861:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-25 16:15:26,861:DEBUG:Using selector: SelectSelector
+2020-12-25 16:16:32,096:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-25 16:16:32,096:DEBUG:Using selector: SelectSelector
+2020-12-25 16:17:35,420:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-25 16:17:35,420:DEBUG:Using selector: SelectSelector
+2020-12-25 16:18:18,064:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-25 16:18:18,064:DEBUG:Using selector: SelectSelector
+2020-12-25 16:18:36,297:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-25 16:18:38,636:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'new labels'}}
+2020-12-25 16:20:08,345:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-25 16:20:08,345:DEBUG:Using selector: SelectSelector
+2020-12-25 16:20:34,190:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-25 16:20:37,260:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'new labels'}}200
+2020-12-25 16:21:28,292:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-25 16:21:28,292:DEBUG:Using selector: SelectSelector
+2020-12-25 16:21:40,353:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-25 16:21:42,513:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'new labels'}}, status_code = 200
+2020-12-25 16:23:17,721:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-25 16:23:17,721:DEBUG:Using selector: SelectSelector
+2020-12-25 16:23:26,575:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-25 16:23:29,120:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'new labels'}}, status_code = 200
+2020-12-25 16:23:29,120:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, status_code = 400
+2020-12-25 16:23:32,992:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'new labels'}}, status_code = 200
+2020-12-25 16:23:32,992:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, status_code = 400
+2020-12-25 16:23:36,015:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-25 16:23:38,109:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'new labels'}}, status_code = 200
+2020-12-25 16:23:38,109:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, status_code = 400
+2020-12-25 16:24:23,490:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-25 16:24:27,534:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'new labels'}}, status_code = 200
+2020-12-25 16:24:27,534:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, status_code = 400
+2020-12-25 16:24:31,962:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'new labels'}}, status_code = 200
+2020-12-25 16:24:31,962:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, status_code = 400
+2020-12-25 16:24:54,884:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-25 16:24:54,885:DEBUG:Using selector: SelectSelector
+2020-12-25 16:25:01,857:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-25 16:25:04,709:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'new labels'}}, status_code = 200
+2020-12-25 16:25:19,764:DEBUG:Using selector: SelectSelector
+2020-12-25 16:34:27,528:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-25 16:34:51,530:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-25 16:35:07,870:DEBUG:Using selector: SelectSelector
+2020-12-26 10:11:13,292:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 10:11:16,746:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 10:11:23,343:DEBUG:Using selector: SelectSelector
+2020-12-26 10:13:05,400:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 10:13:08,028:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 10:13:13,253:DEBUG:Using selector: SelectSelector
+2020-12-26 10:13:41,004:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 10:20:11,295:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-26 10:20:11,295:DEBUG:Using selector: SelectSelector
+2020-12-26 10:21:04,424:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-26 10:21:04,424:DEBUG:Using selector: SelectSelector
+2020-12-26 10:21:21,596:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-26 10:21:21,596:DEBUG:Using selector: SelectSelector
+2020-12-26 10:21:27,026:ERROR:Internal Server Error: /note/1
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -193,23 +64,10 @@ Traceback (most recent call last):
     return self.dispatch(request, *args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
     return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 14, in wrapper
-    decoded_token = jwt.decode(token, "secret", algorithms=["HS256"])
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
-    payload, _, _, _ = self._load(jwt)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
-    raise DecodeError('Not enough segments')
-jwt.exceptions.DecodeError: Not enough segments
-2020-12-24 15:13:32,076:DEBUG:{'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}, 'status': True}
-2020-12-24 15:13:36,137:DEBUG:Using selector: SelectSelector
-2020-12-24 15:16:52,239:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py", line 76, in get
-    result = utils.manage_response(status=True, message=serializer.data)
-AttributeError: module 'notes.utils' has no attribute 'manage_response'
-
-During handling of the above exception, another exception occurred:
-
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
+    actual_token = Redis.get_token('token').decode()
+AttributeError: 'NoneType' object has no attribute 'decode'
+2020-12-26 10:21:29,978:ERROR:Internal Server Error: /note/1
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -221,278 +79,37 @@ Traceback (most recent call last):
     return self.dispatch(request, *args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
     return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 21, in wrapper
-    return view_func(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py", line 84, in get
-    result = utils.manage_response(status=False, message='some other issue please try after some time')
-AttributeError: module 'notes.utils' has no attribute 'manage_response'
-2020-12-24 15:16:54,630:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py", line 76, in get
-    result = utils.manage_response(status=True, message=serializer.data)
-AttributeError: module 'notes.utils' has no attribute 'manage_response'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 21, in wrapper
-    return view_func(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py", line 84, in get
-    result = utils.manage_response(status=False, message='some other issue please try after some time')
-AttributeError: module 'notes.utils' has no attribute 'manage_response'
-2020-12-24 15:17:00,400:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py", line 76, in get
-    result = utils.manage_response(status=True, message=serializer.data)
-AttributeError: module 'notes.utils' has no attribute 'manage_response'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 21, in wrapper
-    return view_func(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py", line 84, in get
-    result = utils.manage_response(status=False, message='some other issue please try after some time')
-AttributeError: module 'notes.utils' has no attribute 'manage_response'
-2020-12-24 15:17:38,660:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
-2020-12-24 15:17:38,660:DEBUG:Using selector: SelectSelector
-2020-12-24 15:17:43,755:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}
-2020-12-24 15:17:49,755:DEBUG:Using selector: SelectSelector
-2020-12-24 15:19:11,866:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'mmm'}}
-2020-12-24 15:19:16,577:ERROR:Internal Server Error: /label/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
-    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
-ValueError: not enough values to unpack (expected 2, got 1)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 14, in wrapper
-    decoded_token = jwt.decode(token, "secret", algorithms=["HS256"])
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
-    payload, _, _, _ = self._load(jwt)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
-    raise DecodeError('Not enough segments')
-jwt.exceptions.DecodeError: Not enough segments
-2020-12-24 15:19:18,763:ERROR:Internal Server Error: /label/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
-    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
-ValueError: not enough values to unpack (expected 2, got 1)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 14, in wrapper
-    decoded_token = jwt.decode(token, "secret", algorithms=["HS256"])
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
-    payload, _, _, _ = self._load(jwt)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
-    raise DecodeError('Not enough segments')
-jwt.exceptions.DecodeError: Not enough segments
-2020-12-24 15:19:34,154:DEBUG:{'status': True, 'message': {'user': 1, 'label_name': 'mmm'}}
-2020-12-24 15:19:45,432:DEBUG:Using selector: SelectSelector
-2020-12-24 15:23:01,404:WARNING:Not Found: /notes/2
-2020-12-24 15:23:08,651:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}
-2020-12-24 15:23:18,918:DEBUG:Using selector: SelectSelector
-2020-12-24 15:33:07,624:WARNING:Method Not Allowed: /login/
-2020-12-24 15:34:02,156:DEBUG:{'email': 'viratkohli123@gmail.com', 'user_name': 'viratkohli'}
-2020-12-24 15:34:06,065:DEBUG:Using selector: SelectSelector
-2020-12-24 15:42:35,319:DEBUG:{'email': 'viratkohli123@gmail.com'}
-2020-12-24 15:43:07,874:DEBUG:Using selector: SelectSelector
-2020-12-24 15:46:31,890:ERROR:Internal Server Error: /login/
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 37, in post
-    serializer.is_valid(raise_exception=True)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 419, in run_validation
-    value = self.to_internal_value(data)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 472, in to_internal_value
-    for field in fields:
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 355, in _writable_fields
-    for field in self.fields.values():
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 349, in fields
-    for key, value in self.get_fields().items():
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 1029, in get_fields
-    field_names = self.get_field_names(declared_fields, info)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 1130, in get_field_names
-    serializer_class=self.__class__.__name__
-AssertionError: The field 'token' was declared on serializer LoginSerializer, but has not been included in the 'fields' option.
-2020-12-24 15:47:50,451:ERROR:Internal Server Error: /login/
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 37, in post
-    serializer.is_valid(raise_exception=True)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 419, in run_validation
-    value = self.to_internal_value(data)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 472, in to_internal_value
-    for field in fields:
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 355, in _writable_fields
-    for field in self.fields.values():
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 349, in fields
-    for key, value in self.get_fields().items():
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 1029, in get_fields
-    field_names = self.get_field_names(declared_fields, info)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 1130, in get_field_names
-    serializer_class=self.__class__.__name__
-AssertionError: The field 'token' was declared on serializer LoginSerializer, but has not been included in the 'fields' option.
-2020-12-24 15:48:50,895:ERROR:Internal Server Error: /login/
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 37, in post
-    serializer.is_valid(raise_exception=True)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 419, in run_validation
-    value = self.to_internal_value(data)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 472, in to_internal_value
-    for field in fields:
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 355, in _writable_fields
-    for field in self.fields.values():
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 349, in fields
-    for key, value in self.get_fields().items():
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 1029, in get_fields
-    field_names = self.get_field_names(declared_fields, info)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 1130, in get_field_names
-    serializer_class=self.__class__.__name__
-AssertionError: The field 'token' was declared on serializer LoginSerializer, but has not been included in the 'fields' option.
-2020-12-24 15:53:01,145:DEBUG:{'email': 'viratkohli123@gmail.com'}
-2020-12-24 15:53:04,616:DEBUG:Using selector: SelectSelector
-2020-12-24 15:53:44,908:DEBUG:Using selector: SelectSelector
-2020-12-24 15:53:53,946:DEBUG:Using selector: SelectSelector
-2020-12-24 15:55:41,836:DEBUG:Using selector: SelectSelector
-2020-12-24 15:55:50,096:DEBUG:{'email': 'viratkohli123@gmail.com', 'user_name': 'viratkohli'}
-2020-12-24 15:55:53,743:DEBUG:Using selector: SelectSelector
-2020-12-24 15:59:16,516:DEBUG:{'email': 'viratkohli123@gmail.com', 'user_name': 'viratkohli'}
-2020-12-24 15:59:30,312:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
-2020-12-24 15:59:30,328:DEBUG:Using selector: SelectSelector
-2020-12-24 15:59:35,112:DEBUG:{'email': 'viratkohli123@gmail.com', 'user_name': 'viratkohli'}eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI
-2020-12-24 15:59:52,615:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
-2020-12-24 15:59:52,615:DEBUG:Using selector: SelectSelector
-2020-12-24 16:00:41,466:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
-2020-12-24 16:00:41,466:DEBUG:Using selector: SelectSelector
-2020-12-24 16:00:46,505:DEBUG:{'email': 'viratkohli123@gmail.com', 'user_name': 'viratkohli'}
-2020-12-24 16:00:46,593:ERROR:Internal Server Error: /login/
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
+    actual_token = Redis.get_token('token').decode()
+AttributeError: 'NoneType' object has no attribute 'decode'
+2020-12-26 10:21:42,922:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-26 10:21:42,922:DEBUG:Using selector: SelectSelector
+2020-12-26 10:24:00,186:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 10:24:35,602:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-26 10:24:35,602:DEBUG:Using selector: SelectSelector
+2020-12-26 10:24:57,070:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 10:25:29,155:DEBUG:Using selector: SelectSelector
+2020-12-26 10:52:47,193:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 10:53:15,488:DEBUG:{'status': True, 'message': 'Note Added Successfully'}, status_code = 201
+2020-12-26 10:53:26,909:DEBUG:Using selector: SelectSelector
+2020-12-26 10:54:32,314:DEBUG:Using selector: SelectSelector
+2020-12-26 12:31:13,456:DEBUG:Using selector: SelectSelector
+2020-12-26 19:46:17,542:WARNING:Not Found: /favicon.ico
+2020-12-26 19:46:52,437:DEBUG:Using selector: SelectSelector
+2020-12-26 19:57:22,031:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-26 19:57:22,056:DEBUG:Using selector: SelectSelector
+2020-12-26 19:57:36,590:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 19:57:40,234:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 19:58:31,872:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-26 19:58:31,872:DEBUG:Using selector: SelectSelector
+2020-12-26 19:58:41,910:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 19:58:44,038:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 19:58:58,181:DEBUG:Using selector: SelectSelector
+2020-12-26 20:00:42,493:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 20:00:56,496:DEBUG:Using selector: SelectSelector
+2020-12-26 20:02:01,647:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 20:03:17,633:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 20:43:29,899:ERROR:Internal Server Error: /login/
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -511,10 +128,9 @@ Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
   File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 41, in post
-    return Response(serializer.data, token, status=status.HTTP_200_OK)
-TypeError: __init__() got multiple values for argument 'status'
-2020-12-24 16:00:48,967:DEBUG:{'email': 'viratkohli123@gmail.com', 'user_name': 'viratkohli'}
-2020-12-24 16:00:49,040:ERROR:Internal Server Error: /login/
+    Redis.set_token('USER_'+user.id+'_AUTHTOKEN', token)
+TypeError: can only concatenate str (not "int") to str
+2020-12-26 20:43:33,998:ERROR:Internal Server Error: /login/
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -533,14 +149,33 @@ Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
   File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 41, in post
-    return Response(serializer.data, token, status=status.HTTP_200_OK)
-TypeError: __init__() got multiple values for argument 'status'
-2020-12-24 16:01:22,838:DEBUG:Using selector: SelectSelector
-2020-12-24 16:02:20,458:DEBUG:{'data': {'email': 'viratkohli123@gmail.com', 'user_name': 'viratkohli'}, 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 16:03:04,243:DEBUG:Using selector: SelectSelector
-2020-12-24 16:04:51,349:DEBUG:{'email': 'viratkohli123@gmail.com', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 16:07:22,792:DEBUG:Using selector: SelectSelector
-2020-12-24 16:11:34,363:ERROR:Internal Server Error: /note/2
+    Redis.set_token('USER_'+user.id+'_AUTHTOKEN', token)
+TypeError: can only concatenate str (not "int") to str
+2020-12-26 21:00:22,340:DEBUG:Using selector: SelectSelector
+2020-12-26 21:18:27,692:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 21:18:59,197:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-26 21:18:59,197:DEBUG:Using selector: SelectSelector
+2020-12-26 21:19:04,619:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 21:19:12,812:DEBUG:Using selector: SelectSelector
+2020-12-26 23:19:36,776:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 23:19:38,938:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:19:43,367:DEBUG:Using selector: SelectSelector
+2020-12-26 23:22:16,085:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 23:22:18,960:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:22:24,241:DEBUG:Using selector: SelectSelector
+2020-12-26 23:25:05,196:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 23:25:07,940:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:25:13,215:DEBUG:Using selector: SelectSelector
+2020-12-26 23:27:16,574:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-26 23:27:21,692:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 23:27:38,376:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:27:56,861:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:28:16,667:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:28:44,805:DEBUG:Using selector: SelectSelector
+2020-12-26 23:30:49,138:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-26 23:30:58,171:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:31:01,176:DEBUG:Using selector: SelectSelector
+2020-12-26 23:36:57,586:ERROR:Internal Server Error: /login/
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -550,12 +185,20 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
-    id = decoded_token['id']
-KeyError: 'id'
-2020-12-24 16:11:37,100:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 41, in post
+    Cache.set_cache(user.id, token)
+TypeError: set_cache() missing 1 required positional argument: 'value'
+2020-12-26 23:37:13,374:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2020-12-26 23:37:13,374:DEBUG:Using selector: SelectSelector
+2020-12-26 23:37:19,072:ERROR:Internal Server Error: /login/
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -565,14 +208,20 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
-    id = decoded_token['id']
-KeyError: 'id'
-2020-12-24 16:11:55,809:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 16:11:55,809:DEBUG:Using selector: SelectSelector
-2020-12-24 16:12:00,467:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 41, in post
+    Cache.set_cache(self, user.id, token)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\cache.py", line 10, in set_cache
+    self.r.set(key, value)
+AttributeError: 'LoginAPIView' object has no attribute 'r'
+2020-12-26 23:38:54,086:ERROR:Internal Server Error: /login/
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -582,17 +231,22 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
-    id = decoded_token['token']
-KeyError: 'token'
-2020-12-24 16:12:27,098:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 16:12:27,098:DEBUG:Using selector: SelectSelector
-2020-12-24 16:12:31,636:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}
-2020-12-24 16:13:08,866:DEBUG:Using selector: SelectSelector
-2020-12-24 21:06:42,464:DEBUG:{'email': 'viratkohli123@gmail.com', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 21:07:11,806:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 41, in post
+    Cache.set_cache(self, user.id, token)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\cache.py", line 10, in set_cache
+    self.r.set(key, value)
+AttributeError: 'LoginAPIView' object has no attribute 'r'
+2020-12-26 23:39:23,861:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2020-12-26 23:39:23,861:DEBUG:Using selector: SelectSelector
+2020-12-26 23:39:29,029:ERROR:Internal Server Error: /login/
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -602,12 +256,20 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
-    email = decoded_token['email']
-KeyError: 'email'
-2020-12-24 21:07:16,768:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 41, in post
+    Cache.set_cache(user.id, token)
+TypeError: set_cache() missing 1 required positional argument: 'value'
+2020-12-26 23:39:58,244:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\cache.py changed, reloading.
+2020-12-26 23:39:58,260:DEBUG:Using selector: SelectSelector
+2020-12-26 23:40:03,428:ERROR:Internal Server Error: /login/
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -617,14 +279,77 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
-    email = decoded_token['email']
-KeyError: 'email'
-2020-12-24 21:07:53,258:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:07:53,259:DEBUG:Using selector: SelectSelector
-2020-12-24 21:08:01,360:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 41, in post
+    Cache.set_cache(user.id, token)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\cache.py", line 10, in set_cache
+    self.r.set(key, value)
+NameError: name 'self' is not defined
+2020-12-26 23:40:17,235:DEBUG:Using selector: SelectSelector
+2020-12-26 23:44:49,687:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-26 23:45:10,157:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-26 23:45:14,094:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 23:45:57,678:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\cache.py changed, reloading.
+2020-12-26 23:45:57,678:DEBUG:Using selector: SelectSelector
+2020-12-26 23:46:03,477:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:47:00,539:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-26 23:47:03,299:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-26 23:47:05,915:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:47:21,121:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:47:24,711:DEBUG:Using selector: SelectSelector
+2020-12-26 23:50:54,942:DEBUG:Using selector: SelectSelector
+2020-12-26 23:51:58,254:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-26 23:52:00,741:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:52:03,456:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:52:13,397:DEBUG:Using selector: SelectSelector
+2020-12-26 23:57:32,835:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-26 23:57:36,512:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:57:40,260:DEBUG:Using selector: SelectSelector
+2020-12-26 23:58:37,427:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-26 23:58:39,582:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-26 23:58:43,677:DEBUG:Using selector: SelectSelector
+2020-12-27 00:17:43,537:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-27 00:17:43,537:DEBUG:Using selector: SelectSelector
+2020-12-27 00:19:10,473:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-27 00:19:10,473:DEBUG:Using selector: SelectSelector
+2020-12-27 00:19:16,088:DEBUG:{'message': "logged in user's token is not provided", 'status': False}
+2020-12-27 00:19:54,108:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-27 00:19:54,123:DEBUG:Using selector: SelectSelector
+2020-12-27 00:19:59,238:DEBUG:{'message': "logged in user's token is not provided", 'status': False}400
+2020-12-27 00:20:23,870:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-27 00:20:23,870:DEBUG:Using selector: SelectSelector
+2020-12-27 00:20:32,778:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-27 00:20:32,778:DEBUG:Using selector: SelectSelector
+2020-12-27 00:20:37,587:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-27 00:21:53,338:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-27 00:21:53,338:DEBUG:Using selector: SelectSelector
+2020-12-27 00:22:04,873:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-27 00:22:09,265:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-27 00:22:09,328:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-27 00:22:45,381:DEBUG:Using selector: SelectSelector
+2020-12-27 00:24:50,761:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-27 00:25:00,289:WARNING:Unauthorized: /login/
+2020-12-27 00:28:55,395:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py changed, reloading.
+2020-12-27 00:28:55,395:DEBUG:Using selector: SelectSelector
+2020-12-27 00:30:59,043:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py changed, reloading.
+2020-12-27 00:30:59,043:DEBUG:Using selector: SelectSelector
+2020-12-27 00:32:04,725:ERROR:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'Response' object has no attribute 'email'
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -634,16 +359,37 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
-    email = decoded_token['token']
-KeyError: 'token'
-2020-12-24 21:08:12,398:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:08:12,399:DEBUG:Using selector: SelectSelector
-2020-12-24 21:08:47,676:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
-2020-12-24 21:08:47,678:DEBUG:Using selector: SelectSelector
-2020-12-24 21:08:53,293:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 40, in post
+    user = Account.objects.get(email=serializer.data['email'])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 248, in data
+    self._data = self.to_representation(self.validated_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\fields.py", line 490, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `email` on serializer `LoginSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Response` instance.
+Original exception text was: 'Response' object has no attribute 'email'.
+2020-12-27 00:32:08,732:ERROR:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'Response' object has no attribute 'email'
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -653,12 +399,39 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
-    email = decoded_token['email']
-KeyError: 'email'
-2020-12-24 21:08:55,631:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 40, in post
+    user = Account.objects.get(email=serializer.data['email'])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 248, in data
+    self._data = self.to_representation(self.validated_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\fields.py", line 490, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `email` on serializer `LoginSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Response` instance.
+Original exception text was: 'Response' object has no attribute 'email'.
+2020-12-27 00:33:28,692:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py changed, reloading.
+2020-12-27 00:33:28,692:DEBUG:Using selector: SelectSelector
+2020-12-27 00:33:33,867:ERROR:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'set' object has no attribute 'email'
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -668,18 +441,53 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
-    email = decoded_token['email']
-KeyError: 'email'
-2020-12-24 21:09:06,132:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
-2020-12-24 21:09:06,134:DEBUG:Using selector: SelectSelector
-2020-12-24 21:09:23,470:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
-2020-12-24 21:09:23,607:DEBUG:Using selector: SelectSelector
-2020-12-24 21:09:32,762:DEBUG:{'email': 'viratkohli123@gmail.com', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 21:09:37,770:DEBUG:{'email': 'viratkohli123@gmail.com', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 21:09:50,064:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 40, in post
+    user = Account.objects.get(email=serializer.data['email'])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 248, in data
+    self._data = self.to_representation(self.validated_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\fields.py", line 490, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `email` on serializer `LoginSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `set` instance.
+Original exception text was: 'set' object has no attribute 'email'.
+2020-12-27 00:35:07,467:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py changed, reloading.
+2020-12-27 00:35:07,467:DEBUG:Using selector: SelectSelector
+2020-12-27 00:38:11,915:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2020-12-27 00:38:11,915:DEBUG:Using selector: SelectSelector
+2020-12-27 00:38:18,153:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, status_code = 400
+2020-12-27 00:38:18,156:WARNING:Bad Request: /login/
+2020-12-27 00:39:29,742:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-27 00:39:29,742:DEBUG:Using selector: SelectSelector
+2020-12-27 00:39:34,563:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, exception = Invalid credentials, try again, status_code = 400
+2020-12-27 00:39:34,565:WARNING:Bad Request: /login/
+2020-12-27 00:40:09,721:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2020-12-27 00:40:09,721:DEBUG:Using selector: SelectSelector
+2020-12-27 00:40:14,970:ERROR:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 42, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py", line 68, in validate
+    raise AuthenticationFailed('Invalid credentials, try again')
+rest_framework.exceptions.AuthenticationFailed: Invalid credentials, try again
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -689,13 +497,35 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 13, in wrapper
-    email = decoded_token['email']
-KeyError: 'email'
-2020-12-24 21:10:31,227:DEBUG:Using selector: SelectSelector
-2020-12-24 21:11:21,114:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 51, in post
+    status_code=status.HTTP_400_BAD_REQUEST)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py", line 67, in manage_response
+    logging.debug('{}, exception = {}, status_code = {}'.format(result, kwargs['exception'], kwargs['status_code']))
+KeyError: 'exception'
+2020-12-27 00:40:25,630:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2020-12-27 00:40:25,630:DEBUG:Using selector: SelectSelector
+2020-12-27 00:40:31,674:ERROR:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 42, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py", line 68, in validate
+    raise AuthenticationFailed('Invalid credentials, try again')
+rest_framework.exceptions.AuthenticationFailed: Invalid credentials, try again
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -705,16 +535,33 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 14, in wrapper
-    user = Account.objects.get(email=email)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\db\models\query.py", line 431, in get
-    self.model._meta.object_name
-fundooapp.models.Account.DoesNotExist: Account matching query does not exist.
-2020-12-24 21:11:25,665:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 51, in post
+    status_code=status.HTTP_400_BAD_REQUEST)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py", line 67, in manage_response
+    logging.debug('{}, exception = {}, status_code = {}'.format(result, kwargs['exception'], kwargs['status_code']))
+KeyError: 'exception'
+2020-12-27 00:40:34,004:ERROR:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 42, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py", line 68, in validate
+    raise AuthenticationFailed('Invalid credentials, try again')
+rest_framework.exceptions.AuthenticationFailed: Invalid credentials, try again
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -724,17 +571,42 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 14, in wrapper
-    user = Account.objects.get(email=email)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\db\models\query.py", line 431, in get
-    self.model._meta.object_name
-fundooapp.models.Account.DoesNotExist: Account matching query does not exist.
-2020-12-24 21:11:31,400:DEBUG:{'email': 'viratkohli123@gmail.com', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 21:11:42,950:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 51, in post
+    status_code=status.HTTP_400_BAD_REQUEST)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py", line 67, in manage_response
+    logging.debug('{}, exception = {}, status_code = {}'.format(result, kwargs['exception'], kwargs['status_code']))
+KeyError: 'exception'
+2020-12-27 00:41:04,068:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-27 00:41:04,068:DEBUG:Using selector: SelectSelector
+2020-12-27 00:41:08,584:DEBUG:{'status': False, 'message': 'Invalid credentials, try again'}, status_code = 400
+2020-12-27 00:41:08,586:WARNING:Bad Request: /login/
+2020-12-27 00:47:11,198:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2020-12-27 00:47:11,198:DEBUG:Using selector: SelectSelector
+2020-12-27 00:47:16,547:DEBUG:{'status': False, 'message': 'Invalid credentials, try again'}, status_code = 400
+2020-12-27 00:47:16,549:WARNING:Bad Request: /login/
+2020-12-27 00:49:34,553:DEBUG:Using selector: SelectSelector
+2020-12-27 00:54:50,761:ERROR:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 42, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py", line 68, in validate
+    raise AuthenticationFailed('Invalid credentials, try again')
+rest_framework.exceptions.AuthenticationFailed: Invalid credentials, try again
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -744,30 +616,35 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 14, in wrapper
-    user = Account.objects.get(email=email)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\db\models\query.py", line 431, in get
-    self.model._meta.object_name
-fundooapp.models.Account.DoesNotExist: Account matching query does not exist.
-2020-12-24 21:12:09,721:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:12:09,722:DEBUG:Using selector: SelectSelector
-2020-12-24 21:12:16,846:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}
-2020-12-24 21:12:34,072:DEBUG:Using selector: SelectSelector
-2020-12-24 21:13:31,594:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 21:13:46,242:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}
-2020-12-24 21:13:58,582:DEBUG:Using selector: SelectSelector
-2020-12-24 21:17:06,956:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}
-2020-12-24 21:28:14,480:DEBUG:Using selector: SelectSelector
-2020-12-24 21:36:18,114:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 21:36:43,652:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:36:43,654:DEBUG:Using selector: SelectSelector
-2020-12-24 21:36:49,827:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 21:36:53,057:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 21:37:26,480:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 51, in post
+    status_code=status.HTTP_400_BAD_REQUEST)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py", line 67, in manage_response
+    if kwargs['exception'] is None:
+KeyError: 'exception'
+2020-12-27 00:57:44,913:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-27 00:57:44,923:DEBUG:Using selector: SelectSelector
+2020-12-27 00:57:49,873:ERROR:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 42, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py", line 68, in validate
+    raise AuthenticationFailed('Invalid credentials, try again')
+rest_framework.exceptions.AuthenticationFailed: Invalid credentials, try again
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -777,12 +654,35 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY)
-NameError: name 'settings' is not defined
-2020-12-24 21:37:32,108:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 51, in post
+    status_code=status.HTTP_400_BAD_REQUEST)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py", line 67, in manage_response
+    if kwargs['exception']:
+KeyError: 'exception'
+2020-12-27 00:58:14,002:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-27 00:58:14,002:DEBUG:Using selector: SelectSelector
+2020-12-27 00:58:19,866:ERROR:Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 42, in post
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py", line 68, in validate
+    raise AuthenticationFailed('Invalid credentials, try again')
+rest_framework.exceptions.AuthenticationFailed: Invalid credentials, try again
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
     response = get_response(request)
@@ -792,142 +692,71 @@ Traceback (most recent call last):
     return view_func(*args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
     return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY)
-NameError: name 'settings' is not defined
-2020-12-24 21:37:46,506:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY)
-NameError: name 'settings' is not defined
-2020-12-24 21:37:56,396:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY)
-NameError: name 'settings' is not defined
-2020-12-24 21:37:59,436:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY)
-NameError: name 'settings' is not defined
-2020-12-24 21:38:00,917:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY)
-NameError: name 'settings' is not defined
-2020-12-24 21:38:02,487:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY)
-NameError: name 'settings' is not defined
-2020-12-24 21:38:04,220:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY)
-NameError: name 'settings' is not defined
-2020-12-24 21:38:23,131:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:38:23,132:DEBUG:Using selector: SelectSelector
-2020-12-24 21:38:29,656:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])
-NameError: name 'settings' is not defined
-2020-12-24 21:38:31,423:ERROR:Internal Server Error: /note/2
-Traceback (most recent call last):
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
-    response = get_response(request)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
-    return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])
-NameError: name 'settings' is not defined
-2020-12-24 21:38:37,310:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:38:37,311:DEBUG:Using selector: SelectSelector
-2020-12-24 21:38:43,177:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}
-2020-12-24 21:38:53,903:DEBUG:Using selector: SelectSelector
-2020-12-24 21:39:57,193:ERROR:Internal Server Error: /note/2
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 51, in post
+    status_code=status.HTTP_400_BAD_REQUEST)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py", line 67, in manage_response
+    if exception in kwargs:
+NameError: name 'exception' is not defined
+2020-12-27 00:59:07,291:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2020-12-27 00:59:07,291:DEBUG:Using selector: SelectSelector
+2020-12-27 00:59:12,410:DEBUG:{'status': False, 'message': 'Invalid credentials, try again'}, status_code = 400
+2020-12-27 00:59:12,412:WARNING:Bad Request: /login/
+2020-12-27 01:03:54,996:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2020-12-27 01:03:54,996:DEBUG:Using selector: SelectSelector
+2020-12-27 01:04:09,668:DEBUG:{'status': False, 'message': 'Invalid credentials, try again'}, status_code = 400
+2020-12-27 01:04:09,669:WARNING:Bad Request: /login/
+2020-12-27 01:04:16,838:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-27 01:04:21,676:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-27 01:04:21,726:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': [3]}}, status_code = 200
+2020-12-27 01:04:26,423:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-27 01:04:26,428:DEBUG:{'status': False, 'message': 'Please enter valid Note id'}, status_code = 404
+2020-12-27 01:04:26,428:WARNING:Not Found: /note/55
+2020-12-27 01:04:32,806:DEBUG:Using selector: SelectSelector
+2020-12-27 01:09:05,007:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-27 01:09:35,333:DEBUG:Using selector: SelectSelector
+2020-12-27 01:21:35,137:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-27 01:21:35,140:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-27 01:22:11,542:DEBUG:Using selector: SelectSelector
+2020-12-27 01:27:45,496:ERROR:{'message': 'Invalid Token', 'status': False}, exception = Not enough segments, status_code = 400
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
     signing_input, crypto_segment = jwt.rsplit(b'.', 1)
 ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 16, in wrapper
+    decoded_token = jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
+    payload, _, _, _ = self._load(jwt)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
+    raise DecodeError('Not enough segments')
+jwt.exceptions.DecodeError: Not enough segments
+2020-12-27 01:27:45,625:ERROR:Internal Server Error: /note/55
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 16, in wrapper
+    decoded_token = jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
+    payload, _, _, _ = self._load(jwt)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
+    raise DecodeError('Not enough segments')
+jwt.exceptions.DecodeError: Not enough segments
 
 During handling of the above exception, another exception occurred:
 
@@ -942,18 +771,41 @@ Traceback (most recent call last):
     return self.dispatch(request, *args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
     return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, "secret", algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 34, in wrapper
+    return HTTPResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
+NameError: name 'HTTPResponse' is not defined
+2020-12-27 01:31:41,300:ERROR:{'message': 'Invalid Token', 'status': False}, exception = Not enough segments, status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 16, in wrapper
+    decoded_token = jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
     payload, _, _, _ = self._load(jwt)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
     raise DecodeError('Not enough segments')
 jwt.exceptions.DecodeError: Not enough segments
-2020-12-24 21:39:59,582:ERROR:Internal Server Error: /note/2
+2020-12-27 01:31:41,400:ERROR:Internal Server Error: /note/55
 Traceback (most recent call last):
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
     signing_input, crypto_segment = jwt.rsplit(b'.', 1)
 ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 16, in wrapper
+    decoded_token = jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
+    payload, _, _, _ = self._load(jwt)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
+    raise DecodeError('Not enough segments')
+jwt.exceptions.DecodeError: Not enough segments
 
 During handling of the above exception, another exception occurred:
 
@@ -968,26 +820,150 @@ Traceback (most recent call last):
     return self.dispatch(request, *args, **kwargs)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
     return bound_method(*args, **kwargs)
-  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 12, in wrapper
-    decoded_token = jwt.decode(token, "secret", algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 34, in wrapper
+    return HTTPResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
+NameError: name 'HTTPResponse' is not defined
+2020-12-27 01:31:49,252:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-27 01:31:49,252:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-27 01:31:59,934:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-27 01:31:59,950:DEBUG:{'status': False, 'message': 'Please enter valid Note id'}, status_code = 404
+2020-12-27 01:31:59,951:WARNING:Not Found: /note/55
+2020-12-27 01:32:08,764:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-27 01:32:08,810:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}, status_code = 200
+2020-12-27 01:32:22,017:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-27 01:33:24,129:ERROR:{'message': 'Invalid Token', 'status': False}, exception = Not enough segments, status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 16, in wrapper
+    decoded_token = jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
     payload, _, _, _ = self._load(jwt)
   File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
     raise DecodeError('Not enough segments')
 jwt.exceptions.DecodeError: Not enough segments
-2020-12-24 21:40:47,374:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:40:47,375:DEBUG:Using selector: SelectSelector
-2020-12-24 21:41:35,239:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:41:35,241:DEBUG:Using selector: SelectSelector
-2020-12-24 21:41:50,273:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:41:50,274:DEBUG:Using selector: SelectSelector
-2020-12-24 21:42:15,335:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:42:15,337:DEBUG:Using selector: SelectSelector
-2020-12-24 21:44:25,475:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:44:25,476:DEBUG:Using selector: SelectSelector
-2020-12-24 21:44:56,507:WARNING:Unauthorized: /login/
-2020-12-24 21:45:02,066:WARNING:Unauthorized: /login/
-2020-12-24 21:45:24,083:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
-2020-12-24 21:46:14,101:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
-2020-12-24 21:46:14,101:DEBUG:Using selector: SelectSelector
-2020-12-24 21:46:18,307:DEBUG:Using selector: SelectSelector
+2020-12-27 01:33:24,225:ERROR:Internal Server Error: /note/2
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 16, in wrapper
+    decoded_token = jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
+    payload, _, _, _ = self._load(jwt)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
+    raise DecodeError('Not enough segments')
+jwt.exceptions.DecodeError: Not enough segments
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 34, in wrapper
+    return HTTPResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
+NameError: name 'HTTPResponse' is not defined
+2020-12-27 01:34:12,019:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-27 01:34:12,019:DEBUG:Using selector: SelectSelector
+2020-12-27 01:34:21,396:ERROR:{'message': 'Invalid Token', 'status': False}, exception = Not enough segments, status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 16, in wrapper
+    decoded_token = jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
+    payload, _, _, _ = self._load(jwt)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
+    raise DecodeError('Not enough segments')
+jwt.exceptions.DecodeError: Not enough segments
+2020-12-27 01:35:36,010:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-27 01:37:15,175:ERROR:{'message': 'Invalid Token', 'status': False}, exception = Not enough segments, status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 16, in wrapper
+    decoded_token = jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
+    payload, _, _, _ = self._load(jwt)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
+    raise DecodeError('Not enough segments')
+jwt.exceptions.DecodeError: Not enough segments
+2020-12-27 01:38:09,812:DEBUG:Using selector: SelectSelector
+2020-12-27 01:48:15,168:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-27 01:48:15,169:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-27 01:48:33,927:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-27 01:48:34,004:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}, status_code = 200
+2020-12-27 01:48:41,024:DEBUG:Using selector: SelectSelector
+2020-12-27 01:52:29,487:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, exception = Invalid input of type: 'NoneType'. Convert to a bytes, string, int or float first., status_code = 400
+2020-12-27 01:52:29,489:WARNING:Bad Request: /login/
+2020-12-27 01:52:50,185:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\encrypt.py changed, reloading.
+2020-12-27 01:52:50,195:DEBUG:Using selector: SelectSelector
+2020-12-27 01:52:56,169:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, exception = Invalid input of type: 'NoneType'. Convert to a bytes, string, int or float first., status_code = 400
+2020-12-27 01:52:56,173:WARNING:Bad Request: /login/
+2020-12-27 01:52:58,216:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, exception = Invalid input of type: 'NoneType'. Convert to a bytes, string, int or float first., status_code = 400
+2020-12-27 01:52:58,217:WARNING:Bad Request: /login/
+2020-12-27 01:53:35,277:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\encrypt.py changed, reloading.
+2020-12-27 01:53:35,277:DEBUG:Using selector: SelectSelector
+2020-12-27 01:53:48,850:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-27 01:53:48,851:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-27 01:53:57,794:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-27 01:53:57,818:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}, status_code = 200
+2020-12-27 01:54:04,084:DEBUG:Using selector: SelectSelector
+2020-12-27 02:00:06,004:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-27 02:00:09,098:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-27 02:00:09,098:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-27 02:00:12,058:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-27 02:00:12,084:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}, status_code = 200
+2020-12-27 02:00:15,971:DEBUG:Using selector: SelectSelector
+2020-12-27 02:07:17,692:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, exception = can only concatenate str (not "int") to str, status_code = 400
+2020-12-27 02:07:17,694:WARNING:Bad Request: /login/
+2020-12-27 02:08:40,429:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2020-12-27 02:08:40,429:DEBUG:Using selector: SelectSelector
+2020-12-27 02:08:47,372:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-27 02:08:47,373:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-27 02:10:09,582:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-27 02:10:09,582:DEBUG:Using selector: SelectSelector
+2020-12-27 02:10:15,847:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-27 02:10:15,848:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-27 02:10:18,139:ERROR:{'message': 'some other issue please try after some time', 'status': False} exception = can only concatenate str (not "int") to str, status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 17, in wrapper
+    if Cache.get_cache("TOKEN_"+decoded_token['id']+"_AUTH") is not None:
+TypeError: can only concatenate str (not "int") to str
+2020-12-27 02:10:19,926:ERROR:{'message': 'some other issue please try after some time', 'status': False} exception = can only concatenate str (not "int") to str, status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 17, in wrapper
+    if Cache.get_cache("TOKEN_"+decoded_token['id']+"_AUTH") is not None:
+TypeError: can only concatenate str (not "int") to str
+2020-12-27 02:10:52,404:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-27 02:10:52,404:DEBUG:Using selector: SelectSelector
+2020-12-27 02:10:58,512:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-27 02:10:58,538:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}, status_code = 200
+2020-12-27 02:12:10,232:DEBUG:Using selector: SelectSelector
