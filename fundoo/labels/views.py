@@ -35,8 +35,9 @@ class Labels(APIView):
                                              status_code=status.HTTP_201_CREATED)
             return utils.manage_response(status=False, message='maximum length of label name should be 50 characters',
                                          status_code=status.HTTP_400_BAD_REQUEST)
-        except Exception:
+        except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
 
     def get(self, *args, **kwargs):
@@ -53,8 +54,9 @@ class Labels(APIView):
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
                                          status_code=status.HTTP_404_NOT_FOUND)
-        except Exception:
+        except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request, *args, **kwargs):
@@ -76,8 +78,9 @@ class Labels(APIView):
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
                                          status_code=status.HTTP_404_NOT_FOUND)
-        except Exception:
+        except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, *args, **kwargs):
@@ -94,6 +97,7 @@ class Labels(APIView):
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
                                          status_code=status.HTTP_404_NOT_FOUND)
-        except Exception:
+        except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
