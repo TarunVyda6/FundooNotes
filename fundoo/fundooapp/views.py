@@ -9,13 +9,18 @@ from django.utils.http import urlsafe_base64_encode
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import (generics, status, views)
-from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Account
 from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, \
     EmailVerificationSerializer, LoginSerializer
 from .utils import Util
 import logging
+from services.cache import Cache
+from decouple import config
+from rest_framework.exceptions import AuthenticationFailed
+from notes import utils
+from services.encrypt import Encrypt
+
 
 logging.basicConfig(filename='users.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -33,10 +38,23 @@ class LoginAPIView(generics.GenericAPIView):
         it verifies the credentials, if credentials were matched then returns data in json format, else throws exception
         :return: return json data if credentials are matched
         """
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        logging.debug('{}'.format(serializer.data))
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        try:
+            serializer = self.serializer_class(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            user = Account.objects.get(email=serializer.data['email'])
+            token = Encrypt.encode(user.id)
+            Cache.set_cache("TOKEN_"+str(user.id)+"_AUTH", token)
+            result = {'token': token}
+            logging.debug('{}'.format(result, token))
+            return utils.manage_response(status=True, message=result,
+                                         status_code=status.HTTP_200_OK)
+        except AuthenticationFailed as e:
+            return utils.manage_response(status=False, message=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
 
 
 class RegisterView(generics.GenericAPIView):
@@ -60,11 +78,12 @@ class RegisterView(generics.GenericAPIView):
             data = {'email_body': email_body, 'to_email': user.email,
                     'email_subject': 'Verify your email'}
             Util.send_email(data)
-            logging.debug('{}'.format(user_data))
-            return Response(user_data, status.HTTP_201_CREATED)
+            return utils.manage_response(status=True, message=user_data,
+                                         status_code=status.HTTP_201_CREATED)
         except Exception as e:
-            logging.debug('{}'.format(str(e)))
-            return Response({'message': str(e), 'status': False}, status.HTTP_400_BAD_REQUEST)
+            return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
 
 
 class VerifyEmail(views.APIView):
@@ -92,24 +111,27 @@ class VerifyEmail(views.APIView):
                 user.save()
                 result['message'] = 'Successfully activated'
                 result['status'] = True
-                logging.debug('{}'.format(result))
-                return Response(result, status.HTTP_200_OK)
+                return utils.manage_response(status=result['status'], message=result['message'],
+                                             status_code=status.HTTP_200_OK)
             else:
                 result['message'] = 'email is already verified'
-                logging.debug('{}'.format(result))
-                return Response(result, status.HTTP_400_BAD_REQUEST)
+                return utils.manage_response(status=result['status'], message=result['message'],
+                                             status_code=status.HTTP_400_BAD_REQUEST)
 
-        except jwt.ExpiredSignatureError:
+        except jwt.ExpiredSignatureError as e:
             result['message'] = 'Activation Expired'
-            logging.debug('{}'.format(result))
-            return Response(result, status.HTTP_400_BAD_REQUEST)
-        except jwt.exceptions.DecodeError:
+            return utils.manage_response(status=result['status'], message=result['message'],
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except jwt.exceptions.DecodeError as e:
             result['message'] = 'Invalid Token'
-            logging.debug('{}'.format(result))
-            return Response(result, status.HTTP_400_BAD_REQUEST)
-        except Exception:
-            logging.debug('{}'.format(result))
-            return Response(result, status.HTTP_400_BAD_REQUEST)
+            return utils.manage_response(status=result['status'], message=result['message'],
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return utils.manage_response(status=result['status'], message=result['message'],
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
 
 
 class RequestPasswordResetEmail(generics.GenericAPIView):
@@ -138,15 +160,17 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
                 Util.send_email(data)
                 result['message'] = 'We have sent you a link to reset your password'
                 result['status'] = True
-                logging.debug('{}'.format(result))
-                return Response(result, status.HTTP_200_OK)
+                return utils.manage_response(status=result['status'], message=result['message'],
+                                             status_code=status.HTTP_200_OK)
             else:
                 result['message'] = "Email id you have entered doesn't exist"
                 logging.debug('{}'.format(result))
-                return Response(result, status.HTTP_400_BAD_REQUEST)
-        except:
-            logging.debug('{}'.format(result))
-            return Response(result, status.HTTP_400_BAD_REQUEST)
+                return utils.manage_response(status=result['status'], message=result['message'],
+                                             status_code=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return utils.manage_response(status=result['status'], message=result['message'],
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
 
 
 class PasswordTokenCheckAPI(generics.GenericAPIView):
@@ -174,5 +198,5 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
         """
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        logging.debug("message': 'Password reset success', 'status': True")
-        return Response({'message': 'Password reset success', 'status': True}, status.HTTP_200_OK)
+        return utils.manage_response(status=True, message='Password reset success',
+                                     status_code=status.HTTP_200_OK)

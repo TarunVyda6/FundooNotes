@@ -6,6 +6,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
+import jwt
 
 
 class RegisterSerializer(ModelSerializer):
@@ -69,8 +70,9 @@ class LoginSerializer(ModelSerializer):
             raise AuthenticationFailed('Account disabled, contact admin')
 
         return {
-            'user_name': user.user_name, 'email': user.email,
+            'email': user.email
         }
+
 
 
 class ResetPasswordEmailRequestSerializer(serializers.Serializer):
