@@ -5,6 +5,9 @@ from django.utils.translation import gettext_lazy as _
 
 
 class CustomAccountManager(BaseUserManager):
+    """
+    this class is used to create an account for user
+    """
 
     def create_superuser(self, first_name, last_name, user_name, email, password, **other_fields):
         """

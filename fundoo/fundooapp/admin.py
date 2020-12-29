@@ -4,6 +4,9 @@ from django.contrib.auth.admin import UserAdmin
 
 
 class UserDetailsAdmin(UserAdmin):
+    """
+    this class is used to setup the look of the admin panel
+    """
     model = Account
     ordering = ('email', 'first_name', 'last_name', 'user_name')
     list_display = ['user_name', 'email']

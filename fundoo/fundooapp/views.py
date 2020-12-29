@@ -30,6 +30,9 @@ class CustomRedirect(HttpResponsePermanentRedirect):
 
 
 class LoginAPIView(generics.GenericAPIView):
+    """
+    this class will check credentials and if valid it will allow user to login
+    """
     serializer_class = LoginSerializer
 
     def post(self, request):
@@ -58,6 +61,9 @@ class LoginAPIView(generics.GenericAPIView):
 
 
 class RegisterView(generics.GenericAPIView):
+    """
+    this class will register a new account
+    """
     serializer_class = RegisterSerializer
 
     def post(self, request):
@@ -87,6 +93,9 @@ class RegisterView(generics.GenericAPIView):
 
 
 class VerifyEmail(views.APIView):
+    """
+    this class will verifies the email
+    """
     serializer_class = EmailVerificationSerializer
 
     def get(self, request):
@@ -131,6 +140,9 @@ class VerifyEmail(views.APIView):
 
 
 class RequestPasswordResetEmail(generics.GenericAPIView):
+    """
+    this class will request for new password
+    """
     serializer_class = ResetPasswordEmailRequestSerializer
 
     def post(self, request):
@@ -170,6 +182,9 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
 
 
 class PasswordTokenCheckAPI(generics.GenericAPIView):
+    """
+    this class will check the token is valid or not
+    """
     serializer_class = SetNewPasswordSerializer
 
     def get(self, request):
@@ -185,6 +200,9 @@ class PasswordTokenCheckAPI(generics.GenericAPIView):
 
 
 class SetNewPasswordAPIView(generics.GenericAPIView):
+    """
+    this class will set a new password
+    """
     serializer_class = SetNewPasswordSerializer
 
     def patch(self, request):

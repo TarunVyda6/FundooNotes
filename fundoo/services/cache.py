@@ -3,7 +3,14 @@ from decouple import config
 
 
 class Cache:
+    """
+    this class is used to set and get cache from redis
+    """
+
     def __init__(self):
+        """
+        this method creates a connection with redis server
+        """
         self.r = redis.StrictRedis(host=config('REDIS_HOST'), port=config('REDIS_PORT'))
 
     def set_cache(self, key, value):

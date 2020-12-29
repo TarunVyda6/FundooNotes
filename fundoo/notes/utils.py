@@ -61,6 +61,9 @@ def get_label_list(request):
 
 
 def manage_response(**kwargs):
+    """
+    this function is used to log and return the responses
+    """
     result = {'status': kwargs['status'], 'message': kwargs['message']}
     if 'exception' in kwargs:
         logging.debug('{}, exception = {}, status_code = {}'.format(result, kwargs['exception'], kwargs['status_code']))

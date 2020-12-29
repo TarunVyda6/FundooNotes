@@ -3,7 +3,9 @@ from .models import Label
 
 
 class LabelSerializer(serializers.ModelSerializer):
-    # Serializer for Labels
+    """
+    this class is used to serialization and deserialization of labels
+    """
 
     class Meta:
         model = Label

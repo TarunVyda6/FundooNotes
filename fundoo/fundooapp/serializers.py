@@ -10,6 +10,9 @@ import jwt
 
 
 class RegisterSerializer(ModelSerializer):
+    """
+    this serializer class is used for serialization and deserialization of data while registering
+    """
     password = serializers.CharField(
         max_length=68, min_length=6, write_only=True)
 
@@ -34,10 +37,16 @@ class RegisterSerializer(ModelSerializer):
         return attrs
 
     def create(self, validated_data):
+        """
+        this method will create an account for validated data
+        """
         return Account.objects.create_user(**validated_data)
 
 
 class EmailVerificationSerializer(serializers.ModelSerializer):
+    """
+    this serializer class is used for serialization and deserialization of data at email verification
+    """
     token = serializers.CharField(max_length=555)
 
     class Meta:
@@ -46,6 +55,9 @@ class EmailVerificationSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializer(ModelSerializer):
+    """
+    this serializer class is used for serialization and deserialization of data while login
+    """
     email = serializers.EmailField(max_length=255, min_length=3)
     password = serializers.CharField(
         max_length=68, min_length=6, write_only=True)
@@ -74,8 +86,10 @@ class LoginSerializer(ModelSerializer):
         }
 
 
-
 class ResetPasswordEmailRequestSerializer(serializers.Serializer):
+    """
+    this serializer class is used for serialization and deserialization of data while requesting for reset password
+    """
     email = serializers.EmailField(min_length=2)
 
     redirect_url = serializers.CharField(max_length=500, required=False)
@@ -85,6 +99,9 @@ class ResetPasswordEmailRequestSerializer(serializers.Serializer):
 
 
 class SetNewPasswordSerializer(serializers.Serializer):
+    """
+    this serializer class is used for serialization and deserialization of data while setting new password
+    """
     password = serializers.CharField(
         min_length=6, max_length=68, write_only=True)
     token = serializers.CharField(

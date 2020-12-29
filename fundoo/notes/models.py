@@ -6,8 +6,10 @@ from fundooapp.models import Account
 from labels.models import Label
 
 
-# Note model
 class Note(models.Model):
+    """
+    this class is used to create model for user
+    """
     title = models.CharField(max_length=150, default=None)  # for add title
     description = models.TextField()  # for add descriptions
     created_time = models.DateTimeField(auto_now_add=True, null=True)  # for created time which is auto
@@ -26,5 +28,8 @@ class Note(models.Model):
         return self.title + " " + self.description
 
     def soft_delete(self):
+        """
+        this class is used to change the status of is_deleted to true
+        """
         self.is_deleted = True
         self.save()

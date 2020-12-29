@@ -6,10 +6,10 @@ from .models import Note
 User = get_user_model()
 
 
-# Note serializer for storing user created notes to database
-
 class NoteSerializer(serializers.ModelSerializer):
-    # Serializer for Notes
+    """
+    this class is used for serialization and deserialization of notes
+    """
 
     class Meta:
         model = Note

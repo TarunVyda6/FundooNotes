@@ -12,7 +12,14 @@ User = get_user_model()
 
 @pytest.mark.django_db
 class Data(TestCase):
+    """
+    this class will initialise all the urls and data and it is inherited by other test classes
+    """
+
     def setUp(self):
+        """
+        this method setup all the url and data which was required by all test cases
+        """
         self.register_url = reverse("register")
         self.login_url = reverse("login")
         self.valid_registration_data = {'first_name': "tarun",
@@ -33,10 +40,13 @@ class Data(TestCase):
 
 
 class RegistrationTests(Data):
+    """
+    this class will test registration view and match with status_code
+    """
 
     def test_given_valid_details_for_registration(self):
         """
-        Ensure we can create a new account object.
+        Ensure we can create a new account object and it returns status code as 201.
         """
 
         response = self.client.post(self.register_url, self.valid_registration_data, format='json')
@@ -44,7 +54,7 @@ class RegistrationTests(Data):
 
     def test_given_invalid_details_for_registration(self):
         """
-        Ensure we cannot create a new account object.
+        Ensure we cannot create a new account object and returns status code as 400.
         """
 
         response = self.client.post(self.register_url, self.invalid_registration_data, format='json')
@@ -55,7 +65,7 @@ class LoginTest(Data):
 
     def test_given_valid_credentials_login(self):
         """
-        Ensure we can login.
+        Ensure we can login and return status code as 200.
         """
 
         self.client.post(self.register_url, self.valid_registration_data, format='json')
@@ -68,7 +78,7 @@ class LoginTest(Data):
 
     def test_given_invalid_credentials_for_login(self):
         """
-        Ensure we cannot login.
+        Ensure we cannot login and returns status code as 400.
         """
 
         self.client.post(self.register_url, self.valid_registration_data, format='json')
