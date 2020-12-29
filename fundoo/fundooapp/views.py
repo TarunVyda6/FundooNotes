@@ -21,7 +21,6 @@ from rest_framework.exceptions import AuthenticationFailed
 from notes import utils
 from services.encrypt import Encrypt
 
-
 logging.basicConfig(filename='users.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
 
@@ -43,7 +42,8 @@ class LoginAPIView(generics.GenericAPIView):
             serializer.is_valid(raise_exception=True)
             user = Account.objects.get(email=serializer.data['email'])
             token = Encrypt.encode(user.id)
-            Cache.set_cache("TOKEN_"+str(user.id)+"_AUTH", token)
+            cache = Cache()
+            cache.set_cache("TOKEN_" + str(user.id) + "_AUTH", token)
             result = {'token': token}
             logging.debug('{}'.format(result, token))
             return utils.manage_response(status=True, message=result,
@@ -89,10 +89,6 @@ class RegisterView(generics.GenericAPIView):
 class VerifyEmail(views.APIView):
     serializer_class = EmailVerificationSerializer
 
-    token_param_config = openapi.Parameter(
-        'token', in_=openapi.IN_QUERY, description='Description', type=openapi.TYPE_STRING)
-
-    @swagger_auto_schema(manual_parameters=[token_param_config])
     def get(self, request):
 
         """

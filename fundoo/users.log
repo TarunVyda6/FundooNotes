@@ -967,3 +967,114 @@ TypeError: can only concatenate str (not "int") to str
 2020-12-27 02:10:58,512:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
 2020-12-27 02:10:58,538:DEBUG:{'status': True, 'message': {'id': 2, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2020-12-21T14:22:19.826517Z', 'updated_time': '2020-12-21T14:22:19.826517Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 3, 'label': [1], 'collaborate': [1]}}, status_code = 200
 2020-12-27 02:12:10,232:DEBUG:Using selector: SelectSelector
+2020-12-28 13:31:24,388:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, exception = set_cache() missing 1 required positional argument: 'value', status_code = 400
+2020-12-28 13:31:24,391:WARNING:Bad Request: /login/
+2020-12-28 13:32:50,298:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2020-12-28 13:32:50,300:DEBUG:Using selector: SelectSelector
+2020-12-28 13:32:58,917:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-28 13:32:58,918:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-28 13:33:05,379:DEBUG:Using selector: SelectSelector
+2020-12-28 16:27:20,692:ERROR:{'message': 'some other issue please try after some time', 'status': False}, exception = 'HTTP_AUTHORIZATION', status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 18, in wrapper
+    token = request.META['HTTP_AUTHORIZATION']
+KeyError: 'HTTP_AUTHORIZATION'
+2020-12-28 16:27:20,966:WARNING:Not Found: /favicon.ico
+2020-12-28 16:27:25,059:WARNING:Method Not Allowed: /login/
+2020-12-28 16:27:33,637:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}
+2020-12-28 16:27:33,637:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.O09y2tVCvQ7wE-CkRe3uFQJchj3KQj1F8alZ1ChGcGg'}}, status_code = 200
+2020-12-28 16:27:49,398:ERROR:{'message': 'some other issue please try after some time', 'status': False}, exception = 'HTTP_AUTHORIZATION', status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 18, in wrapper
+    token = request.META['HTTP_AUTHORIZATION']
+KeyError: 'HTTP_AUTHORIZATION'
+2020-12-28 16:28:55,896:DEBUG:Using selector: SelectSelector
+2020-12-28 16:30:09,382:ERROR:{'message': 'Invalid Token', 'status': False}, exception = Not enough segments, status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 19, in wrapper
+    decoded_token = Encrypt.decode(token)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\encrypt.py", line 8, in decode
+    return jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
+    payload, _, _, _ = self._load(jwt)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
+    raise DecodeError('Not enough segments')
+jwt.exceptions.DecodeError: Not enough segments
+2020-12-28 16:30:44,159:ERROR:{'message': 'some other issue please try after some time', 'status': False}, exception = 'HTTP_AUTHORIZATION', status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 18, in wrapper
+    token = request.META['HTTP_AUTHORIZATION']
+KeyError: 'HTTP_AUTHORIZATION'
+2020-12-28 16:31:25,812:ERROR:{'message': 'some other issue please try after some time', 'status': False}, exception = 'HTTP_AUTHORIZATION', status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 18, in wrapper
+    token = request.META['HTTP_AUTHORIZATION']
+KeyError: 'HTTP_AUTHORIZATION'
+2020-12-28 16:32:14,577:ERROR:{'message': 'Invalid Token', 'status': False}, exception = Not enough segments, status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 19, in wrapper
+    decoded_token = Encrypt.decode(token)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\encrypt.py", line 8, in decode
+    return jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
+    payload, _, _, _ = self._load(jwt)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
+    raise DecodeError('Not enough segments')
+jwt.exceptions.DecodeError: Not enough segments
+2020-12-28 16:32:27,512:ERROR:{'message': 'Invalid Token', 'status': False}, exception = Not enough segments, status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b'.', 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 19, in wrapper
+    decoded_token = Encrypt.decode(token)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\encrypt.py", line 8, in decode
+    return jwt.decode(token, config('ENCODE_SECRET_KEY'), algorithms=["HS256"])
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jwt.py", line 84, in decode
+    payload, _, _, _ = self._load(jwt)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\jwt\api_jws.py", line 183, in _load
+    raise DecodeError('Not enough segments')
+jwt.exceptions.DecodeError: Not enough segments
+2020-12-28 16:32:36,728:DEBUG:Using selector: SelectSelector
+2020-12-28 16:34:02,251:DEBUG:Using selector: SelectSelector
+2020-12-28 18:20:01,233:WARNING:Method Not Allowed: /login/
+2020-12-28 18:22:12,682:DEBUG:Using selector: SelectSelector
+2020-12-28 19:44:20,419:ERROR:{'message': 'some other issue please try after some time', 'status': False}, exception = 'HTTP_AUTHORIZATION', status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 18, in wrapper
+    token = request.META['HTTP_AUTHORIZATION']
+KeyError: 'HTTP_AUTHORIZATION'
+2020-12-28 19:44:20,806:WARNING:Not Found: /favicon.ico
+2020-12-28 19:46:59,668:WARNING:Not Found: /favicon.ico
+2020-12-28 19:47:51,112:WARNING:Method Not Allowed: /register/
+2020-12-28 19:48:02,122:DEBUG:{'status': True, 'message': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao0@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201
+2020-12-28 19:48:20,289:DEBUG:{'status': True, 'message': 'Successfully activated'}, status_code = 200
+2020-12-28 19:48:50,381:WARNING:Method Not Allowed: /login/
+2020-12-28 19:48:57,514:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.p7vnTWOxwcspRSV_GK_-ZpE3Ojfb0Eovz0GJTDN5y1o'}
+2020-12-28 19:48:57,514:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NH0.p7vnTWOxwcspRSV_GK_-ZpE3Ojfb0Eovz0GJTDN5y1o'}}, status_code = 200
+2020-12-28 19:49:06,471:DEBUG:Using selector: SelectSelector
+2020-12-28 19:51:38,627:WARNING:Method Not Allowed: /register/
+2020-12-28 19:51:46,976:DEBUG:{'status': True, 'message': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao0@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201
+2020-12-28 19:51:55,246:DEBUG:{'status': True, 'message': 'Successfully activated'}, status_code = 200
+2020-12-28 19:52:06,862:WARNING:Method Not Allowed: /login/
+2020-12-28 19:52:13,698:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.whTlJ8goUxTxjmCSj_meXJQ3bHqFBr6MYGfCo1aMp1I'}
+2020-12-28 19:52:13,698:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.whTlJ8goUxTxjmCSj_meXJQ3bHqFBr6MYGfCo1aMp1I'}}, status_code = 200
+2020-12-28 19:52:20,277:DEBUG:Using selector: SelectSelector
