@@ -31,7 +31,7 @@ class Labels(APIView):
             serializer = LabelSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
-                return utils.manage_response(status=True, message='Label Added Successfully',
+                return utils.manage_response(status=True, message='Label Added Successfully', data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
             return utils.manage_response(status=False, message='maximum length of label name should be 50 characters',
                                          status_code=status.HTTP_400_BAD_REQUEST)
@@ -49,7 +49,8 @@ class Labels(APIView):
         try:
             item = Label.objects.get(pk=kwargs.get('pk'), is_deleted=False)
             serializer = LabelSerializer(item)
-            return utils.manage_response(status=True, message=serializer.data, status_code=status.HTTP_200_OK)
+            return utils.manage_response(status=True, message="Label retrieved successfully", data=serializer.data,
+                                         status_code=status.HTTP_200_OK)
 
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
@@ -71,7 +72,7 @@ class Labels(APIView):
             serializer = LabelSerializer(item, data=request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
-                return utils.manage_response(status=True, message="Label Update Successfully",
+                return utils.manage_response(status=True, message="Label Update Successfully", data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
             return utils.manage_response(status=False, message="maximum length of label name should be 50 characters",
                                          status_code=status.HTTP_400_BAD_REQUEST)

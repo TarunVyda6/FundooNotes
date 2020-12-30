@@ -21,7 +21,8 @@ def user_login_required(view_func):
         try:
             token = request.META['HTTP_AUTHORIZATION']
             decoded_token = Encrypt.decode(token)
-            if Cache.get_cache("TOKEN_" + str(decoded_token['id']) + "_AUTH") is not None:
+            cache = Cache()
+            if cache.get_cache("TOKEN_" + str(decoded_token['id']) + "_AUTH") is not None:
                 request.user = Account.objects.get(id=decoded_token['id'])
                 result['message'] = 'token verification successful'
                 result['status'] = True

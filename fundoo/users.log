@@ -1078,3 +1078,117 @@ KeyError: 'HTTP_AUTHORIZATION'
 2020-12-28 19:52:13,698:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.whTlJ8goUxTxjmCSj_meXJQ3bHqFBr6MYGfCo1aMp1I'}
 2020-12-28 19:52:13,698:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NX0.whTlJ8goUxTxjmCSj_meXJQ3bHqFBr6MYGfCo1aMp1I'}}, status_code = 200
 2020-12-28 19:52:20,277:DEBUG:Using selector: SelectSelector
+2020-12-29 12:35:13,144:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-29 12:35:13,147:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-29 12:35:19,028:DEBUG:Using selector: SelectSelector
+2020-12-29 12:43:14,638:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-29 12:43:14,639:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-29 12:43:41,750:ERROR:{'message': 'some other issue please try after some time', 'status': False}, exception = get_cache() missing 1 required positional argument: 'key', status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 24, in wrapper
+    if Cache.get_cache("TOKEN_" + str(decoded_token['id']) + "_AUTH") is not None:
+TypeError: get_cache() missing 1 required positional argument: 'key'
+2020-12-29 12:43:58,383:ERROR:{'message': 'some other issue please try after some time', 'status': False}, exception = get_cache() missing 1 required positional argument: 'key', status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 24, in wrapper
+    if Cache.get_cache("TOKEN_" + str(decoded_token['id']) + "_AUTH") is not None:
+TypeError: get_cache() missing 1 required positional argument: 'key'
+2020-12-29 12:47:51,929:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py changed, reloading.
+2020-12-29 12:47:51,931:DEBUG:Using selector: SelectSelector
+2020-12-29 12:48:01,914:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-29 12:48:09,366:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-29 12:48:09,367:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-29 12:48:23,477:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-29 12:48:23,498:DEBUG:{'status': False, 'message': 'Please enter valid Note id'}, status_code = 404
+2020-12-29 12:48:23,499:WARNING:Not Found: /note/2
+2020-12-29 12:48:31,622:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-29 12:48:31,673:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': []}}, status_code = 200
+2020-12-29 12:49:58,130:DEBUG:Using selector: SelectSelector
+2020-12-29 12:53:42,810:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-29 12:53:42,811:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-29 12:54:02,242:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-29 12:55:21,528:DEBUG:{'status': True, 'message': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': []}}, status_code = 200
+2020-12-29 12:57:57,420:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-29 12:57:57,422:DEBUG:{'status': True, 'message': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, status_code = 200
+2020-12-29 12:58:00,896:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 08:51:52,777:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-30 08:51:52,779:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, exception = 'exception', status_code = 400
+2020-12-30 08:51:52,779:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, status_code = 400
+2020-12-30 08:51:52,780:WARNING:Bad Request: /login/
+2020-12-30 08:54:42,246:DEBUG:{'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-30 08:54:42,247:DEBUG:{'status': True, 'message': 'login successful'}, status_code = 200, data = {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-30 08:54:42,247:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, exception = HTTP status code must be an integer., status_code = 400
+2020-12-30 08:54:42,248:WARNING:Bad Request: /login/
+2020-12-30 08:56:21,958:DEBUG:{'status': True, 'message': 'login successful'}, status_code = 200, data = {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-30 08:56:21,960:DEBUG:{'status': False, 'message': 'some other issue please try after some time'}, exception = HTTP status code must be an integer., status_code = 400
+2020-12-30 08:56:21,961:WARNING:Bad Request: /login/
+2020-12-30 08:58:43,379:DEBUG:{'status': True, 'message': 'login successful'}, status_code = 200, data = {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-30 09:07:11,156:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}, data = {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}
+2020-12-30 09:09:34,189:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:10:18,602:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:11:11,300:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:26:15,662:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-30 09:26:35,157:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-30 09:26:38,581:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-30 09:26:54,115:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-30 09:28:13,901:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:28:18,323:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 09:28:18,396:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': {'id': 1, 'title': 'my put note11', 'description': 'this is my testing note for put', 'created_time': '2020-12-21T07:12:08.603603Z', 'updated_time': '2020-12-22T05:45:47.772013Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [1], 'collaborate': []}}
+2020-12-30 09:30:26,682:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2020-12-30 09:30:26,682:DEBUG:Using selector: SelectSelector
+2020-12-30 09:30:42,376:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:30:48,268:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-30 09:30:59,827:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}
+2020-12-30 09:31:03,340:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-30 09:31:06,176:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-30 09:31:11,359:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:31:14,331:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-30 09:31:16,784:DEBUG:{'message': "logged in user's token is not provided", 'status': False} status_code = 400
+2020-12-30 09:31:22,041:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:31:33,415:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 09:31:33,430:DEBUG:{'status': True, 'message': 'Label retrieved successfully', 'status_code': 200, 'data': {'user': 1, 'label_name': 'new labels'}}
+2020-12-30 09:31:41,449:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}
+2020-12-30 09:31:45,641:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:31:58,300:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 09:31:58,307:DEBUG:{'status': True, 'message': 'Label retrieved successfully', 'status_code': 200, 'data': {'user': 1, 'label_name': 'new labels'}}
+2020-12-30 09:32:08,542:DEBUG:Using selector: SelectSelector
+2020-12-30 09:35:36,251:WARNING:Not Found: /favicon.ico
+2020-12-30 09:38:53,707:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:39:10,861:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 09:39:10,888:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 1, 'label_name': 'label1'}}
+2020-12-30 09:39:17,696:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 09:39:17,731:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 1, 'label_name': 'label2'}}
+2020-12-30 09:40:05,954:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:40:17,812:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 09:40:17,897:DEBUG:{'status': True, 'message': 'Note Added Successfully', 'status_code': 201, 'data': {'id': 8, 'title': 'kohli first note', 'description': 'this is my first note', 'created_time': '2020-12-30T04:10:17.841883Z', 'updated_time': '2020-12-30T04:10:17.841883Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [4, 5], 'collaborate': [2, 1]}}
+2020-12-30 09:40:39,913:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 09:40:39,923:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 2, 'label_name': 'label3'}}
+2020-12-30 09:40:51,172:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 09:40:51,183:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 2, 'label_name': 'label4'}}
+2020-12-30 09:41:26,193:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 09:41:30,907:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 09:41:30,974:DEBUG:{'status': True, 'message': 'Note Added Successfully', 'status_code': 201, 'data': {'id': 9, 'title': 'tarun first note', 'description': 'this is my first note', 'created_time': '2020-12-30T04:11:30.941208Z', 'updated_time': '2020-12-30T04:11:30.941208Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 2, 'label': [6, 7], 'collaborate': [2, 1]}}
+2020-12-30 10:07:56,853:DEBUG:Using selector: SelectSelector
+2020-12-30 10:13:15,695:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 10:13:38,480:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 10:13:38,490:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 1, 'label_name': 'label1'}}
+2020-12-30 10:13:44,925:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 10:13:44,937:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 1, 'label_name': 'label2'}}
+2020-12-30 10:14:53,588:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.-xXA0iKB4mVNvWLYFtt2xNiYkFpObF54J9lj2RwduAI'}}
+2020-12-30 10:15:30,788:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 10:15:30,866:DEBUG:{'status': True, 'message': 'Note Added Successfully', 'status_code': 201, 'data': {'id': 10, 'title': 'virat first note', 'description': 'this is my first note', 'created_time': '2020-12-30T04:45:30.823194Z', 'updated_time': '2020-12-30T04:45:30.823194Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [8, 9], 'collaborate': [2, 1]}}
+2020-12-30 10:15:56,336:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}
+2020-12-30 10:16:17,155:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 10:16:17,165:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 1, 'label_name': 'label3'}}
+2020-12-30 10:16:23,219:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 10:16:23,228:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 1, 'label_name': 'label4'}}
+2020-12-30 10:16:52,544:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}
+2020-12-30 10:16:58,076:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 10:16:58,085:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 2, 'label_name': 'label3'}}
+2020-12-30 10:17:05,144:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 10:17:05,162:DEBUG:{'status': True, 'message': 'Label Added Successfully', 'status_code': 201, 'data': {'user': 2, 'label_name': 'label4'}}
+2020-12-30 10:17:47,787:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}
+2020-12-30 10:18:07,860:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}
+2020-12-30 10:18:19,640:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2020-12-30 10:18:19,706:DEBUG:{'status': True, 'message': 'Note Added Successfully', 'status_code': 201, 'data': {'id': 11, 'title': 'tarun first note', 'description': 'this is my first note', 'created_time': '2020-12-30T04:48:19.672731Z', 'updated_time': '2020-12-30T04:48:19.672731Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 2, 'label': [12, 13], 'collaborate': [2, 1]}}
+2020-12-30 10:37:27,003:DEBUG:Using selector: SelectSelector

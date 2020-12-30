@@ -64,9 +64,14 @@ def manage_response(**kwargs):
     """
     this function is used to log and return the responses
     """
-    result = {'status': kwargs['status'], 'message': kwargs['message']}
+    result = {'status': kwargs['status'], 'message': kwargs['message'], 'status_code':kwargs['status_code']}
     if 'exception' in kwargs:
-        logging.debug('{}, exception = {}, status_code = {}'.format(result, kwargs['exception'], kwargs['status_code']))
+        logging.debug('{}, exception = {}'.format(result, kwargs['exception']))
+    elif 'data' in kwargs:
+        result['data'] = kwargs['data']
+        logging.debug(
+            '{}'.format(result))
+        return Response(result)
     else:
-        logging.debug('{}, status_code = {}'.format(result, kwargs['status_code']))
-    return Response(result, kwargs['status_code'])
+        logging.debug('{}'.format(result))
+    return Response(result)

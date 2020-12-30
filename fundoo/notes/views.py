@@ -44,7 +44,7 @@ class Notes(APIView):
 
             if serializer.is_valid():
                 serializer.save()
-                return utils.manage_response(status=True, message='Note Added Successfully',
+                return utils.manage_response(status=True, message='Note Added Successfully', data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
             return utils.manage_response(status=False, message='title should be less than 150 characters',
                                          status_code=status.HTTP_400_BAD_REQUEST)
@@ -62,7 +62,8 @@ class Notes(APIView):
         try:
             item = Note.objects.get(pk=kwargs.get('pk'), is_deleted=False)
             serializer = NoteSerializer(item)
-            return utils.manage_response(status=True, message=serializer.data, status_code=status.HTTP_200_OK)
+            return utils.manage_response(status=True, message="data retrieved successfully", data=serializer.data,
+                                         status_code=status.HTTP_200_OK)
         except Note.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid Note id",
                                          status_code=status.HTTP_404_NOT_FOUND)
@@ -84,7 +85,7 @@ class Notes(APIView):
             serializer = NoteSerializer(item, data=data, partial=True)
             if serializer.is_valid():
                 serializer.save()
-                return utils.manage_response(status=True, message="Note Update Successfully",
+                return utils.manage_response(status=True, message="Note Update Successfully", data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
             return utils.manage_response(status=False, message="You have entered invalid details",
                                          status_code=status.HTTP_400_BAD_REQUEST)

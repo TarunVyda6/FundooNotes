@@ -48,8 +48,7 @@ class LoginAPIView(generics.GenericAPIView):
             cache = Cache()
             cache.set_cache("TOKEN_" + str(user.id) + "_AUTH", token)
             result = {'token': token}
-            logging.debug('{}'.format(result, token))
-            return utils.manage_response(status=True, message=result,
+            return utils.manage_response(status=True, message="login successful", data=result,
                                          status_code=status.HTTP_200_OK)
         except AuthenticationFailed as e:
             return utils.manage_response(status=False, message=str(e),
@@ -84,7 +83,7 @@ class RegisterView(generics.GenericAPIView):
             data = {'email_body': email_body, 'to_email': user.email,
                     'email_subject': 'Verify your email'}
             Util.send_email(data)
-            return utils.manage_response(status=True, message=user_data,
+            return utils.manage_response(status=True, message="Account created successfully", data=user_data,
                                          status_code=status.HTTP_201_CREATED)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
