@@ -23,13 +23,13 @@ def user_login_required(view_func):
             decoded_token = Encrypt.decode(token)
             cache = Cache()
             if cache.get_cache("TOKEN_" + str(decoded_token['id']) + "_AUTH") is not None:
-                request.user = Account.objects.get(id=decoded_token['id'])
+                kwargs['user'] = Account.objects.get(id=decoded_token['id'])
                 result['message'] = 'token verification successful'
                 result['status'] = True
                 logging.debug('{} status_code = {}'.format(result, status.HTTP_200_OK))
                 return view_func(request, *args, **kwargs)
 
-            result['message'] = "logged in user's token is not provided"
+            result['message'] = "you are not logged in"
             logging.debug('{} status_code = {}'.format(result, status.HTTP_400_BAD_REQUEST))
             return HttpResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
         except jwt.ExpiredSignatureError as e:

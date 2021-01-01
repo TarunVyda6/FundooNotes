@@ -7,6 +7,7 @@ import logging
 from notes import utils
 from django.utils.decorators import method_decorator
 from fundooapp.decorator import user_login_required
+import json
 
 logging.basicConfig(filename='labels.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -20,14 +21,17 @@ class Labels(APIView):
     """
     serializer_class = LabelSerializer
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         """
         takes label data as input and if the data is valid then it stores the data in database
         :rtype:Response returns success or failure message along with status
         """
 
         try:
-
+            _mutable = request.data._mutable
+            request.data._mutable = True
+            request.data['user'] = str(kwargs.get('user').id)
+            request.data._mutable = _mutable
             serializer = LabelSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
@@ -47,10 +51,24 @@ class Labels(APIView):
         """
 
         try:
-            item = Label.objects.get(pk=kwargs.get('pk'), is_deleted=False)
-            serializer = LabelSerializer(item)
-            return utils.manage_response(status=True, message="Label retrieved successfully", data=serializer.data,
-                                         status_code=status.HTTP_200_OK)
+
+            if kwargs.get('pk'):
+                item = Label.objects.get(pk=kwargs.get('pk'), is_deleted=False)
+                if item.user == kwargs.get('user'):
+                    serializer = LabelSerializer(item)
+                    return utils.manage_response(status=True, message="Label retrieved successfully",
+                                                 data=serializer.data,
+                                                 status_code=status.HTTP_200_OK)
+                else:
+                    return utils.manage_response(status=False,
+                                                 message="you don't have permission to retrieve this label",
+                                                 status_code=status.HTTP_401_UNAUTHORIZED)
+            else:
+                labels = Label.objects.filter(user_id=kwargs.get('user').id, is_deleted=False)
+                serializer = LabelSerializer(labels, many=True)
+                return utils.manage_response(status=True, message="Labels retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
 
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
@@ -69,13 +87,20 @@ class Labels(APIView):
         try:
 
             item = Label.objects.get(pk=kwargs.get('pk'), is_deleted=False)
-            serializer = LabelSerializer(item, data=request.data, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                return utils.manage_response(status=True, message="Label Update Successfully", data=serializer.data,
-                                             status_code=status.HTTP_201_CREATED)
-            return utils.manage_response(status=False, message="maximum length of label name should be 50 characters",
-                                         status_code=status.HTTP_400_BAD_REQUEST)
+            if item.user == kwargs.get('user'):
+                serializer = LabelSerializer(item, data=request.data, partial=True)
+                if serializer.is_valid():
+                    serializer.save()
+                    return utils.manage_response(status=True, message="Label Update Successfully", data=serializer.data,
+                                                 status_code=status.HTTP_201_CREATED)
+                return utils.manage_response(status=False,
+                                             message="maximum length of label name should be 50 characters",
+                                             status_code=status.HTTP_400_BAD_REQUEST)
+            else:
+                return utils.manage_response(status=False,
+                                             message="you don't have permission to update this label",
+                                             status_code=status.HTTP_401_UNAUTHORIZED)
+
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
                                          status_code=status.HTTP_404_NOT_FOUND)
@@ -91,10 +116,16 @@ class Labels(APIView):
         """
 
         try:
-            label = Label.objects.get(id=kwargs.get('pk'), is_deleted=False)
-            label.soft_delete()
-            return utils.manage_response(status=True, message="Label Deleted Successfully",
-                                         status_code=status.HTTP_202_ACCEPTED)
+            item = Label.objects.get(id=kwargs.get('pk'), is_deleted=False)
+            if item.user == kwargs.get('user'):
+                item.soft_delete()
+                return utils.manage_response(status=True, message="Label Deleted Successfully",
+                                             status_code=status.HTTP_202_ACCEPTED)
+            else:
+                return utils.manage_response(status=False,
+                                             message="you don't have permission to delete this label",
+                                             status_code=status.HTTP_401_UNAUTHORIZED)
+
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
                                          status_code=status.HTTP_404_NOT_FOUND)

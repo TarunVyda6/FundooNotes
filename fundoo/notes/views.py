@@ -7,6 +7,7 @@ from . import utils
 import logging
 from django.utils.decorators import method_decorator
 from fundooapp.decorator import user_login_required
+from django.db.models import Q
 
 User = get_user_model()
 
@@ -22,16 +23,14 @@ class Notes(APIView):
     """
     serializer_class = NoteSerializer
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         """
         takes notes data as input and if the data is valid then it stores the data in database
         :rtype:Response returns success or failure message along with statuscode
         """
 
         try:
-
-            if request.data.get('user'):
-                utils.get_user(request)
+            utils.set_user(request, kwargs.get('user').id)
             if request.data.get('collaborate'):
                 utils.get_collaborator_list(request)
             if request.data.get('label'):
@@ -60,10 +59,27 @@ class Notes(APIView):
         """
 
         try:
-            item = Note.objects.get(pk=kwargs.get('pk'), is_deleted=False)
-            serializer = NoteSerializer(item)
-            return utils.manage_response(status=True, message="data retrieved successfully", data=serializer.data,
-                                         status_code=status.HTTP_200_OK)
+            if kwargs.get('pk'):
+                item = Note.objects.get(pk=kwargs.get('pk'), is_deleted=False)
+                collaborators = item.collaborate.all()
+                collaborator_list = list(map(lambda items: items.id, collaborators))
+                if kwargs.get('user').id in collaborator_list:
+                    serializer = NoteSerializer(item)
+
+                    return utils.manage_response(status=True, message="data retrieved successfully",
+                                                 data=serializer.data,
+                                                 status_code=status.HTTP_200_OK)
+                else:
+                    return utils.manage_response(status=False,
+                                                 message="you don't have permission to retrieve this note",
+                                                 status_code=status.HTTP_401_UNAUTHORIZED)
+            else:
+                notes = Note.objects.filter(
+                    Q(user=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)).exclude(is_deleted=True)
+                serializer = NoteSerializer(notes, many=True)
+                return utils.manage_response(status=True, message="data retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
         except Note.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid Note id",
                                          status_code=status.HTTP_404_NOT_FOUND)
@@ -81,14 +97,21 @@ class Notes(APIView):
         try:
 
             item = Note.objects.get(pk=kwargs.get('pk'), is_deleted=False)
-            data = request.data
-            serializer = NoteSerializer(item, data=data, partial=True)
-            if serializer.is_valid():
-                serializer.save()
-                return utils.manage_response(status=True, message="Note Update Successfully", data=serializer.data,
-                                             status_code=status.HTTP_201_CREATED)
-            return utils.manage_response(status=False, message="You have entered invalid details",
-                                         status_code=status.HTTP_400_BAD_REQUEST)
+            collaborators = item.collaborate.all()
+            collaborator_list = list(map(lambda items: items.id, collaborators))
+            if kwargs.get('user').id in collaborator_list:
+                data = request.data
+                serializer = NoteSerializer(item, data=data, partial=True)
+                if serializer.is_valid():
+                    serializer.save()
+                    return utils.manage_response(status=True, message="Note Update Successfully", data=serializer.data,
+                                                 status_code=status.HTTP_201_CREATED)
+                return utils.manage_response(status=False, message="You have entered invalid details",
+                                             status_code=status.HTTP_400_BAD_REQUEST)
+            else:
+                return utils.manage_response(status=False,
+                                             message="you don't have permission to update this note",
+                                             status_code=status.HTTP_401_UNAUTHORIZED)
         except Note.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid Note id",
                                          status_code=status.HTTP_404_NOT_FOUND)
@@ -105,9 +128,16 @@ class Notes(APIView):
 
         try:
             note = Note.objects.get(id=kwargs.get('pk'), is_deleted=False)
-            note.soft_delete()
-            return utils.manage_response(status=True, message="Note Deleted Successfully",
-                                         status_code=status.HTTP_202_ACCEPTED)
+            collaborators = note.collaborate.all()
+            collaborator_list = list(map(lambda items: items.id, collaborators))
+            if kwargs.get('user').id in collaborator_list:
+                note.soft_delete()
+                return utils.manage_response(status=True, message="Note Deleted Successfully",
+                                             status_code=status.HTTP_202_ACCEPTED)
+            else:
+                return utils.manage_response(status=False,
+                                             message="you don't have permission to delete this note",
+                                             status_code=status.HTTP_401_UNAUTHORIZED)
         except Note.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid Note id",
                                          status_code=status.HTTP_404_NOT_FOUND)

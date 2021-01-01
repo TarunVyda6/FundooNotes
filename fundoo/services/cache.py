@@ -18,7 +18,7 @@ class Cache:
         it takes key and value value as inputs and stores it in redis server and has expiry time of 60 seconds
         """
         self.r.set(key, value)
-        self.r.expire(key, time=60)
+        self.r.expire(key, time=1500)
 
     def get_cache(self, key):
         """

@@ -4,7 +4,7 @@ from labels.models import *
 from fundooapp.models import *
 
 
-def get_user(request):
+def set_user(request, user_id):
     """[sets user email to associated user id and modifies request.data]
     Args:
         request ([QueryDict]): [post data]
@@ -12,12 +12,6 @@ def get_user(request):
         Account.DoesNotExist: [if given email isn't found in database]
     """
     request.POST._mutable = True
-    user_email = request.data.get('user')
-    user_qs = Account.objects.get(email=user_email)
-    if not user_qs:
-        raise Account.DoesNotExist('No such account exists')
-    if user_qs:
-        user_id = user_qs.id
     request.data["user"] = user_id
     request.POST._mutable = False
 
@@ -64,14 +58,14 @@ def manage_response(**kwargs):
     """
     this function is used to log and return the responses
     """
-    result = {'status': kwargs['status'], 'message': kwargs['message'], 'status_code':kwargs['status_code']}
+    result = {'status': kwargs['status'], 'message': kwargs['message'], 'status_code': kwargs['status_code']}
     if 'exception' in kwargs:
-        logging.debug('{}, exception = {}'.format(result, kwargs['exception']))
+        logging.debug('{}, status_code = {}, exception = {}'.format(result, kwargs['status_code'], kwargs['exception']))
     elif 'data' in kwargs:
         result['data'] = kwargs['data']
         logging.debug(
-            '{}'.format(result))
-        return Response(result)
+            '{}, status_code = {} '.format(result, kwargs['status_code']))
+        return Response(result, kwargs['status_code'])
     else:
-        logging.debug('{}'.format(result))
-    return Response(result)
+        logging.debug('{}, status_code = {} '.format(result, kwargs['status_code']))
+    return Response(result, kwargs['status_code'])
