@@ -8,6 +8,8 @@ import logging
 from django.utils.decorators import method_decorator
 from fundooapp.decorator import user_login_required
 from django.db.models import Q
+from services.myexceptions import (InvalidCredentials, UnVerifiedAccount, EmptyField, LengthError, ValidationError,
+                                   UnAuthorized)
 
 User = get_user_model()
 
@@ -37,15 +39,21 @@ class Notes(APIView):
                 utils.get_label_list(request)
             data = request.data
             serializer = NoteSerializer(data=data)
-            if data['title'] is None or data['description'] is None:
-                return utils.manage_response(status=False, message='title and description required',
-                                             status_code=status.HTTP_400_BAD_REQUEST)
+            if 'title' not in data or data['title'] is '' or 'description' not in data or data['description'] is '':
+                raise ValidationError("title and description required")
 
             if serializer.is_valid():
                 serializer.save()
                 return utils.manage_response(status=True, message='Note Added Successfully', data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
-            return utils.manage_response(status=False, message='title should be less than 150 characters',
+            raise LengthError('title should be less than 150 characters')
+        except LengthError as e:
+            return utils.manage_response(status=False, message=str(e),
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except ValidationError as e:
+            return utils.manage_response(status=False, message=str(e),
+                                         exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
@@ -70,9 +78,8 @@ class Notes(APIView):
                                                  data=serializer.data,
                                                  status_code=status.HTTP_200_OK)
                 else:
-                    return utils.manage_response(status=False,
-                                                 message="you don't have permission to retrieve this note",
-                                                 status_code=status.HTTP_401_UNAUTHORIZED)
+                    raise UnAuthorized("No such note exist")
+
             else:
                 notes = Note.objects.filter(
                     Q(user=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)).exclude(is_deleted=True)
@@ -80,8 +87,12 @@ class Notes(APIView):
                 return utils.manage_response(status=True, message="data retrieved successfully",
                                              data=serializer.data,
                                              status_code=status.HTTP_200_OK)
-        except Note.DoesNotExist:
-            return utils.manage_response(status=False, message="Please enter valid Note id",
+        except UnAuthorized as e:
+            return utils.manage_response(status=False,
+                                         message=str(e), exception=str(e),
+                                         status_code=status.HTTP_401_UNAUTHORIZED)
+        except Note.DoesNotExist as e:
+            return utils.manage_response(status=False, message="No such note exist", exception=str(e),
                                          status_code=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
@@ -106,14 +117,17 @@ class Notes(APIView):
                     serializer.save()
                     return utils.manage_response(status=True, message="Note Update Successfully", data=serializer.data,
                                                  status_code=status.HTTP_201_CREATED)
-                return utils.manage_response(status=False, message="You have entered invalid details",
-                                             status_code=status.HTTP_400_BAD_REQUEST)
+                raise ValidationError("You have entered invalid details")
             else:
-                return utils.manage_response(status=False,
-                                             message="you don't have permission to update this note",
-                                             status_code=status.HTTP_401_UNAUTHORIZED)
-        except Note.DoesNotExist:
-            return utils.manage_response(status=False, message="Please enter valid Note id",
+                raise UnAuthorized('no such note found')
+        except ValidationError as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except UnAuthorized as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_404_NOT_FOUND)
+        except Note.DoesNotExist as e:
+            return utils.manage_response(status=False, message="Please enter valid Note id", exception=str(e),
                                          status_code=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
@@ -135,9 +149,10 @@ class Notes(APIView):
                 return utils.manage_response(status=True, message="Note Deleted Successfully",
                                              status_code=status.HTTP_202_ACCEPTED)
             else:
-                return utils.manage_response(status=False,
-                                             message="you don't have permission to delete this note",
-                                             status_code=status.HTTP_401_UNAUTHORIZED)
+                raise UnAuthorized('no such note found')
+        except UnAuthorized as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_404_NOT_FOUND)
         except Note.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid Note id",
                                          status_code=status.HTTP_404_NOT_FOUND)

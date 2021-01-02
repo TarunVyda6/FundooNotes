@@ -1,4 +1,3 @@
-from rest_framework.response import Response
 from rest_framework import status
 from .serializer import LabelSerializer
 from .models import Label
@@ -7,7 +6,7 @@ import logging
 from notes import utils
 from django.utils.decorators import method_decorator
 from fundooapp.decorator import user_login_required
-import json
+from services.myexceptions import (LengthError, ValidationError, UnAuthorized)
 
 logging.basicConfig(filename='labels.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -37,7 +36,10 @@ class Labels(APIView):
                 serializer.save()
                 return utils.manage_response(status=True, message='Label Added Successfully', data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
-            return utils.manage_response(status=False, message='maximum length of label name should be 50 characters',
+            raise LengthError('maximum length of label name should be 50 characters')
+        except LengthError as e:
+            return utils.manage_response(status=False, message=str(e),
+                                         exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
@@ -60,16 +62,17 @@ class Labels(APIView):
                                                  data=serializer.data,
                                                  status_code=status.HTTP_200_OK)
                 else:
-                    return utils.manage_response(status=False,
-                                                 message="you don't have permission to retrieve this label",
-                                                 status_code=status.HTTP_401_UNAUTHORIZED)
+                    raise UnAuthorized("No such note exist")
             else:
                 labels = Label.objects.filter(user_id=kwargs.get('user').id, is_deleted=False)
                 serializer = LabelSerializer(labels, many=True)
                 return utils.manage_response(status=True, message="Labels retrieved successfully",
                                              data=serializer.data,
                                              status_code=status.HTTP_200_OK)
-
+        except UnAuthorized as e:
+            return utils.manage_response(status=False,
+                                         message=str(e), exception=str(e),
+                                         status_code=status.HTTP_401_UNAUTHORIZED)
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
                                          status_code=status.HTTP_404_NOT_FOUND)
@@ -93,13 +96,17 @@ class Labels(APIView):
                     serializer.save()
                     return utils.manage_response(status=True, message="Label Update Successfully", data=serializer.data,
                                                  status_code=status.HTTP_201_CREATED)
-                return utils.manage_response(status=False,
-                                             message="maximum length of label name should be 50 characters",
-                                             status_code=status.HTTP_400_BAD_REQUEST)
+                raise LengthError('title should be less than 150 characters')
             else:
-                return utils.manage_response(status=False,
-                                             message="you don't have permission to update this label",
-                                             status_code=status.HTTP_401_UNAUTHORIZED)
+                raise UnAuthorized("No such note exist")
+        except LengthError as e:
+            return utils.manage_response(status=False, message=str(e),
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except UnAuthorized as e:
+            return utils.manage_response(status=False,
+                                         message=str(e), exception=str(e),
+                                         status_code=status.HTTP_401_UNAUTHORIZED)
 
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
@@ -122,10 +129,11 @@ class Labels(APIView):
                 return utils.manage_response(status=True, message="Label Deleted Successfully",
                                              status_code=status.HTTP_202_ACCEPTED)
             else:
-                return utils.manage_response(status=False,
-                                             message="you don't have permission to delete this label",
-                                             status_code=status.HTTP_401_UNAUTHORIZED)
-
+                raise UnAuthorized("No such note exist")
+        except UnAuthorized as e:
+            return utils.manage_response(status=False,
+                                         message=str(e), exception=str(e),
+                                         status_code=status.HTTP_401_UNAUTHORIZED)
         except Label.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid label id",
                                          status_code=status.HTTP_404_NOT_FOUND)

@@ -69,3 +69,5 @@ def manage_response(**kwargs):
     else:
         logging.debug('{}, status_code = {} '.format(result, kwargs['status_code']))
     return Response(result, kwargs['status_code'])
+
+

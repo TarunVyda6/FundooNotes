@@ -1921,3 +1921,370 @@ You should either call `.is_valid()` first, or access `.initial_data` instead.
 2020-12-31 12:16:33,139:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
 2020-12-31 12:18:05,025:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
 2020-12-31 12:20:09,109:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-01 15:30:26,331:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = email or password is incorrect
+2021-01-01 15:30:26,344:WARNING:Bad Request: /login/
+2021-01-01 15:31:45,433:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 15:31:45,449:DEBUG:Using selector: SelectSelector
+2021-01-01 15:31:52,782:DEBUG:{'status': False, 'message': 'email or password is incorrect', 'status_code': 400}, status_code = 400 
+2021-01-01 15:31:52,785:WARNING:Bad Request: /login/
+2021-01-01 15:35:41,075:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py changed, reloading.
+2021-01-01 15:35:41,075:DEBUG:Using selector: SelectSelector
+2021-01-01 15:37:16,173:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'mahi', 'last_name': 'dhoni', 'email': 'msdhoni@gmail.com', 'user_name': 'msdhoni'}}, status_code = 201 
+2021-01-01 15:37:37,140:DEBUG:{'status': False, 'message': 'email or password is incorrect', 'status_code': 400}, status_code = 400 
+2021-01-01 15:37:37,140:WARNING:Bad Request: /login/
+2021-01-01 15:37:42,120:DEBUG:{'status': False, 'message': 'email or password is incorrect', 'status_code': 400}, status_code = 400 
+2021-01-01 15:37:42,121:WARNING:Bad Request: /login/
+2021-01-01 15:37:44,584:DEBUG:{'status': False, 'message': 'email or password is incorrect', 'status_code': 400}, status_code = 400 
+2021-01-01 15:37:44,584:WARNING:Bad Request: /login/
+2021-01-01 15:38:16,947:DEBUG:{'status': False, 'message': 'email or password is incorrect', 'status_code': 400}, status_code = 400 
+2021-01-01 15:38:16,948:WARNING:Bad Request: /login/
+2021-01-01 15:39:16,639:WARNING:Not Found: /favicon.ico
+2021-01-01 15:40:15,011:DEBUG:Using selector: SelectSelector
+2021-01-01 15:44:04,862:DEBUG:{'status': False, 'message': 'email or password is incorrect', 'status_code': 400}, status_code = 400 
+2021-01-01 15:44:04,863:WARNING:Bad Request: /login/
+2021-01-01 15:44:08,284:DEBUG:{'status': False, 'message': 'email or password is incorrect', 'status_code': 400}, status_code = 400 
+2021-01-01 15:44:08,285:WARNING:Bad Request: /login/
+2021-01-01 15:44:19,822:DEBUG:Using selector: SelectSelector
+2021-01-01 15:45:52,504:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Nn0.NZbwdByCHPlxXpTYmB0ZdiY-kb2DMy4-vnarVBD1lFA'}}, status_code = 200 
+2021-01-01 15:45:57,881:DEBUG:Using selector: SelectSelector
+2021-01-01 15:46:18,295:DEBUG:{'status': False, 'message': 'please verify your account first to login', 'status_code': 400}, status_code = 400 
+2021-01-01 15:46:18,297:WARNING:Bad Request: /login/
+2021-01-01 15:46:29,791:DEBUG:Using selector: SelectSelector
+2021-01-01 15:47:28,994:DEBUG:Using selector: SelectSelector
+2021-01-01 15:49:15,224:DEBUG:Using selector: SelectSelector
+2021-01-01 15:49:50,488:DEBUG:Using selector: SelectSelector
+2021-01-01 15:50:04,903:DEBUG:Using selector: SelectSelector
+2021-01-01 15:50:30,295:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'mahi', 'last_name': 'dhoni', 'email': 'msdhoni@gmail.com', 'user_name': 'msdhoni'}}, status_code = 201 
+2021-01-01 15:50:42,936:DEBUG:{'status': False, 'message': 'please verify your account first to login', 'status_code': 400}, status_code = 400 
+2021-01-01 15:50:42,937:WARNING:Bad Request: /login/
+2021-01-01 15:50:45,499:DEBUG:{'status': False, 'message': 'please verify your account first to login', 'status_code': 400}, status_code = 400 
+2021-01-01 15:50:45,500:WARNING:Bad Request: /login/
+2021-01-01 15:50:57,781:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6N30.u8tQmYe21yFLPlb5ABDzRHAG7XGE2zugyDhD3IA5K1s'}}, status_code = 200 
+2021-01-01 15:51:08,613:DEBUG:Using selector: SelectSelector
+2021-01-01 16:08:10,512:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'password': [ErrorDetail(string='Ensure this field has at least 6 characters.', code='min_length')]}
+2021-01-01 16:08:10,515:WARNING:Bad Request: /login/
+2021-01-01 16:11:31,531:DEBUG:Using selector: SelectSelector
+2021-01-01 16:31:03,176:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'email': [ErrorDetail(string='This field may not be blank.', code='blank')], 'password': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2021-01-01 16:31:03,179:WARNING:Bad Request: /login/
+2021-01-01 16:31:46,350:DEBUG:Using selector: SelectSelector
+2021-01-01 16:36:13,639:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 16:36:13,639:DEBUG:Using selector: SelectSelector
+2021-01-01 16:36:25,071:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'email': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2021-01-01 16:36:25,073:WARNING:Bad Request: /login/
+2021-01-01 16:36:27,944:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'email': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2021-01-01 16:36:27,945:WARNING:Bad Request: /login/
+2021-01-01 16:46:44,258:DEBUG:Using selector: SelectSelector
+2021-01-01 22:43:36,829:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+2021-01-01 22:44:06,301:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+2021-01-01 22:44:06,305:WARNING:Bad Request: /login/
+2021-01-01 22:44:29,020:DEBUG:Using selector: SelectSelector
+2021-01-01 22:45:11,367:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'email': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2021-01-01 22:45:11,370:WARNING:Bad Request: /login/
+2021-01-01 22:45:37,243:DEBUG:Using selector: SelectSelector
+2021-01-01 22:48:30,261:DEBUG:{'status': False, 'message': 'email field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 22:48:30,263:WARNING:Bad Request: /login/
+2021-01-01 22:48:45,804:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'email'
+2021-01-01 22:48:45,804:WARNING:Bad Request: /login/
+2021-01-01 22:49:31,853:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 22:49:31,854:DEBUG:Using selector: SelectSelector
+2021-01-01 22:49:35,531:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'email'
+2021-01-01 22:49:35,532:WARNING:Bad Request: /login/
+2021-01-01 22:49:42,138:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'email'
+2021-01-01 22:49:42,139:WARNING:Bad Request: /login/
+2021-01-01 22:54:40,310:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'email'
+2021-01-01 22:54:40,312:WARNING:Bad Request: /login/
+2021-01-01 22:56:45,320:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'email'
+2021-01-01 22:56:45,322:WARNING:Bad Request: /login/
+2021-01-01 22:57:42,423:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 22:57:42,423:DEBUG:Using selector: SelectSelector
+2021-01-01 22:57:47,980:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'email'
+2021-01-01 22:57:47,983:WARNING:Bad Request: /login/
+2021-01-01 22:58:44,270:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 22:58:44,270:DEBUG:Using selector: SelectSelector
+2021-01-01 22:58:58,461:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 22:58:58,461:DEBUG:Using selector: SelectSelector
+2021-01-01 22:59:09,884:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 22:59:09,884:DEBUG:Using selector: SelectSelector
+2021-01-01 22:59:14,768:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'email'
+2021-01-01 22:59:14,770:WARNING:Bad Request: /login/
+2021-01-01 22:59:26,996:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 22:59:27,012:DEBUG:Using selector: SelectSelector
+2021-01-01 22:59:32,441:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'str' object has no attribute 'exists'
+2021-01-01 22:59:32,443:WARNING:Bad Request: /login/
+2021-01-01 22:59:50,915:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'str' object has no attribute 'exists'
+2021-01-01 22:59:50,916:WARNING:Bad Request: /login/
+2021-01-01 22:59:53,103:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'str' object has no attribute 'exists'
+2021-01-01 22:59:53,104:WARNING:Bad Request: /login/
+2021-01-01 23:00:37,926:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:00:37,926:DEBUG:Using selector: SelectSelector
+2021-01-01 23:00:42,637:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'QueryDict' object has no attribute 'email'
+2021-01-01 23:00:42,658:WARNING:Bad Request: /login/
+2021-01-01 23:01:20,214:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:01:20,214:DEBUG:Using selector: SelectSelector
+2021-01-01 23:01:24,461:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'QueryDict' object has no attribute 'email'
+2021-01-01 23:01:24,469:WARNING:Bad Request: /login/
+2021-01-01 23:01:26,350:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'QueryDict' object has no attribute 'email'
+2021-01-01 23:01:26,351:WARNING:Bad Request: /login/
+2021-01-01 23:01:46,790:DEBUG:Using selector: SelectSelector
+2021-01-01 23:05:46,670:DEBUG:{'status': False, 'message': 'email field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:05:46,672:WARNING:Bad Request: /login/
+2021-01-01 23:05:54,049:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-01 23:05:58,776:DEBUG:{'status': False, 'message': 'email field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:05:58,776:WARNING:Bad Request: /login/
+2021-01-01 23:06:03,513:DEBUG:{'status': False, 'message': 'email field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:06:03,513:WARNING:Bad Request: /login/
+2021-01-01 23:06:11,721:DEBUG:Using selector: SelectSelector
+2021-01-01 23:07:13,276:DEBUG:{'status': False, 'message': 'email field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:07:13,278:WARNING:Bad Request: /login/
+2021-01-01 23:07:24,087:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-01 23:07:30,164:DEBUG:{'status': False, 'message': 'password field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:07:30,165:WARNING:Bad Request: /login/
+2021-01-01 23:07:32,312:DEBUG:{'status': False, 'message': 'password field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:07:32,313:WARNING:Bad Request: /login/
+2021-01-01 23:07:35,366:DEBUG:{'status': False, 'message': 'password field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:07:35,366:WARNING:Bad Request: /login/
+2021-01-01 23:07:36,459:DEBUG:{'status': False, 'message': 'password field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:07:36,460:WARNING:Bad Request: /login/
+2021-01-01 23:07:37,382:DEBUG:{'status': False, 'message': 'password field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:07:37,383:WARNING:Bad Request: /login/
+2021-01-01 23:07:54,405:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-01 23:08:00,548:DEBUG:Using selector: SelectSelector
+2021-01-01 23:13:08,897:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-01 23:13:26,240:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:13:26,240:DEBUG:Using selector: SelectSelector
+2021-01-01 23:13:49,444:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:13:49,444:DEBUG:Using selector: SelectSelector
+2021-01-01 23:14:01,842:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:14:01,842:DEBUG:Using selector: SelectSelector
+2021-01-01 23:14:07,915:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-01 23:14:19,874:DEBUG:Using selector: SelectSelector
+2021-01-01 23:14:31,871:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-01 23:16:22,643:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = name 'EmptyField' is not defined
+2021-01-01 23:16:22,645:WARNING:Bad Request: /login/
+2021-01-01 23:18:21,565:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\utils.py changed, reloading.
+2021-01-01 23:18:21,565:DEBUG:Using selector: SelectSelector
+2021-01-01 23:22:12,335:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = module 'notes.utils' has no attribute 'validate_data'
+2021-01-01 23:22:12,346:WARNING:Bad Request: /login/
+2021-01-01 23:22:14,181:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = module 'notes.utils' has no attribute 'validate_data'
+2021-01-01 23:22:14,182:WARNING:Bad Request: /login/
+2021-01-01 23:23:18,806:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:23:18,806:DEBUG:Using selector: SelectSelector
+2021-01-01 23:23:24,113:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = module 'notes.utils' has no attribute 'validate_data'
+2021-01-01 23:23:24,117:WARNING:Bad Request: /login/
+2021-01-01 23:24:19,844:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:24:19,844:DEBUG:Using selector: SelectSelector
+2021-01-01 23:24:24,569:DEBUG:{'status': False, 'message': 'email field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:24:24,572:WARNING:Bad Request: /login/
+2021-01-01 23:24:34,296:DEBUG:{'status': False, 'message': 'password field should not be empty', 'status_code': 400}, status_code = 400 
+2021-01-01 23:24:34,297:WARNING:Bad Request: /login/
+2021-01-01 23:24:42,612:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-01 23:26:50,626:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:26:50,626:DEBUG:Using selector: SelectSelector
+2021-01-01 23:28:40,877:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\utils.py changed, reloading.
+2021-01-01 23:28:40,877:DEBUG:Using selector: SelectSelector
+2021-01-01 23:35:14,195:DEBUG:Using selector: SelectSelector
+2021-01-01 23:50:33,142:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'email': [ErrorDetail(string='Ensure this field has no more than 50 characters.', code='max_length'), ErrorDetail(string='Enter a valid email address.', code='invalid')]}
+2021-01-01 23:50:33,143:WARNING:Bad Request: /register/
+2021-01-01 23:51:22,712:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:51:22,712:DEBUG:Using selector: SelectSelector
+2021-01-01 23:51:27,758:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = '>' not supported between instances of 'str' and 'int'
+2021-01-01 23:51:27,761:WARNING:Bad Request: /register/
+2021-01-01 23:52:08,256:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\utils.py changed, reloading.
+2021-01-01 23:52:08,256:DEBUG:Using selector: SelectSelector
+2021-01-01 23:52:33,842:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\utils.py changed, reloading.
+2021-01-01 23:52:33,857:DEBUG:Using selector: SelectSelector
+2021-01-01 23:52:38,598:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = invalid literal for int() with base 10: 'msdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmai
+2021-01-01 23:52:38,618:WARNING:Bad Request: /register/
+2021-01-01 23:55:20,297:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\utils.py changed, reloading.
+2021-01-01 23:55:20,297:DEBUG:Using selector: SelectSelector
+2021-01-01 23:55:24,921:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = invalid literal for int() with base 10: 'msdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmail.commsdhoni@gmai
+2021-01-01 23:55:24,923:WARNING:Bad Request: /register/
+2021-01-01 23:56:12,937:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\utils.py changed, reloading.
+2021-01-01 23:56:12,937:DEBUG:Using selector: SelectSelector
+2021-01-01 23:56:16,960:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = email maximum length should be 50 character
+2021-01-01 23:56:16,963:WARNING:Bad Request: /register/
+2021-01-01 23:57:29,502:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-01 23:57:29,502:DEBUG:Using selector: SelectSelector
+2021-01-01 23:57:33,932:DEBUG:{'status': False, 'message': 'email maximum length should be 50 character', 'status_code': 400}, status_code = 400 
+2021-01-01 23:57:33,938:WARNING:Bad Request: /register/
+2021-01-01 23:58:35,228:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\utils.py changed, reloading.
+2021-01-01 23:58:35,228:DEBUG:Using selector: SelectSelector
+2021-01-01 23:59:15,902:DEBUG:{'status': False, 'message': 'lastname maximum length should be 20 character', 'status_code': 400}, status_code = 400 
+2021-01-01 23:59:15,911:WARNING:Bad Request: /register/
+2021-01-02 00:00:06,189:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\utils.py changed, reloading.
+2021-01-02 00:00:06,189:DEBUG:Using selector: SelectSelector
+2021-01-02 00:00:24,569:DEBUG:{'status': False, 'message': 'username maximum length should be 20 character', 'status_code': 400}, status_code = 400 
+2021-01-02 00:00:24,604:WARNING:Bad Request: /register/
+2021-01-02 00:04:02,921:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-02 00:04:02,921:DEBUG:Using selector: SelectSelector
+2021-01-02 00:04:35,683:ERROR:Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 426, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2021-01-02 00:05:20,587:DEBUG:Using selector: SelectSelector
+2021-01-02 00:05:29,607:ERROR:Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 426, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2021-01-02 00:05:45,103:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py changed, reloading.
+2021-01-02 00:05:45,103:DEBUG:Using selector: SelectSelector
+2021-01-02 00:05:50,351:ERROR:Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 426, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2021-01-02 00:06:17,051:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-02 00:06:17,051:DEBUG:Using selector: SelectSelector
+2021-01-02 00:06:22,245:ERROR:Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 426, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2021-01-02 00:08:16,979:DEBUG:{'status': False, 'message': 'username maximum length should be 20 character', 'status_code': 400}, status_code = 400 
+2021-01-02 00:08:16,979:WARNING:Bad Request: /register/
+2021-01-02 00:09:06,376:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-02 00:09:06,376:DEBUG:Using selector: SelectSelector
+2021-01-02 00:09:17,499:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = local variable 'user_data' referenced before assignment
+2021-01-02 00:09:17,502:WARNING:Bad Request: /register/
+2021-01-02 00:10:19,760:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-02 00:10:19,760:DEBUG:Using selector: SelectSelector
+2021-01-02 00:10:24,987:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = tlocal variable 'user_data' referenced before assignmen
+2021-01-02 00:10:24,989:WARNING:Bad Request: /register/
+2021-01-02 00:10:52,260:DEBUG:Using selector: SelectSelector
+2021-01-02 00:14:27,956:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201}, status_code = 201 
+2021-01-02 00:14:58,512:WARNING:Not Found: /favicon.ico
+2021-01-02 00:16:15,945:DEBUG:Using selector: SelectSelector
+2021-01-02 00:18:12,951:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+2021-01-02 00:18:12,953:WARNING:Bad Request: /register/
+2021-01-02 00:18:48,699:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'username': [ErrorDetail(string='The username should only contain alphanumeric characters', code='invalid')]}
+2021-01-02 00:18:48,700:WARNING:Bad Request: /register/
+2021-01-02 00:19:09,986:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-02 00:19:09,986:DEBUG:Using selector: SelectSelector
+2021-01-02 00:19:14,149:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'username': [ErrorDetail(string='The username should only contain alphanumeric characters', code='invalid')]}
+2021-01-02 00:19:14,168:WARNING:Bad Request: /register/
+2021-01-02 00:19:16,902:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'username': [ErrorDetail(string='The username should only contain alphanumeric characters', code='invalid')]}
+2021-01-02 00:19:16,903:WARNING:Bad Request: /register/
+2021-01-02 00:20:10,725:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py changed, reloading.
+2021-01-02 00:20:10,725:DEBUG:Using selector: SelectSelector
+2021-01-02 00:20:15,928:DEBUG:{'status': False, 'message': 'username should contain only alphanumeric characters', 'status_code': 400}, status_code = 400 
+2021-01-02 00:20:15,930:WARNING:Bad Request: /register/
+2021-01-02 00:20:20,142:DEBUG:{'status': False, 'message': 'username should contain only alphanumeric characters', 'status_code': 400}, status_code = 400 
+2021-01-02 00:20:20,142:WARNING:Bad Request: /register/
+2021-01-02 00:20:51,475:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-02 00:20:51,475:DEBUG:Using selector: SelectSelector
+2021-01-02 00:21:07,405:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'mahi', 'last_name': 'dhoni', 'email': 'msdhoni12@gmail.com', 'user_name': 'msdhoni'}}, status_code = 201 
+2021-01-02 00:21:51,050:DEBUG:Using selector: SelectSelector
+2021-01-02 00:27:22,323:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-02 00:27:48,377:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 00:27:48,383:DEBUG:{'status': False, 'message': 'Please enter valid Note id', 'status_code': 404}, status_code = 404 
+2021-01-02 00:27:48,384:WARNING:Not Found: /note/12
+2021-01-02 00:27:56,325:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 00:27:56,361:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': {'id': 10, 'title': 'virat first note', 'description': 'this is my testing note for put', 'created_time': '2020-12-30T04:45:30.823194Z', 'updated_time': '2020-12-30T17:50:20.187364Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [9, 8], 'collaborate': [2, 1]}}, status_code = 200 
+2021-01-02 00:28:03,859:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 00:28:03,898:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': [OrderedDict([('id', 10), ('title', 'virat first note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:45:30.823194Z'), ('updated_time', '2020-12-30T17:50:20.187364Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 1), ('label', [9, 8]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'tarun first note'), ('description', 'this is my first note'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2020-12-30T04:48:19.672731Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'tarun first note'), ('description', 'this is my first note'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2020-12-30T04:48:19.672731Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])]), OrderedDict([('id', 14), ('title', 'my testing note'), ('description', 'this is my second note'), ('created_time', '2020-12-31T04:25:06.620071Z'), ('updated_time', '2020-12-31T04:25:06.620071Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [9, 8]), ('collaborate', [2])]), OrderedDict([('id', 15), ('title', 'my testing note'), ('description', 'this is my second note'), ('created_time', '2020-12-31T06:26:32.023889Z'), ('updated_time', '2020-12-31T06:26:32.023889Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [9, 8]), ('collaborate', [2])])]}, status_code = 200 
+2021-01-02 00:28:24,832:WARNING:Not Found: /note/'13'
+2021-01-02 00:29:39,020:DEBUG:Using selector: SelectSelector
+2021-01-02 00:29:54,040:WARNING:Not Found: /note/'13'
+2021-01-02 00:30:22,710:WARNING:Not Found: /note/'13'
+2021-01-02 00:30:35,090:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 00:31:56,005:WARNING:Not Found: /note/'12'
+2021-01-02 00:36:10,366:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-02 00:36:14,508:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 00:36:14,581:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': [OrderedDict([('id', 10), ('title', 'virat first note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:45:30.823194Z'), ('updated_time', '2020-12-30T17:50:20.187364Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 1), ('label', [9, 8]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'tarun first note'), ('description', 'this is my first note'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2020-12-30T04:48:19.672731Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'tarun first note'), ('description', 'this is my first note'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2020-12-30T04:48:19.672731Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])]), OrderedDict([('id', 14), ('title', 'my testing note'), ('description', 'this is my second note'), ('created_time', '2020-12-31T04:25:06.620071Z'), ('updated_time', '2020-12-31T04:25:06.620071Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [9, 8]), ('collaborate', [2])]), OrderedDict([('id', 15), ('title', 'my testing note'), ('description', 'this is my second note'), ('created_time', '2020-12-31T06:26:32.023889Z'), ('updated_time', '2020-12-31T06:26:32.023889Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [9, 8]), ('collaborate', [2])])]}, status_code = 200 
+2021-01-02 00:36:27,794:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 00:36:27,796:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = JSON parse error - Expecting value: line 2 column 12 (char 15)
+2021-01-02 00:36:27,797:WARNING:Bad Request: /note/
+2021-01-02 00:45:52,542:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 00:56:53,127:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 00:56:53,148:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'title'
+2021-01-02 00:56:53,149:WARNING:Bad Request: /note/
+2021-01-02 00:57:51,537:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 00:57:51,538:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = JSON parse error - Expecting value: line 2 column 11 (char 14)
+2021-01-02 00:57:51,538:WARNING:Bad Request: /note/
+2021-01-02 01:00:38,459:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-02 01:00:38,459:DEBUG:Using selector: SelectSelector
+2021-01-02 01:00:45,302:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:00:45,303:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = JSON parse error - Expecting value: line 2 column 11 (char 14)
+2021-01-02 01:00:45,304:WARNING:Bad Request: /note/
+2021-01-02 01:01:10,075:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:01:10,091:DEBUG:{'status': False, 'message': 'title and description required', 'status_code': 400}, status_code = 400, exception = title and description required
+2021-01-02 01:01:10,092:WARNING:Bad Request: /note/
+2021-01-02 01:01:25,310:DEBUG:{'message': 'you are not logged in', 'status': False} status_code = 400
+2021-01-02 01:01:31,192:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-02 01:01:36,359:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:01:36,373:DEBUG:{'status': False, 'message': 'title and description required', 'status_code': 400}, status_code = 400, exception = title and description required
+2021-01-02 01:01:36,374:WARNING:Bad Request: /note/
+2021-01-02 01:01:44,159:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:01:44,222:DEBUG:{'status': True, 'message': 'Note Added Successfully', 'status_code': 201, 'data': {'id': 16, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2021-01-01T19:31:44.185518Z', 'updated_time': '2021-01-01T19:31:44.185518Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 2, 'label': [9, 8], 'collaborate': [2]}}, status_code = 201 
+2021-01-02 01:03:20,157:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-02 01:03:20,157:DEBUG:Using selector: SelectSelector
+2021-01-02 01:03:46,197:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:03:46,222:DEBUG:{'status': False, 'message': 'title should be less than 150 characters', 'status_code': 400}, status_code = 400, exception = title should be less than 150 characters
+2021-01-02 01:03:46,223:WARNING:Bad Request: /note/
+2021-01-02 01:04:00,963:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:04:01,017:DEBUG:{'status': True, 'message': 'Note Added Successfully', 'status_code': 201, 'data': {'id': 17, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2021-01-01T19:34:00.985905Z', 'updated_time': '2021-01-01T19:34:00.985905Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 2, 'label': [9, 8], 'collaborate': [2]}}, status_code = 201 
+2021-01-02 01:09:39,770:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\myexceptions.py changed, reloading.
+2021-01-02 01:09:39,770:DEBUG:Using selector: SelectSelector
+2021-01-02 01:09:51,715:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:09:51,743:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': {'id': 11, 'title': 'tarun first note', 'description': 'this is my first note', 'created_time': '2020-12-30T04:48:19.672731Z', 'updated_time': '2020-12-30T04:48:19.672731Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 2, 'label': [12, 13], 'collaborate': [2, 1]}}, status_code = 200 
+2021-01-02 01:09:57,641:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:09:57,665:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': {'id': 10, 'title': 'virat first note', 'description': 'this is my testing note for put', 'created_time': '2020-12-30T04:45:30.823194Z', 'updated_time': '2020-12-30T17:50:20.187364Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [9, 8], 'collaborate': [2, 1]}}, status_code = 200 
+2021-01-02 01:10:03,362:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:10:03,367:DEBUG:{'status': False, 'message': 'Please enter valid Note id', 'status_code': 404}, status_code = 404 
+2021-01-02 01:10:03,368:WARNING:Not Found: /note/9
+2021-01-02 01:10:36,712:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-02 01:10:36,724:DEBUG:{'status': False, 'message': 'No such note exist', 'status_code': 401}, status_code = 401, exception = No such note exist
+2021-01-02 01:10:36,725:WARNING:Unauthorized: /note/13
+2021-01-02 01:11:26,625:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-02 01:11:26,625:DEBUG:Using selector: SelectSelector
+2021-01-02 01:11:38,778:DEBUG:Using selector: SelectSelector
+2021-01-02 09:23:21,312:WARNING:Not Found: /note/'12'
+2021-01-02 09:23:22,060:WARNING:Not Found: /favicon.ico
+2021-01-02 09:25:20,438:DEBUG:Using selector: SelectSelector
+2021-01-02 09:45:50,600:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\labels\views.py changed, reloading.
+2021-01-02 09:45:50,600:DEBUG:Using selector: SelectSelector
+2021-01-02 09:46:13,189:DEBUG:Using selector: SelectSelector

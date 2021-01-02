@@ -20,6 +20,8 @@ from decouple import config
 from rest_framework.exceptions import AuthenticationFailed
 from notes import utils
 from services.encrypt import Encrypt
+from services.myexceptions import (InvalidCredentials, UnVerifiedAccount, EmptyField, LengthError, ValidationError)
+from .utils import Validation
 
 logging.basicConfig(filename='users.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -41,17 +43,25 @@ class LoginAPIView(generics.GenericAPIView):
         :return: return json data if credentials are matched
         """
         try:
-            serializer = self.serializer_class(data=request.data)
-            serializer.is_valid(raise_exception=True)
-            user = Account.objects.get(email=serializer.data['email'])
-            token = Encrypt.encode(user.id)
-            cache = Cache()
-            cache.set_cache("TOKEN_" + str(user.id) + "_AUTH", token)
-            result = {'token': token}
-            return utils.manage_response(status=True, message="login successful", data=result,
-                                         status_code=status.HTTP_200_OK)
-        except AuthenticationFailed as e:
-            return utils.manage_response(status=False, message=str(e),
+            data = request.data
+            if Validation.validate_data(data):
+                serializer = self.serializer_class(data=data)
+                serializer.is_valid(raise_exception=True)
+                user = Account.objects.get(email=serializer.data['email'])
+                token = Encrypt.encode(user.id)
+                cache = Cache()
+                cache.set_cache("TOKEN_" + str(user.id) + "_AUTH", token)
+                result = {'token': token}
+                return utils.manage_response(status=True, message="login successful", data=result,
+                                             status_code=status.HTTP_200_OK)
+        except EmptyField as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except InvalidCredentials as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except UnVerifiedAccount as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
@@ -71,20 +81,31 @@ class RegisterView(generics.GenericAPIView):
         :rtype: user data and its status if credentials are valid
         """
         try:
-            serializer = self.serializer_class(data=request.data)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            user_data = serializer.data
-            user = Account.objects.get(email=user_data['email'])
-            token = RefreshToken.for_user(user).access_token
-            absolute_url = request.build_absolute_uri(reverse('email-verify')) + "?token=" + str(token)
-            email_body = 'Hi ' + user.user_name + \
-                         ', \n Use the link below to verify your email \n' + absolute_url
-            data = {'email_body': email_body, 'to_email': user.email,
-                    'email_subject': 'Verify your email'}
-            Util.send_email(data)
-            return utils.manage_response(status=True, message="Account created successfully", data=user_data,
-                                         status_code=status.HTTP_201_CREATED)
+            data = request.data
+            if Validation.validate_data(data) and Validation.validate_register(data):
+                serializer = self.serializer_class(data=data)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
+                user_data = serializer.data
+                user = Account.objects.get(email=user_data['email'])
+                token = RefreshToken.for_user(user).access_token
+                absolute_url = request.build_absolute_uri(reverse('email-verify')) + "?token=" + str(token)
+                email_body = 'Hi ' + user.user_name + \
+                             ', \n Use the link below to verify your email \n' + absolute_url
+                data = {'email_body': email_body, 'to_email': user.email,
+                        'email_subject': 'Verify your email'}
+                Util.send_email(data)
+                return utils.manage_response(status=True, message="Account created successfully", data=user_data,
+                                             status_code=status.HTTP_201_CREATED)
+        except ValidationError as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except LengthError as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+        except EmptyField as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),

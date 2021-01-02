@@ -7,6 +7,7 @@ from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
 import jwt
+from services.myexceptions import (InvalidCredentials, UnVerifiedAccount, EmptyField, ValidationError)
 
 
 class RegisterSerializer(ModelSerializer):
@@ -32,8 +33,7 @@ class RegisterSerializer(ModelSerializer):
         user_name = attrs.get('user_name', '')
 
         if not user_name.isalnum():
-            raise serializers.ValidationError(
-                self.default_error_messages)
+            raise ValidationError('username should contain only alphanumeric characters')
         return attrs
 
     def create(self, validated_data):
@@ -77,9 +77,9 @@ class LoginSerializer(ModelSerializer):
         password = attrs.get('password', '')
         user = auth.authenticate(email=email, password=password)
         if not user:
-            raise AuthenticationFailed('Invalid credentials, try again')
-        if not user.is_active:
-            raise AuthenticationFailed('Account disabled, contact admin')
+            raise InvalidCredentials('email or password is incorrect')
+        if not user.is_verified:
+            raise UnVerifiedAccount('please verify your account first to login')
 
         return {
             'email': user.email
