@@ -306,9 +306,15 @@ class TrashView(APIView):
 
 @method_decorator(user_login_required, name='dispatch')
 class SearchNote(APIView):
-
+    """
+    this class will return all requested search notes to which the user have permission to access
+    """
     def get(self, request, **kwargs):
-
+        """
+        this method takes user id from kwargs and return all the search note if exist.
+        :param kwargs: it takes user account object as input
+        :return: all the notes which user have requested
+        """
         try:
             current_user = kwargs.get('user').id
             search_terms = request.data.get('search_term')
