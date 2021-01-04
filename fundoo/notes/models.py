@@ -32,4 +32,5 @@ class Note(models.Model):
         this class is used to change the status of is_deleted to true
         """
         self.is_deleted = True
+        self.trash = True
         self.save()

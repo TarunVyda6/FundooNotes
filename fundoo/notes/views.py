@@ -10,6 +10,7 @@ from fundooapp.decorator import user_login_required
 from django.db.models import Q
 from services.myexceptions import (InvalidCredentials, UnVerifiedAccount, EmptyField, LengthError, ValidationError,
                                    UnAuthorized)
+from services.cache import Cache
 
 User = get_user_model()
 
@@ -41,11 +42,11 @@ class Notes(APIView):
             serializer = NoteSerializer(data=data)
             if 'title' not in data or data['title'] is '' or 'description' not in data or data['description'] is '':
                 raise ValidationError("title and description required")
-
             if serializer.is_valid():
                 serializer.save()
                 return utils.manage_response(status=True, message='Note Added Successfully', data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
+            print(serializer.errors)
             raise LengthError('title should be less than 150 characters')
         except LengthError as e:
             return utils.manage_response(status=False, message=str(e),
@@ -68,21 +69,19 @@ class Notes(APIView):
 
         try:
             if kwargs.get('pk'):
-                item = Note.objects.get(pk=kwargs.get('pk'), is_deleted=False)
-                collaborators = item.collaborate.all()
-                collaborator_list = list(map(lambda items: items.id, collaborators))
-                if kwargs.get('user').id in collaborator_list:
-                    serializer = NoteSerializer(item)
-
-                    return utils.manage_response(status=True, message="data retrieved successfully",
-                                                 data=serializer.data,
-                                                 status_code=status.HTTP_200_OK)
-                else:
-                    raise UnAuthorized("No such note exist")
+                notes = Note.objects.filter(Q(pk=kwargs.get('pk')) &
+                                            (Q(user=kwargs.get('user').id) | Q(
+                                                collaborate=kwargs.get('user').id))).exclude(trash=True).first()
+                if notes is None:
+                    raise UnAuthorized("note doesn't exist")
+                serializer = NoteSerializer(notes)
+                return utils.manage_response(status=True, message="data retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
 
             else:
                 notes = Note.objects.filter(
-                    Q(user=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)).exclude(is_deleted=True)
+                    Q(user=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)).exclude(trash=True)
                 serializer = NoteSerializer(notes, many=True)
                 return utils.manage_response(status=True, message="data retrieved successfully",
                                              data=serializer.data,
@@ -107,19 +106,19 @@ class Notes(APIView):
 
         try:
 
-            item = Note.objects.get(pk=kwargs.get('pk'), is_deleted=False)
-            collaborators = item.collaborate.all()
-            collaborator_list = list(map(lambda items: items.id, collaborators))
-            if kwargs.get('user').id in collaborator_list:
-                data = request.data
-                serializer = NoteSerializer(item, data=data, partial=True)
-                if serializer.is_valid():
-                    serializer.save()
-                    return utils.manage_response(status=True, message="Note Update Successfully", data=serializer.data,
-                                                 status_code=status.HTTP_201_CREATED)
-                raise ValidationError("You have entered invalid details")
-            else:
-                raise UnAuthorized('no such note found')
+            item = Note.objects.filter(Q(pk=kwargs.get('pk')) &
+                                       (Q(user=kwargs.get('user').id) | Q(
+                                           collaborate=kwargs.get('user').id))).exclude(trash=True).first()
+            if item is None:
+                raise UnAuthorized("Note doesn't exist")
+            data = request.data
+            serializer = NoteSerializer(item, data=data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return utils.manage_response(status=True, message="Note Update Successfully", data=serializer.data,
+                                             status_code=status.HTTP_201_CREATED)
+            raise ValidationError("You have entered invalid details")
+
         except ValidationError as e:
             return utils.manage_response(status=False, message=str(e), exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
@@ -141,21 +140,202 @@ class Notes(APIView):
         """
 
         try:
-            note = Note.objects.get(id=kwargs.get('pk'), is_deleted=False)
-            collaborators = note.collaborate.all()
-            collaborator_list = list(map(lambda items: items.id, collaborators))
-            if kwargs.get('user').id in collaborator_list:
-                note.soft_delete()
-                return utils.manage_response(status=True, message="Note Deleted Successfully",
-                                             status_code=status.HTTP_202_ACCEPTED)
-            else:
+            note = Note.objects.filter(Q(pk=kwargs.get('pk')) &
+                                       (Q(user=kwargs.get('user').id) | Q(
+                                           collaborate=kwargs.get('user').id))).exclude(trash=True).first()
+            if note is None:
                 raise UnAuthorized('no such note found')
+
+            note.soft_delete()
+            return utils.manage_response(status=True, message="Note Deleted Successfully",
+                                         status_code=status.HTTP_202_ACCEPTED)
+
         except UnAuthorized as e:
             return utils.manage_response(status=False, message=str(e), exception=str(e),
                                          status_code=status.HTTP_404_NOT_FOUND)
         except Note.DoesNotExist:
             return utils.manage_response(status=False, message="Please enter valid Note id",
                                          status_code=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+
+
+@method_decorator(user_login_required, name="dispatch")
+class ArchivedView(APIView):
+    """
+    this class will return all archived notes to which the user have permission to access
+    """
+
+    def get(self, request, *args, **kwargs):
+        """
+        this method takes pk from url in kwargs and return the particular archived note if exist. else it will return
+        all archived notes of particular user
+        :param kwargs: it takes primary key and user account object as input
+        :return: all the request archived notes which user have requested
+        """
+        try:
+            if kwargs.get('pk'):
+                item = Note.objects.filter(Q(pk=kwargs.get('pk')) & Q(trash=False) & Q(is_archived=True) & (Q(
+                    user=kwargs.get('user').id) | Q(
+                    collaborate=kwargs.get('user').id))).first()
+                if item is None:
+                    raise UnAuthorized("Note doesn't exist")
+                serializer = NoteSerializer(item)
+                return utils.manage_response(status=True, message="archived note retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
+
+            else:
+                item = Note.objects.filter(
+                    (Q(user_id=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)) & Q(
+                        is_archived=True)).exclude(is_deleted=True)
+                if item is None:
+                    raise UnAuthorized("Note doesn't exist")
+                serializer = NoteSerializer(item, many=True)
+                return utils.manage_response(status=True, message="archived notes retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
+        except UnAuthorized as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_404_NOT_FOUND)
+        except Note.DoesNotExist:
+            return utils.manage_response(status=False, message="Please enter valid note id",
+                                         status_code=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+
+
+@method_decorator(user_login_required, name="dispatch")
+class PinnedView(APIView):
+    """
+    this class will return all pinned notes to which the user have permission to access
+    """
+
+    def get(self, request, *args, **kwargs):
+        """
+        this method takes pk from url in kwargs and return the particular pinned note if exist. else it will return
+        all pinned notes of particular user
+        :param kwargs: it takes primary key and user account object as input
+        :return: all the request pinned notes which user have requested
+        """
+        try:
+            if kwargs.get('pk'):
+                item = Note.objects.filter(Q(pk=kwargs.get('pk')) & Q(trash=False) & Q(is_pinned=True) & (Q(
+                    user=kwargs.get('user').id) | Q(
+                    collaborate=kwargs.get('user').id))).first()
+                if item is None:
+                    raise UnAuthorized("Note doesn't exist")
+                serializer = NoteSerializer(item)
+                return utils.manage_response(status=True, message="pinned note retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
+
+            else:
+                item = Note.objects.filter(
+                    (Q(user_id=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)) & Q(
+                        is_pinned=True)).exclude(is_deleted=True)
+                if item is None:
+                    raise UnAuthorized("Note doesn't exist")
+                serializer = NoteSerializer(item, many=True)
+                return utils.manage_response(status=True, message="pinned notes retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
+        except UnAuthorized as e:
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_404_NOT_FOUND)
+        except Note.DoesNotExist:
+            return utils.manage_response(status=False, message="Please enter valid note id",
+                                         status_code=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+
+
+@method_decorator(user_login_required, name="dispatch")
+class TrashView(APIView):
+    """
+    this class will return all trash notes to which the user have permission to access
+    """
+
+    def get(self, request, *args, **kwargs):
+        """
+        this method takes pk from url in kwargs and return the particular trash note if exist. else it will return
+        all trash notes of particular user
+        :param kwargs: it takes primary key and user account object as input
+        :return: all the request trash notes which user have requested
+        """
+        try:
+            if kwargs.get('pk'):
+                item = Note.objects.filter(Q(pk=kwargs.get('pk')) & Q(is_deleted=False) & Q(trash=True) & (Q(
+                    user=kwargs.get('user').id) | Q(
+                    collaborate=kwargs.get('user').id))).first()
+                if item is None:
+                    raise UnAuthorized("Note doesn't exist")
+                serializer = NoteSerializer(item)
+                return utils.manage_response(status=True, message="Trashed note retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
+
+            else:
+                item = Note.objects.filter(
+                    (Q(user_id=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)) & Q(
+                        trash=True)).exclude(is_deleted=True)
+                if item is None:
+                    raise UnAuthorized("Note doesn't exist")
+                serializer = NoteSerializer(item, many=True)
+                return utils.manage_response(status=True, message="Trashed notes retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
+        except UnAuthorized as e:
+            print("entered")
+            return utils.manage_response(status=False, message=str(e), exception=str(e),
+                                         status_code=status.HTTP_404_NOT_FOUND)
+        except Note.DoesNotExist as e:
+            return utils.manage_response(status=False, message="Please enter valid note id", exception=str(e),
+                                         status_code=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return utils.manage_response(status=False, message='some other issue please try after some time',
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
+
+
+@method_decorator(user_login_required, name='dispatch')
+class SearchNote(APIView):
+
+    def get(self, request, **kwargs):
+
+        try:
+            current_user = kwargs.get('user').id
+            search_terms = request.data.get('search_term')
+            search_term_list = search_terms.split(' ')
+
+            if search_terms == '':
+                raise EmptyField('please enter the note you want to search')
+
+            notes = Note.objects.filter(Q(user=current_user) | Q(collaborate=current_user)).exclude(
+                trash=True)
+
+            search_query = Q(title__icontains=search_term_list[0]) | Q(description__icontains=search_term_list[0])
+
+            for term in search_term_list[1:]:
+                search_query.add((Q(title__icontains=term) | Q(description__icontains=term)),
+                                 search_query.AND)
+
+            notes = notes.filter(search_query)
+
+            serializer = NoteSerializer(notes, many=True)
+            return utils.manage_response(status=True, message='retrieved notes on the basis of search terms',
+                                         data=serializer.data,
+                                         status_code=status.HTTP_200_OK)
+        except EmptyField as e:
+            return utils.manage_response(status=False, message=str(e),
+                                         exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),

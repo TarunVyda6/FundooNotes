@@ -41,6 +41,11 @@ def user_login_required(view_func):
             logging.exception(
                 '{}, exception = {}, status_code = {}'.format(result, str(e), status.HTTP_400_BAD_REQUEST))
             return HttpResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
+        except KeyError as e:
+            result['message'] = 'please provide token key'
+            logging.exception(
+                '{}, exception = {}, status_code = {}'.format(result, str(e), status.HTTP_400_BAD_REQUEST))
+            return HttpResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             result['message'] = 'some other issue please try after some time'
             logging.exception(

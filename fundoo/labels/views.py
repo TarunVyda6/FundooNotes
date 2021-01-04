@@ -92,11 +92,12 @@ class Labels(APIView):
             item = Label.objects.get(pk=kwargs.get('pk'), is_deleted=False)
             if item.user == kwargs.get('user'):
                 serializer = LabelSerializer(item, data=request.data, partial=True)
+
                 if serializer.is_valid():
                     serializer.save()
                     return utils.manage_response(status=True, message="Label Update Successfully", data=serializer.data,
                                                  status_code=status.HTTP_201_CREATED)
-                raise LengthError('title should be less than 150 characters')
+                raise LengthError('title should be less than 50 characters')
             else:
                 raise UnAuthorized("No such note exist")
         except LengthError as e:
@@ -112,6 +113,7 @@ class Labels(APIView):
             return utils.manage_response(status=False, message="Please enter valid label id",
                                          status_code=status.HTTP_404_NOT_FOUND)
         except Exception as e:
+            print(e)
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
@@ -141,3 +143,4 @@ class Labels(APIView):
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
+

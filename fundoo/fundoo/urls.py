@@ -36,5 +36,12 @@ urlpatterns = [
     path('note/<int:pk>', note_view.Notes.as_view()),
     path('label/', label_view.Labels.as_view(), name="label-post"),
     path('label/<int:pk>', label_view.Labels.as_view(), name="label"),
+    path('note/archived/', note_view.ArchivedView.as_view(), name="archived"),
+    path('note/archived/<int:pk>', note_view.ArchivedView.as_view()),
+    path('note/pinned/', note_view.PinnedView.as_view(), name="pinned"),
+    path('note/pinned/<int:pk>', note_view.PinnedView.as_view()),
+    path('note/trash/', note_view.TrashView.as_view(), name="trash"),
+    path('note/trash/<int:pk>', note_view.TrashView.as_view()),
+    path('note/search/', note_view.SearchNote.as_view(), name="search")
 
 ]

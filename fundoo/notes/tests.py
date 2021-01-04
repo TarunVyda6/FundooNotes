@@ -1,9 +1,11 @@
 from rest_framework import status
-from rest_framework.test import APITestCase
+from django.test import TestCase
 from django.urls import reverse
+import pytest
 
 
-class Data(APITestCase):
+@pytest.mark.django_db
+class Data(TestCase):
     def setUp(self):
         self.register_url = reverse("register")
         self.note_post_url = reverse("note")
