@@ -34,14 +34,14 @@ class Validation:
         return True
 
     def validate_register(data: dict) -> object:
-        """
+        '''
         this method takes dictionary data as input and it validates the length of characters
         :return: True if the data is valid. else it raises LengthError Exception.
-        """
+        '''
         if len(data['email']) > 50:
             raise LengthError('email maximum length should be 50 character')
         if len(data['password']) > 68 and len(data['password'] <= 6):
-            raise LengthError('email maximum length should be 50 character')
+            raise LengthError('password maximum length should be 50 character')
         if len(data['last_name']) > 20:
             raise LengthError('lastname maximum length should be 20 character')
         if len(data['user_name']) > 20:

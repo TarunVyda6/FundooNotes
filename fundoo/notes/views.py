@@ -11,6 +11,7 @@ from django.db.models import Q
 from services.myexceptions import (InvalidCredentials, UnVerifiedAccount, EmptyField, LengthError, ValidationError,
                                    UnAuthorized)
 from services.cache import Cache
+from services.encrypt import Encrypt
 
 User = get_user_model()
 
@@ -46,7 +47,6 @@ class Notes(APIView):
                 serializer.save()
                 return utils.manage_response(status=True, message='Note Added Successfully', data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
-            print(serializer.errors)
             raise LengthError('title should be less than 150 characters')
         except LengthError as e:
             return utils.manage_response(status=False, message=str(e),
@@ -69,14 +69,22 @@ class Notes(APIView):
 
         try:
             if kwargs.get('pk'):
-                notes = Note.objects.filter(Q(pk=kwargs.get('pk')) &
-                                            (Q(user=kwargs.get('user').id) | Q(
-                                                collaborate=kwargs.get('user').id))).exclude(trash=True).first()
-                if notes is None:
-                    raise UnAuthorized("note doesn't exist")
-                serializer = NoteSerializer(notes)
+                cache = Cache()
+                if cache.get_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL") is not None:
+                    notes = cache.get_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL")
+                    notes = Encrypt.decode(notes)
+                else:
+                    notes = Note.objects.filter(Q(pk=kwargs.get('pk')) &
+                                                (Q(user=kwargs.get('user').id) | Q(
+                                                    collaborate=kwargs.get('user').id))).exclude(trash=True).first()
+                    if notes is None:
+                        raise UnAuthorized("note doesn't exist")
+                    serializer = NoteSerializer(notes)
+                    notes = serializer.data
+                    notes = Encrypt.encode(notes)
+                    cache.set_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL", notes)
                 return utils.manage_response(status=True, message="data retrieved successfully",
-                                             data=serializer.data,
+                                             data=notes,
                                              status_code=status.HTTP_200_OK)
 
             else:
@@ -115,6 +123,10 @@ class Notes(APIView):
             serializer = NoteSerializer(item, data=data, partial=True)
             if serializer.is_valid():
                 serializer.save()
+                cache = Cache()
+                notes = serializer.data
+                notes = Encrypt.encode(notes)
+                cache.set_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL", notes)
                 return utils.manage_response(status=True, message="Note Update Successfully", data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
             raise ValidationError("You have entered invalid details")
@@ -309,6 +321,7 @@ class SearchNote(APIView):
     """
     this class will return all requested search notes to which the user have permission to access
     """
+
     def get(self, request, **kwargs):
         """
         this method takes user id from kwargs and return all the search note if exist.

@@ -231,7 +231,7 @@ class NotesTest(Data):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
         response = self.client.get(self.note_url, HTTP_AUTHORIZATION=headers, format='json')
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         response = self.client.put(self.note_url, self.valid_note_put_data, HTTP_AUTHORIZATION=headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
