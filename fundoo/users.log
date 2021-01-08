@@ -2999,3 +2999,11 @@ TypeError: get() missing 1 required positional argument: 'params'
 2021-01-08 20:52:24,762:WARNING:Not Found: /favicon.ico
 2021-01-08 20:55:25,078:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\utils.py changed, reloading.
 2021-01-08 20:55:25,079:DEBUG:Using selector: SelectSelector
+2021-01-08 22:14:56,386:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-08 22:14:56,396:DEBUG:Using selector: SelectSelector
+2021-01-08 22:18:05,917:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-08 22:18:05,918:DEBUG:Using selector: SelectSelector
+2021-01-08 22:19:34,710:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-08 22:19:34,712:DEBUG:Using selector: SelectSelector
+2021-01-08 23:03:51,739:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-08 23:03:51,739:DEBUG:Using selector: SelectSelector

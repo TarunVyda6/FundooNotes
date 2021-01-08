@@ -15,7 +15,7 @@ class Cache:
 
     def set_cache(self, key, value):
         """
-        it takes key and value value as inputs and stores it in redis server and has expiry time of 60 seconds
+        it takes key and value value as inputs and stores it in redis server and has expiry time of 1500 seconds
         """
         self.r.set(key, value)
         self.r.expire(key, time=1500)
@@ -25,3 +25,9 @@ class Cache:
         it takes key as input and returns value stored with that key
         """
         return self.r.get(key)
+
+    def delete_cache(self, key):
+        """
+        it takes key as input and delete value stored with that key in redis
+        """
+        self.r.delete(key)
