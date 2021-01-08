@@ -2842,3 +2842,160 @@ Original exception text was: 'QuerySet' object has no attribute 'description'.
 2021-01-05 00:59:35,534:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
 2021-01-05 00:59:36,536:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': {'id': {'id': 14, 'title': 'tarunpersonal note', 'description': 'changing it to 14', 'created_time': '2020-12-31T04:25:06.620071Z', 'updated_time': '2021-01-04T19:28:26.550457Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 2, 'label': [9, 8], 'collaborate': [2]}}}, status_code = 200 
 2021-01-05 00:59:49,846:DEBUG:Using selector: SelectSelector
+2021-01-05 19:23:17,176:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-05 19:23:26,649:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 19:23:27,711:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = 'ExceptionType' object is not callable
+2021-01-05 19:23:27,711:WARNING:Bad Request: /note/20
+2021-01-05 19:25:05,473:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-05 19:25:05,473:DEBUG:Using selector: SelectSelector
+2021-01-05 19:25:17,247:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 19:25:18,270:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 19:25:18,271:WARNING:Bad Request: /note/20
+2021-01-05 19:25:21,637:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 19:25:22,657:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 19:25:22,657:WARNING:Bad Request: /note/20
+2021-01-05 19:26:20,521:DEBUG:Using selector: SelectSelector
+2021-01-05 19:27:44,042:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 19:29:05,711:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 19:29:18,056:DEBUG:{'status': False, 'message': '(<ExceptionType.UnAuthorized: \'you are not authorized to perform this operation\'>, "note doesn\'t exist")', 'status_code': 404}, status_code = 404, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 19:29:33,022:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 19:29:34,039:DEBUG:{'status': False, 'message': '(<ExceptionType.UnAuthorized: \'you are not authorized to perform this operation\'>, "note doesn\'t exist")', 'status_code': 404}, status_code = 404, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 19:29:34,040:WARNING:Not Found: /note/20
+2021-01-05 19:29:56,696:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-05 19:29:56,702:DEBUG:Using selector: SelectSelector
+2021-01-05 19:30:03,518:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 19:30:04,554:DEBUG:{'status': False, 'message': "note doesn't exist", 'status_code': 404}, status_code = 404, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 19:30:04,556:WARNING:Not Found: /note/20
+2021-01-05 19:39:38,166:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-05 19:39:38,166:DEBUG:Using selector: SelectSelector
+2021-01-05 20:01:32,222:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-05 20:01:32,254:DEBUG:Using selector: SelectSelector
+2021-01-05 20:01:58,816:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-05 20:01:58,842:DEBUG:Using selector: SelectSelector
+2021-01-05 20:02:17,391:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-05 20:02:17,410:DEBUG:Using selector: SelectSelector
+2021-01-05 20:02:28,188:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-05 20:02:31,776:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:02:32,810:DEBUG:{'status': False, 'message': "note doesn't exist", 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 20:02:32,811:WARNING:Bad Request: /note/20
+2021-01-05 20:03:55,537:DEBUG:Using selector: SelectSelector
+2021-01-05 20:04:33,912:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-05 20:04:33,912:DEBUG:Using selector: SelectSelector
+2021-01-05 20:04:44,412:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-05 20:04:44,412:DEBUG:Using selector: SelectSelector
+2021-01-05 20:04:51,432:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:04:52,515:DEBUG:{'status': False, 'message': "note doesn't exist", 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 20:04:52,516:WARNING:Bad Request: /note/20
+2021-01-05 20:04:55,307:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:04:56,326:DEBUG:{'status': False, 'message': "note doesn't exist", 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 20:04:56,327:WARNING:Bad Request: /note/20
+2021-01-05 20:05:01,644:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:05:02,656:DEBUG:{'status': False, 'message': "note doesn't exist", 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 20:05:02,657:WARNING:Bad Request: /note/15
+2021-01-05 20:05:07,973:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:05:09,029:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6eyJpZCI6MTYsInRpdGxlIjoibXkgdGVzdGluZyBub3RlIiwiZGVzY3JpcHRpb24iOiJ0aGlzIGlzIG15IHNlY29uZCBub3RlIiwiY3JlYXRlZF90aW1lIjoiMjAyMS0wMS0wMVQxOTozMTo0NC4xODU1MThaIiwidXBkYXRlZF90aW1lIjoiMjAyMS0wMS0wMVQxOTozMTo0NC4xODU1MThaIiwiaXNfYXJjaGl2ZWQiOmZhbHNlLCJpc19kZWxldGVkIjpmYWxzZSwiY29sb3IiOiIjMDBGMEZGIiwiaW1hZ2UiOm51bGwsInRyYXNoIjpmYWxzZSwiaXNfcGlubmVkIjpmYWxzZSwidXNlciI6MiwibGFiZWwiOls5LDhdLCJjb2xsYWJvcmF0ZSI6WzJdfX0.KFhxpPQeBvWRm2BdhMA9XzgyRafpiHSCPHsadfgEgRY'}, status_code = 200 
+2021-01-05 20:06:35,046:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-05 20:06:35,046:DEBUG:Using selector: SelectSelector
+2021-01-05 20:06:41,608:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:06:42,614:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': {'id': {'id': 16, 'title': 'my testing note', 'description': 'this is my second note', 'created_time': '2021-01-01T19:31:44.185518Z', 'updated_time': '2021-01-01T19:31:44.185518Z', 'is_archived': False, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 2, 'label': [9, 8], 'collaborate': [2]}}}, status_code = 200 
+2021-01-05 20:06:50,526:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:06:51,546:DEBUG:{'status': False, 'message': "note doesn't exist", 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 20:06:51,547:WARNING:Bad Request: /note/17
+2021-01-05 20:06:56,256:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:06:57,277:DEBUG:{'status': False, 'message': "note doesn't exist", 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 20:06:57,278:WARNING:Bad Request: /note/18
+2021-01-05 20:07:01,373:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:07:02,388:DEBUG:{'status': False, 'message': "note doesn't exist", 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 20:07:02,388:WARNING:Bad Request: /note/12
+2021-01-05 20:07:05,895:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:07:06,932:DEBUG:{'status': True, 'message': 'data retrieved successfully', 'status_code': 200, 'data': {'id': 10, 'title': 'virats personal note', 'description': 'this is my testing note for put', 'created_time': '2020-12-30T04:45:30.823194Z', 'updated_time': '2021-01-02T06:16:34.219698Z', 'is_archived': True, 'is_deleted': False, 'color': '#00F0FF', 'image': None, 'trash': False, 'is_pinned': False, 'user': 1, 'label': [9, 8], 'collaborate': [2, 1]}}, status_code = 200 
+2021-01-05 20:08:48,308:DEBUG:Using selector: SelectSelector
+2021-01-05 20:12:41,863:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-05 20:12:42,882:DEBUG:{'status': False, 'message': "note doesn't exist", 'status_code': 400}, status_code = 400, exception = (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, "note doesn't exist")
+2021-01-05 20:12:42,884:WARNING:Bad Request: /note/9
+2021-01-05 20:12:47,727:DEBUG:Using selector: SelectSelector
+2021-01-06 11:16:41,979:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-06 11:16:46,613:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-06 11:16:46,707:DEBUG:{'status': True, 'message': 'retrieved notes on the basis of search terms', 'status_code': 200, 'data': [OrderedDict([('id', 16), ('title', 'my testing note'), ('description', 'this is my second note'), ('created_time', '2021-01-01T19:31:44.185518Z'), ('updated_time', '2021-01-01T19:31:44.185518Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [9, 8]), ('collaborate', [2])]), OrderedDict([('id', 10), ('title', 'virats personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:45:30.823194Z'), ('updated_time', '2021-01-02T06:16:34.219698Z'), ('is_archived', True), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 1), ('label', [9, 8]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'taruns personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2021-01-02T06:18:16.370602Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'taruns personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2021-01-02T06:18:16.370602Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])])]}, status_code = 200 
+2021-01-06 11:17:00,847:DEBUG:Using selector: SelectSelector
+2021-01-06 11:17:06,441:DEBUG:Using selector: SelectSelector
+2021-01-06 13:11:22,542:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-06 13:11:30,032:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-06 13:11:30,034:ERROR:{'message': 'some other issue please try after some time', 'status': True}, exception = get() missing 1 required positional argument: 'params', status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 30, in wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: get() missing 1 required positional argument: 'params'
+2021-01-06 13:12:52,121:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-06 13:18:12,604:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-06 13:19:19,940:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-06 13:21:17,260:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-06 13:21:52,262:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-06 13:21:52,388:DEBUG:{'status': True, 'message': 'retrieved notes on the basis of search terms', 'status_code': 200, 'data': [OrderedDict([('id', 16), ('title', 'my testing note'), ('description', 'this is my second note'), ('created_time', '2021-01-01T19:31:44.185518Z'), ('updated_time', '2021-01-01T19:31:44.185518Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [9, 8]), ('collaborate', [2])]), OrderedDict([('id', 10), ('title', 'virats personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:45:30.823194Z'), ('updated_time', '2021-01-02T06:16:34.219698Z'), ('is_archived', True), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 1), ('label', [9, 8]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'taruns personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2021-01-02T06:18:16.370602Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'taruns personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2021-01-02T06:18:16.370602Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])])]}, status_code = 200 
+2021-01-06 13:22:02,062:DEBUG:Using selector: SelectSelector
+2021-01-06 13:30:30,022:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-06 13:30:30,108:DEBUG:{'status': True, 'message': 'retrieved notes on the basis of search terms', 'status_code': 200, 'data': [OrderedDict([('id', 16), ('title', 'my testing note'), ('description', 'this is my second note'), ('created_time', '2021-01-01T19:31:44.185518Z'), ('updated_time', '2021-01-01T19:31:44.185518Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [9, 8]), ('collaborate', [2])]), OrderedDict([('id', 10), ('title', 'virats personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:45:30.823194Z'), ('updated_time', '2021-01-02T06:16:34.219698Z'), ('is_archived', True), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 1), ('label', [9, 8]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'taruns personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2021-01-02T06:18:16.370602Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])]), OrderedDict([('id', 11), ('title', 'taruns personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2021-01-02T06:18:16.370602Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [2, 1])])]}, status_code = 200 
+2021-01-06 13:31:53,993:DEBUG:Using selector: SelectSelector
+2021-01-06 13:32:36,128:DEBUG:Using selector: SelectSelector
+2021-01-08 10:00:16,135:WARNING:Method Not Allowed: /register/
+2021-01-08 10:00:16,801:WARNING:Not Found: /favicon.ico
+2021-01-08 10:01:11,140:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'tarun', 'last_name': 'vyda', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-08 10:01:37,828:DEBUG:{'status': True, 'message': 'Successfully activated', 'status_code': 200}, status_code = 200 
+2021-01-08 10:02:28,515:DEBUG:Using selector: SelectSelector
+2021-01-08 10:10:51,066:DEBUG:Using selector: SelectSelector
+2021-01-08 11:14:37,332:WARNING:Method Not Allowed: /register/
+2021-01-08 11:14:51,956:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+2021-01-08 11:14:52,021:WARNING:Bad Request: /register/
+2021-01-08 11:15:52,763:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-08 11:17:42,671:DEBUG:Using selector: SelectSelector
+2021-01-08 11:28:41,502:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-08 11:57:27,667:DEBUG:Using selector: SelectSelector
+2021-01-08 11:58:12,858:WARNING:Method Not Allowed: /register/
+2021-01-08 11:58:28,050:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+2021-01-08 11:58:28,151:WARNING:Bad Request: /register/
+2021-01-08 11:58:54,510:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-08 11:59:55,399:DEBUG:{'status': True, 'message': 'Successfully activated', 'status_code': 200}, status_code = 200 
+2021-01-08 12:01:11,090:DEBUG:Using selector: SelectSelector
+2021-01-08 12:06:05,856:WARNING:Method Not Allowed: /register/
+2021-01-08 12:06:05,859:WARNING:Method Not Allowed: /register/
+2021-01-08 12:06:19,776:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-08 12:21:04,975:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-08 12:31:08,932:DEBUG:Using selector: SelectSelector
+2021-01-08 12:48:37,344:DEBUG:Using selector: SelectSelector
+2021-01-08 13:00:52,322:DEBUG:{'message': 'you are not logged in', 'status': False} status_code = 400
+2021-01-08 13:00:57,904:DEBUG:{'status': True, 'message': 'login successful', 'status_code': 200, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.TqNLDeEagjSeV6UozaejHx-xOWuzu_6XPHFRvW76Ong'}}, status_code = 200 
+2021-01-08 13:01:01,465:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-08 13:01:01,512:DEBUG:{'status': True, 'message': 'retrieved notes on the basis of search terms', 'status_code': 200, 'data': []}, status_code = 200 
+2021-01-08 13:01:20,496:DEBUG:{'message': 'token verification successful', 'status': True} status_code = 200
+2021-01-08 13:01:20,552:DEBUG:{'status': True, 'message': 'retrieved notes on the basis of search terms', 'status_code': 200, 'data': [OrderedDict([('id', 16), ('title', 'my testing note'), ('description', 'this is my second note'), ('created_time', '2021-01-01T19:31:44.185518Z'), ('updated_time', '2021-01-01T19:31:44.185518Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [9, 8]), ('collaborate', [2])]), OrderedDict([('id', 10), ('title', 'virats personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:45:30.823194Z'), ('updated_time', '2021-01-02T06:16:34.219698Z'), ('is_archived', True), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 1), ('label', [9, 8]), ('collaborate', [1, 2])]), OrderedDict([('id', 11), ('title', 'taruns personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2021-01-02T06:18:16.370602Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [1, 2])]), OrderedDict([('id', 11), ('title', 'taruns personal note'), ('description', 'this is my testing note for put'), ('created_time', '2020-12-30T04:48:19.672731Z'), ('updated_time', '2021-01-02T06:18:16.370602Z'), ('is_archived', False), ('is_deleted', False), ('color', '#00F0FF'), ('image', None), ('trash', False), ('is_pinned', False), ('user', 2), ('label', [12, 13]), ('collaborate', [1, 2])])]}, status_code = 200 
+2021-01-08 13:07:05,911:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'PLAIN', b'AMQPLAIN'], locales: ['en_US']
+2021-01-08 13:07:05,914:DEBUG:using channel_id: 1
+2021-01-08 13:07:05,918:DEBUG:Channel open
+2021-01-08 13:07:05,929:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-08 13:29:41,564:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
+2021-01-08 13:29:41,566:DEBUG:Using selector: SelectSelector
+2021-01-08 20:36:35,826:WARNING:Method Not Allowed: /request-reset-email/
+2021-01-08 20:36:41,192:DEBUG:{'status': False, 'message': 'some other issue', 'status_code': 400}, status_code = 400, exception = Unsupported media type "text/plain" in request.
+2021-01-08 20:36:41,192:WARNING:Bad Request: /request-reset-email/
+2021-01-08 20:37:28,692:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'AMQPLAIN', b'PLAIN'], locales: ['en_US']
+2021-01-08 20:37:28,694:DEBUG:using channel_id: 1
+2021-01-08 20:37:28,696:DEBUG:Channel open
+2021-01-08 20:37:28,701:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200}, status_code = 200 
+2021-01-08 20:46:02,726:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200}, status_code = 200 
+2021-01-08 20:52:13,527:DEBUG:Closed channel #1
+2021-01-08 20:52:13,553:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'PLAIN', b'AMQPLAIN'], locales: ['en_US']
+2021-01-08 20:52:13,555:DEBUG:using channel_id: 1
+2021-01-08 20:52:13,557:DEBUG:Channel open
+2021-01-08 20:52:13,560:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200}, status_code = 200 
+2021-01-08 20:52:23,972:WARNING:Method Not Allowed: /password-reset-complete/
+2021-01-08 20:52:24,762:WARNING:Not Found: /favicon.ico
+2021-01-08 20:55:25,078:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\utils.py changed, reloading.
+2021-01-08 20:55:25,079:DEBUG:Using selector: SelectSelector

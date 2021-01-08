@@ -13,15 +13,16 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Account
 from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, \
     EmailVerificationSerializer, LoginSerializer
-from .utils import Util
+# from .utils import Util
 import logging
 from services.cache import Cache
 from decouple import config
 from rest_framework.exceptions import AuthenticationFailed
 from notes import utils
 from services.encrypt import Encrypt
-from services.myexceptions import (InvalidCredentials, UnVerifiedAccount, EmptyField, LengthError, ValidationError)
+from services.exceptions import (MyCustomError, ExceptionType)
 from .utils import Validation
+from .tasks import send_email
 
 logging.basicConfig(filename='users.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -54,14 +55,8 @@ class LoginAPIView(generics.GenericAPIView):
                 result = {'token': token}
                 return utils.manage_response(status=True, message="login successful", data=result,
                                              status_code=status.HTTP_200_OK)
-        except EmptyField as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
-                                         status_code=status.HTTP_400_BAD_REQUEST)
-        except InvalidCredentials as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
-                                         status_code=status.HTTP_400_BAD_REQUEST)
-        except UnVerifiedAccount as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
@@ -94,17 +89,11 @@ class RegisterView(generics.GenericAPIView):
                              ', \n Use the link below to verify your email \n' + absolute_url
                 data = {'email_body': email_body, 'to_email': user.email,
                         'email_subject': 'Verify your email'}
-                Util.send_email(data)
+                send_email.delay(data)
                 return utils.manage_response(status=True, message="Account created successfully", data=user_data,
                                              status_code=status.HTTP_201_CREATED)
-        except ValidationError as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
-                                         status_code=status.HTTP_400_BAD_REQUEST)
-        except LengthError as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
-                                         status_code=status.HTTP_400_BAD_REQUEST)
-        except EmptyField as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
@@ -185,7 +174,7 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
                              absolute_url + "?redirect_url=" + redirect_url
                 data = {'email_body': email_body, 'to_email': user.email,
                         'email_subject': 'Reset your passsword'}
-                Util.send_email(data)
+                send_email.delay(data)
                 result['message'] = 'We have sent you a link to reset your password'
                 result['status'] = True
                 return utils.manage_response(status=result['status'], message=result['message'],

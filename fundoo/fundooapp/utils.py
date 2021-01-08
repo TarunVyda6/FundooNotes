@@ -1,24 +1,4 @@
-from django.core.mail import EmailMessage
-import threading
-from services.myexceptions import (InvalidCredentials, UnVerifiedAccount, EmptyField, LengthError)
-
-
-class EmailThread(threading.Thread):
-
-    def __init__(self, email):
-        self.email = email
-        threading.Thread.__init__(self)
-
-    def run(self):
-        self.email.send()
-
-
-class Util:
-    @staticmethod
-    def send_email(data):
-        email = EmailMessage(
-            subject=data['email_subject'], body=data['email_body'], to=[data['to_email']])
-        EmailThread(email).start()
+from services.exceptions import (MyCustomError, ExceptionType)
 
 
 class Validation:
@@ -28,9 +8,9 @@ class Validation:
         :rtype: boolean
         """
         if 'email' not in data or data['email'] is '':
-            raise EmptyField('email field should not be empty')
+            raise MyCustomError(ExceptionType.EmptyField, "email field should not be empty")
         if 'password' not in data or data['password'] is '':
-            raise EmptyField('password field should not be empty')
+            raise MyCustomError(ExceptionType.EmptyField, "password field should not be empty")
         return True
 
     def validate_register(data: dict) -> object:
@@ -39,11 +19,11 @@ class Validation:
         :return: True if the data is valid. else it raises LengthError Exception.
         '''
         if len(data['email']) > 50:
-            raise LengthError('email maximum length should be 50 character')
-        if len(data['password']) > 68 and len(data['password'] <= 6):
-            raise LengthError('password maximum length should be 50 character')
+            raise MyCustomError(ExceptionType.LengthError, "email maximum length should be 50 character")
+        if len(data['password']) > 68 or len(data['password']) <= 6:
+            raise MyCustomError(ExceptionType.LengthError, "password length should be between 6 to 50 character")
         if len(data['last_name']) > 20:
-            raise LengthError('lastname maximum length should be 20 character')
+            raise MyCustomError(ExceptionType.LengthError, "lastname maximum length should be 20 character")
         if len(data['user_name']) > 20:
-            raise LengthError('username maximum length should be 20 character')
+            raise MyCustomError(ExceptionType.LengthError, "username maximum length should be 20 character")
         return True
