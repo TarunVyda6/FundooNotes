@@ -14,34 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from rest_framework_simplejwt.views import TokenRefreshView
-from fundooapp import views
-from notes import views as note_view
-from labels import views as label_view
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', views.LoginAPIView.as_view(), name="login"),
-    path('register/', views.RegisterView.as_view(), name="register"),
-    path('email-verify/', views.VerifyEmail.as_view(), name="email-verify"),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('request-reset-email/', views.RequestPasswordResetEmail.as_view(),
-         name="request-reset-email"),
-    path('password-reset/',
-         views.PasswordTokenCheckAPI.as_view(), name='password-reset-confirm'),
-    path('password-reset-complete/', views.SetNewPasswordAPIView.as_view(),
-         name='password-reset-complete'),
-    path('note/', note_view.Notes.as_view(), name="note"),
-    path('note/<int:pk>', note_view.Notes.as_view(), name="single-note"),
-    path('label/', label_view.Labels.as_view(), name="label-post"),
-    path('label/<int:pk>', label_view.Labels.as_view(), name="label"),
-    path('note/archived/', note_view.ArchivedView.as_view(), name="archived"),
-    path('note/archived/<int:pk>', note_view.ArchivedView.as_view(), name="single-archived"),
-    path('note/pinned/', note_view.PinnedView.as_view(), name="pinned"),
-    path('note/pinned/<int:pk>', note_view.PinnedView.as_view(), name="single-pinned"),
-    path('note/trash/', note_view.TrashView.as_view(), name="trash"),
-    path('note/trash/<int:pk>', note_view.TrashView.as_view(), name="single-trash"),
-    path('note/search/', note_view.SearchNote.as_view(), name="search")
+    path('', include('fundooapp.urls')),
+    path('', include('notes.urls')),
+    path('', include('labels.urls')),
+
 
 ]
