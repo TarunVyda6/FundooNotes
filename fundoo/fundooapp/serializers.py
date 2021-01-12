@@ -2,12 +2,10 @@ from .models import Account
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 from django.contrib import auth
-from rest_framework.exceptions import AuthenticationFailed
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_decode
-import jwt
-from services.myexceptions import (InvalidCredentials, UnVerifiedAccount, EmptyField, ValidationError)
+from services.exceptions import (MyCustomError, ExceptionType)
 
 
 class RegisterSerializer(ModelSerializer):
@@ -33,7 +31,7 @@ class RegisterSerializer(ModelSerializer):
         user_name = attrs.get('user_name', '')
 
         if not user_name.isalnum():
-            raise ValidationError('username should contain only alphanumeric characters')
+            raise MyCustomError(ExceptionType.ValidationError, "username should contain only alphanumeric characters")
         return attrs
 
     def create(self, validated_data):
@@ -77,9 +75,9 @@ class LoginSerializer(ModelSerializer):
         password = attrs.get('password', '')
         user = auth.authenticate(email=email, password=password)
         if not user:
-            raise InvalidCredentials('email or password is incorrect')
+            raise MyCustomError(ExceptionType.InvalidCredentials, "email or password is incorrect")
         if not user.is_verified:
-            raise UnVerifiedAccount('please verify your account first to login')
+            raise MyCustomError(ExceptionType.UnVerifiedAccount, "please verify your account first to login")
 
         return {
             'email': user.email
@@ -125,11 +123,11 @@ class SetNewPasswordSerializer(serializers.Serializer):
             id = force_str(urlsafe_base64_decode(uidb64))
             user = Account.objects.get(id=id)
             if not PasswordResetTokenGenerator().check_token(user, token):
-                raise AuthenticationFailed('The reset link is invalid', 401)
+                raise MyCustomError(ExceptionType.UnAuthorized, "The reset link is invalid")
 
             user.set_password(password)
             user.save()
 
             return user
         except Exception as e:
-            raise AuthenticationFailed('The reset link is invalid', 401)
+            raise MyCustomError(ExceptionType.UnAuthorized, "The reset link is invalid")

@@ -11,4 +11,3 @@ omit =
     labels/tests.py,
     fundooapp/tests.py,
     *asgi.py,
-    fundooapp/views.py/SetNewPasswordAPIView,

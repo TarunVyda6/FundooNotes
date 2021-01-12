@@ -13,9 +13,6 @@ class Label(models.Model):
     user = models.ForeignKey(Account, on_delete=models.CASCADE, null=True, blank=True)  # user details
     is_deleted = models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.label_name
-
     def soft_delete(self):
         """
         this method is used to change status of is_deleted to true

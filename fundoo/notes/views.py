@@ -8,8 +8,7 @@ import logging
 from django.utils.decorators import method_decorator
 from fundooapp.decorator import user_login_required
 from django.db.models import Q
-from services.myexceptions import (InvalidCredentials, UnVerifiedAccount, EmptyField, LengthError, ValidationError,
-                                   UnAuthorized)
+from services.exceptions import (MyCustomError, ExceptionType)
 from services.cache import Cache
 from services.encrypt import Encrypt
 
@@ -17,6 +16,7 @@ User = get_user_model()
 
 logging.basicConfig(filename='notes.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
+cache = Cache()
 
 
 @method_decorator(user_login_required, name="dispatch")
@@ -42,19 +42,15 @@ class Notes(APIView):
             data = request.data
             serializer = NoteSerializer(data=data)
             if 'title' not in data or data['title'] is '' or 'description' not in data or data['description'] is '':
-                raise ValidationError("title and description required")
+                raise MyCustomError(ExceptionType.ValidationError, "title and description required")
             if serializer.is_valid():
                 serializer.save()
-                return utils.manage_response(status=True, message='Note Added Successfully', data=serializer.data,
+                serialized_data = serializer.data
+                return utils.manage_response(status=True, message='Note Added Successfully', data=serialized_data,
                                              status_code=status.HTTP_201_CREATED)
-            raise LengthError('title should be less than 150 characters')
-        except LengthError as e:
-            return utils.manage_response(status=False, message=str(e),
-                                         exception=str(e),
-                                         status_code=status.HTTP_400_BAD_REQUEST)
-        except ValidationError as e:
-            return utils.manage_response(status=False, message=str(e),
-                                         exception=str(e),
+            raise MyCustomError(ExceptionType.LengthError, "title should be less than 150 characters")
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
@@ -69,7 +65,6 @@ class Notes(APIView):
 
         try:
             if kwargs.get('pk'):
-                cache = Cache()
                 if cache.get_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL") is not None:
                     notes = cache.get_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL")
                     notes = Encrypt.decode(notes)
@@ -78,11 +73,11 @@ class Notes(APIView):
                                                 (Q(user=kwargs.get('user').id) | Q(
                                                     collaborate=kwargs.get('user').id))).exclude(trash=True).first()
                     if notes is None:
-                        raise UnAuthorized("note doesn't exist")
+                        raise MyCustomError(ExceptionType.UnAuthorized, "note doesn't exist")
                     serializer = NoteSerializer(notes)
                     notes = serializer.data
-                    notes = Encrypt.encode(notes)
-                    cache.set_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL", notes)
+                    cache_notes = Encrypt.encode(notes)
+                    cache.set_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL", cache_notes)
                 return utils.manage_response(status=True, message="data retrieved successfully",
                                              data=notes,
                                              status_code=status.HTTP_200_OK)
@@ -94,13 +89,9 @@ class Notes(APIView):
                 return utils.manage_response(status=True, message="data retrieved successfully",
                                              data=serializer.data,
                                              status_code=status.HTTP_200_OK)
-        except UnAuthorized as e:
-            return utils.manage_response(status=False,
-                                         message=str(e), exception=str(e),
-                                         status_code=status.HTTP_401_UNAUTHORIZED)
-        except Note.DoesNotExist as e:
-            return utils.manage_response(status=False, message="No such note exist", exception=str(e),
-                                         status_code=status.HTTP_404_NOT_FOUND)
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
@@ -118,28 +109,21 @@ class Notes(APIView):
                                        (Q(user=kwargs.get('user').id) | Q(
                                            collaborate=kwargs.get('user').id))).exclude(trash=True).first()
             if item is None:
-                raise UnAuthorized("Note doesn't exist")
+                raise MyCustomError(ExceptionType.UnAuthorized, "Note doesn't exist")
             data = request.data
             serializer = NoteSerializer(item, data=data, partial=True)
             if serializer.is_valid():
                 serializer.save()
-                cache = Cache()
                 notes = serializer.data
                 notes = Encrypt.encode(notes)
                 cache.set_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL", notes)
                 return utils.manage_response(status=True, message="Note Update Successfully", data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
-            raise ValidationError("You have entered invalid details")
+            raise MyCustomError(ExceptionType.ValidationError, "You have entered invalid details")
 
-        except ValidationError as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
-        except UnAuthorized as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
-                                         status_code=status.HTTP_404_NOT_FOUND)
-        except Note.DoesNotExist as e:
-            return utils.manage_response(status=False, message="Please enter valid Note id", exception=str(e),
-                                         status_code=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
@@ -156,18 +140,17 @@ class Notes(APIView):
                                        (Q(user=kwargs.get('user').id) | Q(
                                            collaborate=kwargs.get('user').id))).exclude(trash=True).first()
             if note is None:
-                raise UnAuthorized('no such note found')
+                raise MyCustomError(ExceptionType.UnAuthorized, "Note doesn't exist")
 
             note.soft_delete()
+            if cache.get_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL") is not None:
+                cache.delete_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL")
             return utils.manage_response(status=True, message="Note Deleted Successfully",
                                          status_code=status.HTTP_202_ACCEPTED)
 
-        except UnAuthorized as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
-                                         status_code=status.HTTP_404_NOT_FOUND)
-        except Note.DoesNotExist:
-            return utils.manage_response(status=False, message="Please enter valid Note id",
-                                         status_code=status.HTTP_404_NOT_FOUND)
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
@@ -193,7 +176,7 @@ class ArchivedView(APIView):
                     user=kwargs.get('user').id) | Q(
                     collaborate=kwargs.get('user').id))).first()
                 if item is None:
-                    raise UnAuthorized("Note doesn't exist")
+                    raise MyCustomError(ExceptionType.UnAuthorized, "Note doesn't exist")
                 serializer = NoteSerializer(item)
                 return utils.manage_response(status=True, message="archived note retrieved successfully",
                                              data=serializer.data,
@@ -204,17 +187,14 @@ class ArchivedView(APIView):
                     (Q(user_id=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)) & Q(
                         is_archived=True)).exclude(is_deleted=True)
                 if item is None:
-                    raise UnAuthorized("Note doesn't exist")
+                    raise MyCustomError(ExceptionType.UnAuthorized, "Note doesn't exist")
                 serializer = NoteSerializer(item, many=True)
                 return utils.manage_response(status=True, message="archived notes retrieved successfully",
                                              data=serializer.data,
                                              status_code=status.HTTP_200_OK)
-        except UnAuthorized as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
-                                         status_code=status.HTTP_404_NOT_FOUND)
-        except Note.DoesNotExist:
-            return utils.manage_response(status=False, message="Please enter valid note id",
-                                         status_code=status.HTTP_404_NOT_FOUND)
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
@@ -240,7 +220,7 @@ class PinnedView(APIView):
                     user=kwargs.get('user').id) | Q(
                     collaborate=kwargs.get('user').id))).first()
                 if item is None:
-                    raise UnAuthorized("Note doesn't exist")
+                    raise MyCustomError(ExceptionType.UnAuthorized, "Note doesn't exist")
                 serializer = NoteSerializer(item)
                 return utils.manage_response(status=True, message="pinned note retrieved successfully",
                                              data=serializer.data,
@@ -251,17 +231,14 @@ class PinnedView(APIView):
                     (Q(user_id=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)) & Q(
                         is_pinned=True)).exclude(is_deleted=True)
                 if item is None:
-                    raise UnAuthorized("Note doesn't exist")
+                    raise MyCustomError(ExceptionType.UnAuthorized, "Note doesn't exist")
                 serializer = NoteSerializer(item, many=True)
                 return utils.manage_response(status=True, message="pinned notes retrieved successfully",
                                              data=serializer.data,
                                              status_code=status.HTTP_200_OK)
-        except UnAuthorized as e:
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
-                                         status_code=status.HTTP_404_NOT_FOUND)
-        except Note.DoesNotExist:
-            return utils.manage_response(status=False, message="Please enter valid note id",
-                                         status_code=status.HTTP_404_NOT_FOUND)
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
@@ -287,7 +264,7 @@ class TrashView(APIView):
                     user=kwargs.get('user').id) | Q(
                     collaborate=kwargs.get('user').id))).first()
                 if item is None:
-                    raise UnAuthorized("Note doesn't exist")
+                    raise MyCustomError(ExceptionType.UnAuthorized, "Note doesn't exist")
                 serializer = NoteSerializer(item)
                 return utils.manage_response(status=True, message="Trashed note retrieved successfully",
                                              data=serializer.data,
@@ -298,18 +275,14 @@ class TrashView(APIView):
                     (Q(user_id=kwargs.get('user').id) | Q(collaborate=kwargs.get('user').id)) & Q(
                         trash=True)).exclude(is_deleted=True)
                 if item is None:
-                    raise UnAuthorized("Note doesn't exist")
+                    raise MyCustomError(ExceptionType.UnAuthorized, "Note doesn't exist")
                 serializer = NoteSerializer(item, many=True)
                 return utils.manage_response(status=True, message="Trashed notes retrieved successfully",
                                              data=serializer.data,
                                              status_code=status.HTTP_200_OK)
-        except UnAuthorized as e:
-            print("entered")
-            return utils.manage_response(status=False, message=str(e), exception=str(e),
-                                         status_code=status.HTTP_404_NOT_FOUND)
-        except Note.DoesNotExist as e:
-            return utils.manage_response(status=False, message="Please enter valid note id", exception=str(e),
-                                         status_code=status.HTTP_404_NOT_FOUND)
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
@@ -330,11 +303,11 @@ class SearchNote(APIView):
         """
         try:
             current_user = kwargs.get('user').id
-            search_terms = request.data.get('search_term')
+            search_terms = request.query_params.get('q')
             search_term_list = search_terms.split(' ')
 
             if search_terms == '':
-                raise EmptyField('please enter the note you want to search')
+                raise MyCustomError(ExceptionType.EmptyField, "please enter the note you want to search")
 
             notes = Note.objects.filter(Q(user=current_user) | Q(collaborate=current_user)).exclude(
                 trash=True)
@@ -351,9 +324,8 @@ class SearchNote(APIView):
             return utils.manage_response(status=True, message='retrieved notes on the basis of search terms',
                                          data=serializer.data,
                                          status_code=status.HTTP_200_OK)
-        except EmptyField as e:
-            return utils.manage_response(status=False, message=str(e),
-                                         exception=str(e),
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',

@@ -2,6 +2,7 @@ from rest_framework.response import Response
 import logging
 from labels.models import *
 from fundooapp.models import *
+from services.exceptions import *
 
 
 def set_user(request, user_id):
@@ -23,7 +24,7 @@ def get_collaborator_list(request):
     for collaborator_email in collabs:
         collab_qs = Account.objects.filter(email=collaborator_email)
         if not collab_qs:
-            raise Account.DoesNotExist('No such user account exists')
+            raise MyCustomError(ExceptionType.ValidationError, "No such user account exists")
         if collab_qs.exists() and collab_qs.count() == 1:
             collab_obj = collab_qs.first()  # assign object from queryset
             collaborators_list.append(collab_obj.id)  # append object id of the obtained object to list
@@ -45,7 +46,7 @@ def get_label_list(request):
     for label_name in labels:
         label_qs = Label.objects.filter(label_name=label_name)
         if not label_qs:
-            raise Label.DoesNotExist('No such label exists')
+            raise MyCustomError(ExceptionType.ValidationError, "No such label exists")
         if label_qs.exists() and label_qs.count() == 1:
             label_obj = label_qs.first()  # assign object from queryset
             label_list.append(label_obj.id)  # append object id of the obtained object to list
@@ -55,7 +56,11 @@ def get_label_list(request):
 
 def manage_response(**kwargs):
     """
-    this function takes kwargs as input and is used to log and return the responses
+    this function takes
+    status : if the code executes without exception this will take False and returns False statement, else returns True
+    message : this argument takes success of failed message and returns in response
+    status_code : it will take success or failed or exception status_code and returns in response
+    exception : if there is any exception occurs then this will carry that exception message and stores it in log file
     """
     result = {'status': kwargs['status'], 'message': kwargs['message'], 'status_code': kwargs['status_code']}
     if 'exception' in kwargs:

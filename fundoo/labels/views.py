@@ -6,7 +6,8 @@ import logging
 from notes import utils
 from django.utils.decorators import method_decorator
 from fundooapp.decorator import user_login_required
-from services.myexceptions import (LengthError, ValidationError, UnAuthorized)
+from services.exceptions import (MyCustomError, ExceptionType)
+from django.db.models import Q
 
 logging.basicConfig(filename='labels.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -36,10 +37,9 @@ class Labels(APIView):
                 serializer.save()
                 return utils.manage_response(status=True, message='Label Added Successfully', data=serializer.data,
                                              status_code=status.HTTP_201_CREATED)
-            raise LengthError('maximum length of label name should be 50 characters')
-        except LengthError as e:
-            return utils.manage_response(status=False, message=str(e),
-                                         exception=str(e),
+            raise MyCustomError(ExceptionType.LengthError, "maximum length of label name should be 50 characters")
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
@@ -55,27 +55,24 @@ class Labels(APIView):
         try:
 
             if kwargs.get('pk'):
-                item = Label.objects.get(pk=kwargs.get('pk'), is_deleted=False)
-                if item.user == kwargs.get('user'):
-                    serializer = LabelSerializer(item)
-                    return utils.manage_response(status=True, message="Label retrieved successfully",
-                                                 data=serializer.data,
-                                                 status_code=status.HTTP_200_OK)
-                else:
-                    raise UnAuthorized("No such note exist")
+                item = Label.objects.filter(Q(pk=kwargs.get('pk')) &
+                                            (Q(user=kwargs.get('user').id))).exclude(is_deleted=True).first()
+                if item is None:
+                    raise MyCustomError(ExceptionType.UnAuthorized, "No such note exist")
+                serializer = LabelSerializer(item)
+                return utils.manage_response(status=True, message="Label retrieved successfully",
+                                             data=serializer.data,
+                                             status_code=status.HTTP_200_OK)
+
             else:
-                labels = Label.objects.filter(user_id=kwargs.get('user').id, is_deleted=False)
+                labels = Label.objects.filter(Q(user=kwargs.get('user').id))
                 serializer = LabelSerializer(labels, many=True)
                 return utils.manage_response(status=True, message="Labels retrieved successfully",
                                              data=serializer.data,
                                              status_code=status.HTTP_200_OK)
-        except UnAuthorized as e:
-            return utils.manage_response(status=False,
-                                         message=str(e), exception=str(e),
-                                         status_code=status.HTTP_401_UNAUTHORIZED)
-        except Label.DoesNotExist:
-            return utils.manage_response(status=False, message="Please enter valid label id",
-                                         status_code=status.HTTP_404_NOT_FOUND)
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
@@ -88,59 +85,45 @@ class Labels(APIView):
         """
 
         try:
+            item = Label.objects.filter(Q(pk=kwargs.get('pk')) &
+                                            (Q(user=kwargs.get('user').id))).exclude(is_deleted=True).first()
+            if item is None:
+                raise MyCustomError(ExceptionType.UnAuthorized, "No such note exist")
+            serializer = LabelSerializer(item, data=request.data, partial=True)
 
-            item = Label.objects.get(pk=kwargs.get('pk'), is_deleted=False)
-            if item.user == kwargs.get('user'):
-                serializer = LabelSerializer(item, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return utils.manage_response(status=True, message="Label Update Successfully", data=serializer.data,
+                                             status_code=status.HTTP_201_CREATED)
+            raise MyCustomError(ExceptionType.LengthError, "title should be less than 50 characters")
 
-                if serializer.is_valid():
-                    serializer.save()
-                    return utils.manage_response(status=True, message="Label Update Successfully", data=serializer.data,
-                                                 status_code=status.HTTP_201_CREATED)
-                raise LengthError('title should be less than 50 characters')
-            else:
-                raise UnAuthorized("No such note exist")
-        except LengthError as e:
-            return utils.manage_response(status=False, message=str(e),
-                                         exception=str(e),
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
-        except UnAuthorized as e:
-            return utils.manage_response(status=False,
-                                         message=str(e), exception=str(e),
-                                         status_code=status.HTTP_401_UNAUTHORIZED)
-
-        except Label.DoesNotExist:
-            return utils.manage_response(status=False, message="Please enter valid label id",
-                                         status_code=status.HTTP_404_NOT_FOUND)
         except Exception as e:
-            print(e)
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, *args, **kwargs):
         """
-        takes key as input and if data exists for that key then it returns the delete that data from database
+        takes key as input inside kwargs and if data exists for that key then it returns the delete that data from database
         :rtype:Response returns success or failure message along with status
         """
 
         try:
-            item = Label.objects.get(id=kwargs.get('pk'), is_deleted=False)
-            if item.user == kwargs.get('user'):
-                item.soft_delete()
-                return utils.manage_response(status=True, message="Label Deleted Successfully",
+            item = Label.objects.filter(Q(pk=kwargs.get('pk')) &
+                                            (Q(user=kwargs.get('user').id))).exclude(is_deleted=True).first()
+            if item is None:
+                raise MyCustomError(ExceptionType.UnAuthorized, "No such note exist")
+
+            item.soft_delete()
+            return utils.manage_response(status=True, message="Label Deleted Successfully",
                                              status_code=status.HTTP_202_ACCEPTED)
-            else:
-                raise UnAuthorized("No such note exist")
-        except UnAuthorized as e:
-            return utils.manage_response(status=False,
-                                         message=str(e), exception=str(e),
-                                         status_code=status.HTTP_401_UNAUTHORIZED)
-        except Label.DoesNotExist:
-            return utils.manage_response(status=False, message="Please enter valid label id",
-                                         status_code=status.HTTP_404_NOT_FOUND)
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
-

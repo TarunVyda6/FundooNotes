@@ -219,7 +219,11 @@ class SetNewPasswordAPIView(generics.GenericAPIView):
         it take new password and confirm password and if the password matches all criteria then it will set new password
         :rtype: data of the user and its success status
         """
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        return utils.manage_response(status=True, message='Password reset success',
-                                     status_code=status.HTTP_200_OK)
+        try:
+            serializer = self.serializer_class(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            return utils.manage_response(status=True, message='Password reset success',
+                                         status_code=status.HTTP_200_OK)
+        except MyCustomError as e:
+            return utils.manage_response(status=False, message=e.message, exception=str(e),
+                                         status_code=status.HTTP_400_BAD_REQUEST)

@@ -3007,3 +3007,143 @@ TypeError: get() missing 1 required positional argument: 'params'
 2021-01-08 22:19:34,712:DEBUG:Using selector: SelectSelector
 2021-01-08 23:03:51,739:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\notes\views.py changed, reloading.
 2021-01-08 23:03:51,739:DEBUG:Using selector: SelectSelector
+2021-01-08 23:06:57,849:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\services\exceptions.py changed, reloading.
+2021-01-08 23:06:57,849:DEBUG:Using selector: SelectSelector
+2021-01-10 21:14:45,352:WARNING:Method Not Allowed: /password-reset-complete/
+2021-01-10 21:14:46,263:WARNING:Not Found: /favicon.ico
+2021-01-10 21:20:11,050:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 21:20:11,081:DEBUG:Using selector: SelectSelector
+2021-01-10 21:20:43,019:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 21:20:43,034:DEBUG:Using selector: SelectSelector
+2021-01-10 21:21:01,632:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 21:21:01,632:DEBUG:Using selector: SelectSelector
+2021-01-10 21:24:31,646:ERROR:Internal Server Error: /password-reset-complete/
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py", line 125, in validate
+    user = Account.objects.get(id=id)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\db\models\query.py", line 431, in get
+    self.model._meta.object_name
+fundooapp.models.Account.DoesNotExist: Account matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py", line 225, in patch
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\TARUNVYDA\PycharmProjects\FundooNotes\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\serializers.py", line 134, in validate
+    raise MyCustomError(ExceptionType.UnAuthorized, "The reset link is invalid")
+services.exceptions.MyCustomError: (<ExceptionType.UnAuthorized: 'you are not authorized to perform this operation'>, 'The reset link is invalid')
+2021-01-10 21:32:05,134:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 21:32:05,137:DEBUG:Using selector: SelectSelector
+2021-01-10 23:02:15,642:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:02:15,642:DEBUG:Using selector: SelectSelector
+2021-01-10 23:10:34,774:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:10:34,789:DEBUG:Using selector: SelectSelector
+2021-01-10 23:30:30,832:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:30:30,832:DEBUG:Using selector: SelectSelector
+2021-01-10 23:32:21,075:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:32:21,075:DEBUG:Using selector: SelectSelector
+2021-01-10 23:32:40,029:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:32:40,029:DEBUG:Using selector: SelectSelector
+2021-01-10 23:34:40,294:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:34:40,294:DEBUG:Using selector: SelectSelector
+2021-01-10 23:35:35,840:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:35:35,840:DEBUG:Using selector: SelectSelector
+2021-01-10 23:36:05,876:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:36:05,876:DEBUG:Using selector: SelectSelector
+2021-01-10 23:37:16,412:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:37:16,412:DEBUG:Using selector: SelectSelector
+2021-01-10 23:37:43,288:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:37:43,288:DEBUG:Using selector: SelectSelector
+2021-01-10 23:38:07,238:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:38:07,238:DEBUG:Using selector: SelectSelector
+2021-01-10 23:49:18,362:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-10 23:49:18,363:DEBUG:Using selector: SelectSelector
+2021-01-10 23:58:44,053:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\labels\models.py changed, reloading.
+2021-01-10 23:58:44,053:DEBUG:Using selector: SelectSelector
+2021-01-10 23:59:05,049:ERROR:{'message': 'please provide token key', 'status': False}, exception = 'HTTP_AUTHORIZATION', status_code = 400
+Traceback (most recent call last):
+  File "C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\decorator.py", line 22, in wrapper
+    token = request.META['HTTP_AUTHORIZATION']
+KeyError: 'HTTP_AUTHORIZATION'
+2021-01-10 23:59:35,085:DEBUG:Using selector: SelectSelector
+2021-01-11 12:28:16,670:WARNING:Method Not Allowed: /request-reset-email/
+2021-01-11 12:28:17,618:WARNING:Not Found: /favicon.ico
+2021-01-11 12:28:34,580:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'AMQPLAIN', b'PLAIN'], locales: ['en_US']
+2021-01-11 12:28:34,611:DEBUG:using channel_id: 1
+2021-01-11 12:28:34,613:DEBUG:Channel open
+2021-01-11 12:28:34,618:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200, 'data': {'email_body': 'Hello, \n Your token number is : agb9bm-10f11ca1829d37f909a63cb9bf9bf52d \n your uidb64 code is MQ \n Use link below to reset your password  \nhttp://127.0.0.1:8000/password-reset/?redirect_url=/password-reset-complete/', 'to_email': 'viratkohli123@gmail.com', 'email_subject': 'Reset your passsword'}}, status_code = 200 
+2021-01-11 12:28:54,419:DEBUG:Using selector: SelectSelector
+2021-01-11 14:04:41,422:WARNING:Method Not Allowed: /request-reset-email/
+2021-01-11 14:04:51,381:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'PLAIN', b'AMQPLAIN'], locales: ['en_US']
+2021-01-11 14:04:51,383:DEBUG:using channel_id: 1
+2021-01-11 14:04:51,385:DEBUG:Channel open
+2021-01-11 14:04:51,389:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200, 'data': {'email_body': 'Hello, \n Your token number is : agbds3-a56294a3c95b7bf9befd9843b3e15cce \n your uidb64 code is Mg \n Use link below to reset your password  \nhttp://127.0.0.1:8000/password-reset/?redirect_url=/password-reset-complete/', 'to_email': 'kamaltarun.rao0@gmail.com', 'email_subject': 'Reset your passsword'}}, status_code = 200 
+2021-01-11 14:06:54,183:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200, 'data': {'email_body': 'Hello, \n Your token number is : agbdvi-da6c643a04827d56dae3032d482fa620 \n your uidb64 code is Mg \n Use link below to reset your password  \nhttp://127.0.0.1:8000/password-reset/?redirect_url=/password-reset-complete/', 'to_email': 'kamaltarun.rao0@gmail.com', 'email_subject': 'Reset your passsword'}}, status_code = 200 
+2021-01-11 14:07:35,991:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200, 'data': {'email_body': 'Hello, \n Your token number is : agbdwn-fed31ba16f990bfce2dc30ca0fe8d987 \n your uidb64 code is Mg \n Use link below to reset your password  \nhttp://127.0.0.1:8000/password-reset/?redirect_url=/password-reset-complete/', 'to_email': 'kamaltarun.rao0@gmail.com', 'email_subject': 'Reset your passsword'}}, status_code = 200 
+2021-01-11 14:08:20,040:INFO:C:\Users\TARUNVYDA\CloneProjects\FundooNotes\fundoo\fundooapp\views.py changed, reloading.
+2021-01-11 14:08:20,040:DEBUG:Using selector: SelectSelector
+2021-01-11 14:08:57,502:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'PLAIN', b'AMQPLAIN'], locales: ['en_US']
+2021-01-11 14:08:57,507:DEBUG:using channel_id: 1
+2021-01-11 14:08:57,509:DEBUG:Channel open
+2021-01-11 14:08:57,519:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200, 'data': {'email_body': 'Hello, \n Your token number is : agbdyx-6623b458b6eec8bd04903e5471db681f \n your uidb64 code is Mg \n Use link below to reset your password  \nhttp://127.0.0.1:8000/password-reset/?redirect_url=/password-reset-complete/', 'to_email': 'kamaltarun.rao0@gmail.com', 'email_subject': 'Reset your passsword'}}, status_code = 200 
+2021-01-11 14:09:27,174:WARNING:Method Not Allowed: /register/
+2021-01-11 14:10:32,772:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-11 14:11:58,992:WARNING:Method Not Allowed: /register/
+2021-01-11 14:12:05,071:DEBUG:Closed channel #1
+2021-01-11 14:12:05,098:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'PLAIN', b'AMQPLAIN'], locales: ['en_US']
+2021-01-11 14:12:05,099:DEBUG:using channel_id: 1
+2021-01-11 14:12:05,101:DEBUG:Channel open
+2021-01-11 14:12:05,104:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-11 14:14:13,223:WARNING:Method Not Allowed: /register/
+2021-01-11 14:14:15,955:DEBUG:{'status': False, 'message': 'some other issue please try after some time', 'status_code': 400}, status_code = 400, exception = {'email': [ErrorDetail(string='user with this email already exists.', code='unique')]}
+2021-01-11 14:14:15,999:WARNING:Bad Request: /register/
+2021-01-11 14:15:14,720:DEBUG:Closed channel #1
+2021-01-11 14:15:14,740:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'PLAIN', b'AMQPLAIN'], locales: ['en_US']
+2021-01-11 14:15:14,741:DEBUG:using channel_id: 1
+2021-01-11 14:15:14,743:DEBUG:Channel open
+2021-01-11 14:15:14,746:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-11 14:17:38,249:WARNING:Method Not Allowed: /register/
+2021-01-11 14:17:41,247:DEBUG:Closed channel #1
+2021-01-11 14:17:41,263:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'PLAIN', b'AMQPLAIN'], locales: ['en_US']
+2021-01-11 14:17:41,264:DEBUG:using channel_id: 1
+2021-01-11 14:17:41,266:DEBUG:Channel open
+2021-01-11 14:17:41,269:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-11 14:21:06,580:DEBUG:Using selector: SelectSelector
+2021-01-11 14:22:37,881:WARNING:Method Not Allowed: /register/
+2021-01-11 14:22:40,708:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'AMQPLAIN', b'PLAIN'], locales: ['en_US']
+2021-01-11 14:22:40,710:DEBUG:using channel_id: 1
+2021-01-11 14:22:40,712:DEBUG:Channel open
+2021-01-11 14:22:40,716:DEBUG:{'status': True, 'message': 'Account created successfully', 'status_code': 201, 'data': {'first_name': 'vyda', 'last_name': 'tarun', 'email': 'kamaltarun.rao6@gmail.com', 'user_name': 'tarunvyda'}}, status_code = 201 
+2021-01-11 14:23:24,016:WARNING:Not Found: /request-reset-password/
+2021-01-11 14:23:41,691:WARNING:Method Not Allowed: /request-reset-email/
+2021-01-11 14:23:45,599:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200, 'data': {'email_body': 'Hello, \n Your token number is : agbenl-9dd6efdb9fce8b627d06ea4d7d8aa03b \n your uidb64 code is Mg \n Use link below to reset your password  \nhttp://127.0.0.1:8000/password-reset/?redirect_url=/password-reset-complete/', 'to_email': 'kamaltarun.rao0@gmail.com', 'email_subject': 'Reset your passsword'}}, status_code = 200 
+2021-01-11 14:25:23,070:DEBUG:Using selector: SelectSelector
+2021-01-11 14:28:53,681:DEBUG:Start from server, version: 0.9, properties: {'capabilities': {'publisher_confirms': True, 'exchange_exchange_bindings': True, 'basic.nack': True, 'consumer_cancel_notify': True, 'connection.blocked': True, 'consumer_priorities': True, 'authentication_failure_close': True, 'per_consumer_qos': True, 'direct_reply_to': True}, 'cluster_name': 'rabbit@TARUNVYDA-PC', 'copyright': 'Copyright (c) 2007-2020 VMware, Inc. or its affiliates.', 'information': 'Licensed under the MPL 2.0. Website: https://rabbitmq.com', 'platform': 'Erlang/OTP 23.2', 'product': 'RabbitMQ', 'version': '3.8.9'}, mechanisms: [b'PLAIN', b'AMQPLAIN'], locales: ['en_US']
+2021-01-11 14:28:53,683:DEBUG:using channel_id: 1
+2021-01-11 14:28:53,685:DEBUG:Channel open
+2021-01-11 14:28:53,689:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200, 'data': {'email_body': 'Hello, \n Your token number is : agbew5-d86be80eaf7e65563564808c986adce8 \n your uidb64 code is Mg \n Use link below to reset your password  \nhttp://127.0.0.1:8000/password-reset/?redirect_url=/password-reset-complete/', 'to_email': 'kamaltarun.rao0@gmail.com', 'email_subject': 'Reset your passsword'}}, status_code = 200 
+2021-01-11 14:28:58,558:DEBUG:{'status': True, 'message': 'We have sent you a link to reset your password', 'status_code': 200, 'data': {'email_body': 'Hello, \n Your token number is : agbewa-4780b9cf8d1d4b397cddd31fca511247 \n your uidb64 code is Mg \n Use link below to reset your password  \nhttp://127.0.0.1:8000/password-reset/?redirect_url=/password-reset-complete/', 'to_email': 'kamaltarun.rao0@gmail.com', 'email_subject': 'Reset your passsword'}}, status_code = 200 
+2021-01-11 14:29:20,202:DEBUG:Using selector: SelectSelector
