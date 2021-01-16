@@ -11,6 +11,9 @@ from django.db.models import Q
 from services.exceptions import (MyCustomError, ExceptionType)
 from services.cache import Cache
 from services.encrypt import Encrypt
+import datetime
+from fundooapp.models import Account
+from fundooapp import tasks
 
 User = get_user_model()
 
@@ -29,10 +32,12 @@ class Notes(APIView):
 
     def post(self, request, *args, **kwargs):
         """
-        takes notes data as input and if the data is valid then it stores the data in database
-        :rtype:Response returns success or failure message along with statuscode
+        this method takes data from user in request and creates a new note if details provided are valid, else it will raise
+        exception
+        :param request: takes the note data from the user
+        :param kwargs: it takes user account object as input
+        :return: response of the created note details
         """
-
         try:
             utils.set_user(request, kwargs.get('user').id)
             if request.data.get('collaborate'):
@@ -59,8 +64,10 @@ class Notes(APIView):
 
     def get(self, request, *args, **kwargs):
         """
-        takes key as input and if the data is exists in database then the data is returned
-        :rtype:Response returns data if success else returns failure message along with statuscode
+        this method takes pk from url in kwargs and get the particular note data if exist. else it will raise
+        exception saying that note doesn't exist
+        :param kwargs: it takes primary key and user account object as input
+        :return: response of the requested note details
         """
 
         try:
@@ -99,10 +106,12 @@ class Notes(APIView):
 
     def put(self, request, *args, **kwargs):
         """
-        takes key as input and if the data is valid then it replaces data in database
-        :rtype:Response returns data if success else returns failure message along with statuscode
+        this method takes pk from url in kwargs, data from user in request and update the particular note if exist. else it will raise
+        exception saying that note doesn't exist
+        :param request: takes the note data from the user
+        :param kwargs: it takes primary key and user account object as input
+        :return: response of the updated note details
         """
-
         try:
 
             item = Note.objects.filter(Q(pk=kwargs.get('pk')) &
@@ -131,10 +140,11 @@ class Notes(APIView):
 
     def delete(self, request, *args, **kwargs):
         """
-        takes key as input and if the data is exists in database then the it deletes the data from database
-        :rtype:Response returns success else or failure message along with statuscode
+        this method takes pk from url in kwargs and delete the particular note if exist. else it will raise
+        exception saying that note doesn't exist
+        :param kwargs: it takes primary key and user account object as input
+        :return: response saying that note successfully deleted
         """
-
         try:
             note = Note.objects.filter(Q(pk=kwargs.get('pk')) &
                                        (Q(user=kwargs.get('user').id) | Q(
@@ -171,6 +181,7 @@ class ArchivedView(APIView):
         :return: all the request archived notes which user have requested
         """
         try:
+            # todo:change if else to two different functions
             if kwargs.get('pk'):
                 item = Note.objects.filter(Q(pk=kwargs.get('pk')) & Q(trash=False) & Q(is_archived=True) & (Q(
                     user=kwargs.get('user').id) | Q(
@@ -215,6 +226,7 @@ class PinnedView(APIView):
         :return: all the request pinned notes which user have requested
         """
         try:
+            # todo:change if else to two different functions
             if kwargs.get('pk'):
                 item = Note.objects.filter(Q(pk=kwargs.get('pk')) & Q(trash=False) & Q(is_pinned=True) & (Q(
                     user=kwargs.get('user').id) | Q(
@@ -259,6 +271,7 @@ class TrashView(APIView):
         :return: all the request trash notes which user have requested
         """
         try:
+            # todo:change if else to two different functions
             if kwargs.get('pk'):
                 item = Note.objects.filter(Q(pk=kwargs.get('pk')) & Q(is_deleted=False) & Q(trash=True) & (Q(
                     user=kwargs.get('user').id) | Q(
@@ -331,3 +344,26 @@ class SearchNote(APIView):
             return utils.manage_response(status=False, message='some other issue please try after some time',
                                          exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
+
+
+class Reminder:
+
+    @staticmethod
+    def email_reminder():
+        try:
+            start_date = datetime.datetime.now()
+            end_date = start_date + datetime.timedelta(hours=1)
+            notes = Note.objects.filter(reminder__range=(start_date, end_date)).values('user_id', 'title')
+            list_result = [entry for entry in notes]
+            for entry in list_result:
+                email = Account.objects.filter(id=entry['user_id']).values('email', 'user_name')
+                entry['user_id'] = email[0]['email']
+                data = {'email_subject': "Note Reminder",
+                        'email_body': "Dear " + email[0]['user_name'] + ", \n you have a note reminder with title " +
+                                      entry['title'],
+                        'to_email': entry['user_id']}
+                tasks.send_email.delay(data)
+            logging.debug('{}'.format('reminders sent successfully'))
+        except Exception as e:
+
+            logging.debug('{}'.format(str(e)))

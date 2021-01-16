@@ -1,6 +1,7 @@
 from celery import shared_task
 from django.core.mail import EmailMessage
 import threading
+from notes.views import Reminder
 
 
 class EmailThread(threading.Thread):
@@ -21,3 +22,11 @@ def send_email(data):
     email = EmailMessage(
         subject=data['email_subject'], body=data['email_body'], to=[data['to_email']])
     EmailThread(email).start()
+
+
+@shared_task()
+def email_reminder():
+    """
+        performs repeated task of sending email to all users who have reminders
+    """
+    Reminder.email_reminder()
