@@ -181,7 +181,6 @@ class ArchivedView(APIView):
         :return: all the request archived notes which user have requested
         """
         try:
-            # todo:change if else to two different functions
             if kwargs.get('pk'):
                 item = Note.objects.filter(Q(pk=kwargs.get('pk')) & Q(trash=False) & Q(is_archived=True) & (Q(
                     user=kwargs.get('user').id) | Q(
@@ -226,7 +225,6 @@ class PinnedView(APIView):
         :return: all the request pinned notes which user have requested
         """
         try:
-            # todo:change if else to two different functions
             if kwargs.get('pk'):
                 item = Note.objects.filter(Q(pk=kwargs.get('pk')) & Q(trash=False) & Q(is_pinned=True) & (Q(
                     user=kwargs.get('user').id) | Q(
@@ -271,7 +269,6 @@ class TrashView(APIView):
         :return: all the request trash notes which user have requested
         """
         try:
-            # todo:change if else to two different functions
             if kwargs.get('pk'):
                 item = Note.objects.filter(Q(pk=kwargs.get('pk')) & Q(is_deleted=False) & Q(trash=True) & (Q(
                     user=kwargs.get('user').id) | Q(
