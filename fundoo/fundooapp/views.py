@@ -6,21 +6,16 @@ from django.http import HttpResponsePermanentRedirect
 from django.urls import reverse
 from django.utils.encoding import smart_bytes
 from django.utils.http import urlsafe_base64_encode
-from drf_yasg import openapi
-from drf_yasg.utils import swagger_auto_schema
 from rest_framework import (generics, status, views)
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Account
 from .serializers import RegisterSerializer, SetNewPasswordSerializer, ResetPasswordEmailRequestSerializer, \
     EmailVerificationSerializer, LoginSerializer
-# from .utils import Util
 import logging
 from services.cache import Cache
-from decouple import config
-from rest_framework.exceptions import AuthenticationFailed
 from notes import utils
 from services.encrypt import Encrypt
-from services.exceptions import (MyCustomError, ExceptionType)
+from services.exceptions import (MyCustomError)
 from .utils import Validation
 from .tasks import send_email
 
@@ -168,10 +163,8 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
                 user = Account.objects.get(email=email)
                 uidb64 = urlsafe_base64_encode(smart_bytes(user.id))
                 token = PasswordResetTokenGenerator().make_token(user)
-                redirect_url = reverse('password-reset-complete')
-                absolute_url = request.build_absolute_uri(reverse('password-reset-confirm'))
-                email_body = 'Hello, \n Your token number is : ' + token + ' \n your uidb64 code is ' + uidb64 + ' \n Use link below to reset your password  \n' + \
-                             absolute_url + "?redirect_url=" + redirect_url
+                redirect_url = request.build_absolute_uri(reverse('password-reset-complete'))
+                email_body = 'Hello, \n Your token number is : ' + token + ' \n your uidb64 code is ' + uidb64 + ' \n Use link below to reset your password  \n' + "?redirect_url=" + redirect_url
                 data = {'email_body': email_body, 'to_email': user.email,
                         'email_subject': 'Reset your passsword'}
                 send_email.delay(data)
@@ -188,24 +181,6 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
             return utils.manage_response(status=result['status'], message=result['message'],
                                          exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
-
-
-class PasswordTokenCheckAPI(generics.GenericAPIView):
-    """
-    this class will check the token is valid or not
-    """
-    serializer_class = SetNewPasswordSerializer
-
-    def get(self, request):
-        """
-        it checks whether the token is valid for particular user or not
-        """
-        redirect_url = request.GET.get('redirect_url')
-        if redirect_url and len(redirect_url) > 3:
-            return CustomRedirect(
-                redirect_url + '?token_valid=True&message=Credentials Valid')
-        else:
-            return CustomRedirect(os.environ.get('FRONTEND_URL', '') + '?token_valid=False')
 
 
 class SetNewPasswordAPIView(generics.GenericAPIView):
