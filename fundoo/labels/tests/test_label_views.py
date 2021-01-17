@@ -46,7 +46,7 @@ class Data(TestCase):
         self.invalid_label_title_data = {
             'label_name': "notenotenotenotenotenotenotenotenotenotenotenotenotenotenotenotenotenotenotenotenotenotenote",
         }
-        self.label_url = reverse('label', kwargs={'pk': 1})
+        self.label_url = reverse('label', kwargs={'pk': 2})
         self.label_post_url = reverse("label-post")
 
         self.client.post(self.register_url, self.valid_registration_data, format='json')

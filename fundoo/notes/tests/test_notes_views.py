@@ -39,7 +39,7 @@ class Data(TestCase):
             'email': "kamaltarun.rao0@gmail.com",
             'password': "adminpass"}
         self.note_post_url = reverse("note")
-        self.note_url = reverse("single-note", kwargs={"pk": 1})
+        self.note_url = reverse("single-note", kwargs={"pk": 2})
 
         self.valid_label_data = {
             'label_name': "Third Note",
@@ -65,13 +65,7 @@ class Data(TestCase):
 
         self.label_url = reverse('label', kwargs={'pk': 1})
 
-        self.client.post(self.register_url, self.valid_registration_data, format='json')
-        user = User.objects.filter(email=self.valid_registration_data['email']).first()
-        user.is_verified = True
-        user.save()
 
-        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
 
 
 class NotesTest(Data):
@@ -83,6 +77,13 @@ class NotesTest(Data):
         """
         Test case for validating Labels class with valid details.
         """
+        self.client.post(self.register_url, self.valid_registration_data, format='json')
+        user = User.objects.filter(email=self.valid_registration_data['email']).first()
+        user.is_verified = True
+        user.save()
+
+        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
+        self.headers = self.logged_in.data['data']['token']
         response = self.client.post(self.label_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers,
                                     format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -105,6 +106,13 @@ class NotesTest(Data):
         """
         Test case for validating Labels class with invalid details.
         """
+        self.client.post(self.register_url, self.valid_registration_data, format='json')
+        user = User.objects.filter(email=self.valid_registration_data['email']).first()
+        user.is_verified = True
+        user.save()
+
+        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
+        self.headers = self.logged_in.data['data']['token']
 
         response = self.client.post(self.note_post_url, self.invalid_note_data, HTTP_AUTHORIZATION=self.headers,
                                     format='json')
@@ -130,7 +138,13 @@ class ArchivedViewTest(Data):
         """
         Test case for validating ArchivedView class with valid details.
         """
+        self.client.post(self.register_url, self.valid_registration_data, format='json')
+        user = User.objects.filter(email=self.valid_registration_data['email']).first()
+        user.is_verified = True
+        user.save()
 
+        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
+        self.headers = self.logged_in.data['data']['token']
         self.valid_note_data2 = {
             "title": "valid note",
             "description": "this is my valid note",
@@ -140,7 +154,7 @@ class ArchivedViewTest(Data):
         }
 
         self.note_archived_url = reverse("archived")
-        self.single_note_archived_url = reverse("single-archived", kwargs={"pk": 2})
+        self.single_note_archived_url = reverse("single-archived", kwargs={"pk": 3})
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
         self.headers = self.logged_in.data['data']['token']
@@ -164,7 +178,13 @@ class PinnedViewTest(Data):
         """
         Test case for validating PinnedView class with valid details.
         """
+        self.client.post(self.register_url, self.valid_registration_data, format='json')
+        user = User.objects.filter(email=self.valid_registration_data['email']).first()
+        user.is_verified = True
+        user.save()
 
+        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
+        self.headers = self.logged_in.data['data']['token']
         self.valid_note_data2 = {
             "title": "valid note",
             "description": "this is my valid note",
@@ -173,7 +193,7 @@ class PinnedViewTest(Data):
             "collaborate": ["kamaltarun.rao0@gmail.com"]
         }
         self.note_pinned_url = reverse("pinned")
-        self.single_note_pinned_url = reverse("single-pinned", kwargs={"pk": 4})
+        self.single_note_pinned_url = reverse("single-pinned", kwargs={"pk": 5})
 
         self.client.post(self.label_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers, format='json')
         client.post(self.note_post_url, self.valid_note_data, HTTP_AUTHORIZATION=self.headers, format='json')
@@ -194,7 +214,13 @@ class TrashViewTest(Data):
         """
         Test case for validating TrashView class with valid details.
         """
+        self.client.post(self.register_url, self.valid_registration_data, format='json')
+        user = User.objects.filter(email=self.valid_registration_data['email']).first()
+        user.is_verified = True
+        user.save()
 
+        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
+        self.headers = self.logged_in.data['data']['token']
         self.valid_note_data2 = {
             "title": "valid note",
             "description": "this is my valid note",
@@ -204,7 +230,7 @@ class TrashViewTest(Data):
         }
 
         self.note_trash_url = reverse("trash")
-        self.single_note_trash_url = reverse("single-trash", kwargs={"pk": 6})
+        self.single_note_trash_url = reverse("single-trash", kwargs={"pk": 7})
 
         self.client.post(self.label_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers, format='json')
         client.post(self.note_post_url, self.valid_note_data2, HTTP_AUTHORIZATION=self.headers, format='json')
@@ -222,6 +248,13 @@ class SearchNoteTest(Data):
         """
         Test case for validating SearchNote class with valid details.
         """
+        self.client.post(self.register_url, self.valid_registration_data, format='json')
+        user = User.objects.filter(email=self.valid_registration_data['email']).first()
+        user.is_verified = True
+        user.save()
+
+        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
+        self.headers = self.logged_in.data['data']['token']
         self.search_note_url = reverse("search") + "?q=my second"
         self.client.post(self.label_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers, format='json')
         client.post(self.note_post_url, self.valid_note_data, HTTP_AUTHORIZATION=self.headers, format='json')
@@ -232,6 +265,13 @@ class SearchNoteTest(Data):
         """
         Test case for validating PinnedView class without providing details.
         """
+        self.client.post(self.register_url, self.valid_registration_data, format='json')
+        user = User.objects.filter(email=self.valid_registration_data['email']).first()
+        user.is_verified = True
+        user.save()
+
+        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
+        self.headers = self.logged_in.data['data']['token']
         self.empty_search_note_url = reverse("search") + "?q="
         self.client.post(self.label_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers, format='json')
         client.post(self.note_post_url, self.valid_note_data, HTTP_AUTHORIZATION=self.headers, format='json')
