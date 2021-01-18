@@ -31,25 +31,30 @@ def user_login_required(view_func):
 
             result['message'] = "you are not logged in"
             logging.debug('{} status_code = {}'.format(result, status.HTTP_400_BAD_REQUEST))
-            return HttpResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
+            HttpResponse.status_code = status.HTTP_400_BAD_REQUEST
+            return HttpResponse(json.dumps(result), HttpResponse.status_code)
         except jwt.ExpiredSignatureError as e:
             result['message'] = 'Activation Expired'
             logging.exception('{} exception = {}, status_code = {}'.format(result, str(e), status.HTTP_400_BAD_REQUEST))
-            return HttpResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
+            HttpResponse.status_code = status.HTTP_400_BAD_REQUEST
+            return HttpResponse(json.dumps(result), HttpResponse.status_code)
         except jwt.exceptions.DecodeError as e:
             result['message'] = 'Invalid Token'
             logging.exception(
                 '{}, exception = {}, status_code = {}'.format(result, str(e), status.HTTP_400_BAD_REQUEST))
-            return HttpResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
+            HttpResponse.status_code = status.HTTP_400_BAD_REQUEST
+            return HttpResponse(json.dumps(result), HttpResponse.status_code)
         except KeyError as e:
             result['message'] = 'please provide token key'
             logging.exception(
                 '{}, exception = {}, status_code = {}'.format(result, str(e), status.HTTP_400_BAD_REQUEST))
-            return HttpResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
+            HttpResponse.status_code = status.HTTP_400_BAD_REQUEST
+            return HttpResponse(json.dumps(result), HttpResponse.status_code)
         except Exception as e:
             result['message'] = 'some other issue please try after some time'
             logging.exception(
                 '{}, exception = {}, status_code = {}'.format(result, str(e), status.HTTP_400_BAD_REQUEST))
-            return HttpResponse(json.dumps(result), status.HTTP_400_BAD_REQUEST)
+            HttpResponse.status_code = status.HTTP_400_BAD_REQUEST
+            return HttpResponse(json.dumps(result), HttpResponse.status_code)
 
     return wrapper
