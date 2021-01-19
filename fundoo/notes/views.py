@@ -19,7 +19,7 @@ User = get_user_model()
 
 logging.basicConfig(filename='notes.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
-cache = Cache()
+cache = Cache.get_instance()
 
 
 @method_decorator(user_login_required, name="dispatch")
@@ -156,7 +156,7 @@ class Notes(APIView):
             if cache.get_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL") is not None:
                 cache.delete_cache("NOTE_" + str(kwargs.get('pk')) + "_DETAIL")
             return utils.manage_response(status=True, message="Note Deleted Successfully",
-                                         status_code=status.HTTP_202_ACCEPTED)
+                                         status_code=status.HTTP_204_NO_CONTENT)
 
         except MyCustomError as e:
             return utils.manage_response(status=False, message=e.message, exception=str(e),

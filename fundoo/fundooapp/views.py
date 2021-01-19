@@ -2,7 +2,7 @@ import os
 import jwt
 from django.conf import settings
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
-from django.http import HttpResponsePermanentRedirect
+from django.http import HttpResponsePermanentRedirect, HttpResponse
 from django.urls import reverse
 from django.utils.encoding import smart_bytes
 from django.utils.http import urlsafe_base64_encode
@@ -18,6 +18,7 @@ from services.encrypt import Encrypt
 from services.exceptions import (MyCustomError)
 from .utils import Validation
 from .tasks import send_email
+from rest_framework.response import Response
 
 logging.basicConfig(filename='users.log', level=logging.DEBUG,
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -45,11 +46,13 @@ class LoginAPIView(generics.GenericAPIView):
                 serializer.is_valid(raise_exception=True)
                 user = Account.objects.get(email=serializer.data['email'])
                 token = Encrypt.encode(user.id)
-                cache = Cache()
+                cache = Cache.get_instance()
                 cache.set_cache("TOKEN_" + str(user.id) + "_AUTH", token)
-                result = {'token': token}
-                return utils.manage_response(status=True, message="login successful", data=result,
-                                             status_code=status.HTTP_200_OK)
+
+                response = utils.manage_response(status=True, message="login successful",
+                                                 status_code=status.HTTP_200_OK)
+                response.__setitem__(header="HTTP_AUTHORIZATION", value=token)
+                return response
         except MyCustomError as e:
             return utils.manage_response(status=False, message=e.message, exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
@@ -85,8 +88,10 @@ class RegisterView(generics.GenericAPIView):
                 data = {'email_body': email_body, 'to_email': user.email,
                         'email_subject': 'Verify your email'}
                 send_email.delay(data)
-                return utils.manage_response(status=True, message="Account created successfully", data=user_data,
-                                             status_code=status.HTTP_201_CREATED)
+                response = utils.manage_response(status=True, message="Account created successfully", data=user_data,
+                                                 status_code=status.HTTP_201_CREATED)
+                response.__setitem__(header="HTTP_AUTHORIZATION", value=token)
+                return response
         except MyCustomError as e:
             return utils.manage_response(status=False, message=e.message, exception=str(e),
                                          status_code=status.HTTP_400_BAD_REQUEST)
@@ -170,8 +175,13 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
                 send_email.delay(data)
                 result['message'] = 'We have sent you a link to reset your password'
                 result['status'] = True
-                return utils.manage_response(status=result['status'], message=result['message'],
-                                             status_code=status.HTTP_200_OK)
+                response = Response(data=result, status=status.HTTP_200_OK)
+
+                response.__setitem__(header="HTTP_AUTHORIZATION", value=data)
+                logging.debug('{}, status_code = {}, token = {}'.format(result, status.HTTP_200_OK, token))
+                return response
+                # return utils.manage_response(status=result['status'], message=result['message'],
+                #                              status_code=status.HTTP_200_OK)
             else:
                 result['message'] = "Email id you have entered doesn't exist"
                 logging.debug('{}'.format(result))
