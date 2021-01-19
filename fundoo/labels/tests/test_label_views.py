@@ -49,14 +49,6 @@ class Data(TestCase):
         self.label_url = reverse('label', kwargs={'pk': 2})
         self.label_post_url = reverse("label-post")
 
-        self.client.post(self.register_url, self.valid_registration_data, format='json')
-        user = User.objects.filter(email=self.valid_registration_data['email']).first()
-        user.is_verified = True
-        user.save()
-
-        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
-
 
 class LabelTest(Data):
     """
@@ -73,23 +65,24 @@ class LabelTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
 
-        response = self.client.post(self.label_post_url, self.valid_label_data, HTTP_AUTHORIZATION=headers,
+        response = self.client.post(self.label_post_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers,
                                     format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        response = self.client.get(self.label_url, HTTP_AUTHORIZATION=headers, format='json')
+        response = self.client.get(self.label_url, HTTP_AUTHORIZATION=self.headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        response = self.client.get(self.label_post_url, HTTP_AUTHORIZATION=headers, format='json')
+        response = self.client.get(self.label_post_url, HTTP_AUTHORIZATION=self.headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        response = client.put(self.label_url, self.valid_label_put_data, HTTP_AUTHORIZATION=headers, format='json')
+        response = client.put(self.label_url, self.valid_label_put_data, HTTP_AUTHORIZATION=self.headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        response = client.put(self.label_url, self.invalid_label_title_data, HTTP_AUTHORIZATION=headers, format='json')
+        response = client.put(self.label_url, self.invalid_label_title_data, HTTP_AUTHORIZATION=self.headers,
+                              format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        response = self.client.delete(self.label_url, HTTP_AUTHORIZATION=headers, format='json')
+        response = self.client.delete(self.label_url, HTTP_AUTHORIZATION=self.headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
 
     def test_labels_with_invalid_details(self):
@@ -102,19 +95,19 @@ class LabelTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
 
-        response = self.client.post(self.label_post_url, self.invalid_label_data, HTTP_AUTHORIZATION=headers,
+        response = self.client.post(self.label_post_url, self.invalid_label_data, HTTP_AUTHORIZATION=self.headers,
                                     format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        response = self.client.get(self.label_url, HTTP_AUTHORIZATION=headers, format='json')
+        response = self.client.get(self.label_url, HTTP_AUTHORIZATION=self.headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        response = client.put(self.label_url, self.valid_label_put_data, HTTP_AUTHORIZATION=headers, format='json')
+        response = client.put(self.label_url, self.valid_label_put_data, HTTP_AUTHORIZATION=self.headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-        response = self.client.delete(self.label_url, HTTP_AUTHORIZATION=headers, format='json')
+        response = self.client.delete(self.label_url, HTTP_AUTHORIZATION=self.headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_labels_with_different_users_token(self):
@@ -127,14 +120,15 @@ class LabelTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
+
         self.client.post(self.register_url, self.valid_test_registration_data, format='json')
         user = User.objects.filter(email=self.valid_test_registration_data['email']).first()
         user.is_verified = True
         user.save()
-
-        headers = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.client.post(self.label_post_url, self.valid_test_login_data, HTTP_AUTHORIZATION=headers,
+        logged = self.client.post(self.login_url, self.valid_login_data, format='json')
+        logged_token = logged.__getitem__("HTTP_AUTHORIZATION")
+        self.client.post(self.label_post_url, self.valid_test_login_data, HTTP_AUTHORIZATION=logged_token,
                          format='json')
-        headers = self.logged_in
-        response = self.client.get(self.label_url, HTTP_AUTHORIZATION=headers, format='json')
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        response = self.client.get(self.label_url, HTTP_AUTHORIZATION=self.headers, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)

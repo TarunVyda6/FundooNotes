@@ -89,17 +89,16 @@ class RegistrationTests(Data):
         Ensure we can create a new account object and it returns status code as 201.
         """
 
-        self.client.post(self.register_url, self.valid_registration_data, format='json')
-        user = User.objects.filter(email=self.valid_registration_data['email']).first()
-        user.is_verified = True
-        user.save()
-
-        self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        response = self.client.post(self.register_url, self.valid_test_registration_data, format='json')
-        user = User.objects.filter(email=self.valid_registration_data['email']).first()
-        user.is_verified = True
-        user.save()
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        result = self.client.post(self.register_url, self.valid_registration_data, format='json')
+        token = result.__getitem__("HTTP_AUTHORIZATION")
+        tokens={'token':token}
+        response = self.client.get(reverse("email-verify"), tokens)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        response = self.client.get(reverse("email-verify"), tokens)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        tokens['token']='s'
+        response = self.client.get(reverse("email-verify"), tokens)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_create_super_user_with_valid_details(self):
         """
@@ -184,8 +183,9 @@ class RegistrationTests(Data):
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
         data = {"email": "kamaltarun.rao0@gmail.com"}
         response = self.client.post(self.reset_password_url, data, format='json')
-        token = response.data['data']['email_body'].split(" ")[7]
-        uidb64 = response.data['data']['email_body'].split(" ")[13]
+        token_value = response.__getitem__("HTTP_AUTHORIZATION")
+        token = token_value.split(" ")[8]
+        uidb64 = token_value.split(" ")[14]
         data = json.dumps({"password": "adminpass", "token": token, "uidb64": uidb64})
 
         response = self.client.patch(reverse("password-reset-complete"), data, content_type='application/json')

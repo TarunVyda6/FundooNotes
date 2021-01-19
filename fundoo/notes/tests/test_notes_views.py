@@ -4,7 +4,6 @@ import pytest
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from rest_framework.test import APIClient
-import json
 
 User = get_user_model()
 
@@ -66,8 +65,6 @@ class Data(TestCase):
         self.label_url = reverse('label', kwargs={'pk': 1})
 
 
-
-
 class NotesTest(Data):
     """
     Test case for validating Notes class with valid and invalid details.
@@ -83,14 +80,12 @@ class NotesTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
         response = self.client.post(self.label_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers,
                                     format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         response = client.post(self.note_post_url, self.valid_note_data, HTTP_AUTHORIZATION=self.headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        response = client.get(self.note_url, HTTP_AUTHORIZATION=self.headers, format='json')
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
         response = client.get(self.note_url, HTTP_AUTHORIZATION=self.headers, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         response = client.get(self.note_post_url, HTTP_AUTHORIZATION=self.headers, format='json')
@@ -100,7 +95,7 @@ class NotesTest(Data):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         response = client.delete(self.note_url, HTTP_AUTHORIZATION=self.headers, format='json')
-        self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_notes_with_invalid_details(self):
         """
@@ -112,7 +107,7 @@ class NotesTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
 
         response = self.client.post(self.note_post_url, self.invalid_note_data, HTTP_AUTHORIZATION=self.headers,
                                     format='json')
@@ -144,7 +139,7 @@ class ArchivedViewTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
         self.valid_note_data2 = {
             "title": "valid note",
             "description": "this is my valid note",
@@ -157,7 +152,7 @@ class ArchivedViewTest(Data):
         self.single_note_archived_url = reverse("single-archived", kwargs={"pk": 3})
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
         self.client.post(self.label_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers, format='json')
         client.post(self.note_post_url, self.valid_note_data, HTTP_AUTHORIZATION=self.headers, format='json')
         client.post(self.note_post_url, self.valid_note_data2, HTTP_AUTHORIZATION=self.headers, format='json')
@@ -184,7 +179,7 @@ class PinnedViewTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
         self.valid_note_data2 = {
             "title": "valid note",
             "description": "this is my valid note",
@@ -220,7 +215,7 @@ class TrashViewTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
         self.valid_note_data2 = {
             "title": "valid note",
             "description": "this is my valid note",
@@ -254,7 +249,7 @@ class SearchNoteTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
         self.search_note_url = reverse("search") + "?q=my second"
         self.client.post(self.label_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers, format='json')
         client.post(self.note_post_url, self.valid_note_data, HTTP_AUTHORIZATION=self.headers, format='json')
@@ -271,7 +266,7 @@ class SearchNoteTest(Data):
         user.save()
 
         self.logged_in = self.client.post(self.login_url, self.valid_login_data, format='json')
-        self.headers = self.logged_in.data['data']['token']
+        self.headers = self.logged_in.__getitem__("HTTP_AUTHORIZATION")
         self.empty_search_note_url = reverse("search") + "?q="
         self.client.post(self.label_url, self.valid_label_data, HTTP_AUTHORIZATION=self.headers, format='json')
         client.post(self.note_post_url, self.valid_note_data, HTTP_AUTHORIZATION=self.headers, format='json')
